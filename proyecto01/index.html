@@ -1,199 +1,222 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<head>
-    <title>CV - Gabriel Maldonado</title>
-    <meta charset="UTF-8">
-</head>
+    <head>
+        <title>CV - Gabriel Maldonado</title>
+        <meta charset="UTF-8">
+        <link rel='stylesheet' href='stylesheets/style.css'/>
+    </head>
 
-<body>
+    <body>
 
-    <header>
-        <figure>
-            <img src="image/perfil.jpeg" alt="foto de perfil" id="foto_perfil" width="140" height="140">
-        </figure>
-        <hgroup>
-            <h1>Gabriel Maldonado</h1>
-            <h4>Estudiante de Computacion</h4>
-        </hgroup>
-    </header>
+        <header>
+            <figure >
+                <img  class="profile_img" src="image/perfil.jpeg" alt="foto de perfil" id="foto_perfil" width="140" height="140">
+            </figure>
+            <hgroup class="name_title">
+                <h1>Gabriel Maldonado</h1>
+                <hr>
+                <h4>Estudiante de Computacion</h4>
+            </hgroup>
+        </header>
 
-    <section id="sec_presentacion">
-        <div>
-            <h2>Presentacion</h2>
-            <p>Soy xxxxxxxxxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxxxxxx xxxxxxxxxxx xxxxxxxxxxxxxxxxxxxxxxxxxx
-                xxxxxxxxxxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxxxx
-                xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxxxxxxxxxxx</p>
-        </div>
+        <section id="sec_presentacion" class="pres_contaner" >
 
-        <div>
-            <label><b>Nombre: </b></label>
-            <label>Gabriel Alexander Maldonado Rodriguez</label>
-            <br>
+            <h2 >Presentacion</h2>
+            <div>
 
-            <label><b>Fecha de Nacimiento: </b></label>
-            <label>2000-11-29</label>
-            <br>
-
-            <label><b>Nacionalidad: </b></label>
-            <label>Ecuatoriana</label>
-            <br>
-
-            <label><b>Intereses: </b></label>
-            <label>Música, Videojuegos, Cocina, Repostería</label>
-            <br>
-
+                <div>
+                    <p>Soy xxxxxxxxxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxxxxxx xxxxxxxxxxx xxxxxxxxxxxxxxxxxxxxxxxxxx
+                        xxxxxxxxxxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxxxx
+                        xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxxxxxxxxxxx</p>
+                </div>
+    
+                <div>
+                    <br>
+                    <label><b>Nombre: </b></label>
+                    <span>Gabriel Alexander Maldonado Rodriguez</span>
+                    <br>
+    
+                    <label><b>Fecha de Nacimiento: </b></label>
+                    <span>2000-11-29</span>
+                    <br>
+    
+                    <label><b>Nacionalidad: </b></label>
+                    <span>Ecuatoriana</span>
+                    <br>
+    
+                    <label><b>Intereses: </b></label>
+                    <span>Música, Videojuegos, Cocina, Repostería</span>
+                    <br>
+    
+                    <!--  
+                    <audio controls autoplay >
+                        <source src="media/backgound.mp3" type="audio/mpeg" >
+                    </audio>
+                    -->
+    
+                </div>
+            </div>
             
-            <audio controls autoplay >
-                <source src="media/backgound.mp3" type="audio/mpeg" >
-            </audio>
-
-        </div>
 
         </section>
 
-        <section>
-            <figure>
+        <section class="bloque_habilidad">
+            <figure class="sec_container">
                 <h2>Educación</h2>
                 <img src="image/icon_estudios.png" alt="icono1" id="icon_estudios" width="67" height="67">
             </figure>
 
 
-            <table>
-
-                <thead>
-                    <tr>
-                        <th>Titulo</th>
-                        <th>Institucion</th>
-                        <th>Años</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                    <tr>
-                        <td>Bachiller en Ciencias</td>
-                        <td>Colegio Alemán Humboldt de Guayaquil</td>
-                        <td>2009-2019</td>
-                    </tr>
-
-                    <tr>
-                        <td>Ingeniero en Ciencias de la Computación<br>
-                            (En progreso)</td>
-                        <td>Escuela Superior Politécnica del Litoral</td>
-                        <td>2019-presente</td>
-                    </tr>
-
-                </tbody>
-
-            </table>
+            <div class="info_container">
+                <table class="table1">
+                    <thead>
+                        <tr>
+                            <th>Titulo</th>
+                            <th>Institucion</th>
+                            <th>Años</th>
+                        </tr>
+                    </thead>
+        
+                    <tbody>
+                        <tr>
+                            <td>Bachiller en Ciencias</td>
+                            <td>Colegio Alemán Humboldt de Guayaquil</td>
+                            <td>2009-2019</td>
+                        </tr>
+        
+                        <tr>
+                            <td>Ingeniero en Ciencias de la Computación<br>
+                                (En progreso)</td>
+                            <td>Escuela Superior Politécnica del Litoral</td>
+                            <td>2019-presente</td>
+                        </tr>
+                    </tbody>
+                </table> 
+            </div>
         </section>
 
-        <section>
-            <figure>
+        <section class="bloque_habilidad" >
+            <figure class="sec_container">
                 <h2>Idiomas</h2>
                 <img src="image/icon_idiomas.png" alt="icono2" id="icon_idiomas" width="67" height="67">
             </figure>
 
-            <ul>
-                <li><b>Español:</b> Lengua nativa</li>
-                <li><b>Inglés: </b> Nivel medio (IB English B HL)</li>
-                <li><b>Aleman:</b> B2 (Deutsche Sprachdiplom II)</li>
-            </ul>
+            <div class="info_container">
+                <ul>
+                    <li><b>Español:</b> Lengua nativa</li>
+                    <li><b>Inglés: </b> Nivel medio (IB English B HL)</li>
+                    <li><b>Aleman:</b> B2 (Deutsche Sprachdiplom II)</li>
+                </ul>
+
+            </div>
+
+            
 
         </section>
 
-        <section>
-            <figure>
+        <section class="bloque_habilidad" > 
+            <figure class="sec_container">
                 <h2>Habilidades</h2>
                 <img src="image/icon_habilidades.png" alt="icono3" id="icon_habilidades" width="67" height="67">
             </figure>
 
-            <ul>
-                <li>Ofimática
-                    <ul>
-                        <li>Word: Nivel medio</li>
-                        <li>Power Point: Nivel medio</li>
-                        <li>Exel: Nivel medio bajo</li>
-                    </ul>
-                </li>
-
-                <li>Programación
-                    <ul>
-                        <li>Phython: Nivel medio bajo</li>
-                        <li>C: Nivel bajo</li>
-                        <li>Java: Nivel medio</li>
-                        <li>SQL: Nivel medio bajo</li>
-                    </ul>
-                </li>
-
-                <li>Redes:</li>
-                    <ul>
-                        <li>CCNA Introduction to Networks</li>
-                    </ul>
-            </ul>
+            <div class = "info_container" >
+                <ul>
+                    <li>Ofimática
+                        <ul>
+                            <li>Word: Nivel medio</li>
+                            <li>Power Point: Nivel medio</li>
+                            <li>Exel: Nivel medio bajo</li>
+                        </ul>
+                    </li>
+    
+                    <li>Programación
+                        <ul>
+                            <li>Phython: Nivel medio bajo</li>
+                            <li>C: Nivel bajo</li>
+                            <li>Java: Nivel medio</li>
+                            <li>SQL: Nivel medio bajo</li>
+                        </ul>
+                    </li>
+    
+                    <li>Redes:</li>
+                        <ul>
+                            <li>CCNA Introduction to Networks</li>
+                        </ul>
+                </ul>
+            </div>
+            
         </section>
 
-        <section>
+        <section class="contact_contaner">
+
+            
+            
+                
+            <div class="contact_wraper">
+
+                <h2>Contactame</h2>
+                <div>
+                    <div>
+                        <label><img src="image/subIcon1.png" width="15" alt="icon"></label>
+                        <input type="text" placeholder="Nombre" size = "20">
+                        <br>
+    
+                        <label><img src="image/subIcon2.png" width="15" alt="icon"></label>
+                        <input type="text" placeholder="Asunto" size = "20">
+                        <br>
+    
+                        <label><img src="image/subIcon3.png" width="15" alt="icon"></label>
+                        <input type="email" placeholder="Correo" size = "20">
+                        <br>
+    
+                        <label><img src="image/subIcon4.png" width="15" alt="icon"></label>
+                        <textarea name="mensaje" placeholder="Mensaje" rows="5" cols="20" maxlength="20"></textarea>
+                        <br>
+    
+                        <button>Enviar</button>
+                    </div>
+    
+                    <div>
+                        <label><b>Celular: </b></label><br>
+                        <span>+593 99 184 8675</span>
+                        <br>
+    
+                        <label><b>Correo: </b></label><br>
+                        <span>gabamald@espol.edu.ec</span>
+                        <br>
+    
+                        <label><b>Dirrecion: </b></label><br>
+                        <span>Av. León Febres Cordero y
+                            vial 10 xxxxxxxxx Mz. 9 Villa. 29</span>
+                        <br>
+                    </div>
+                </div>
+
+            </div>
+
+            
             <div class="mapouter">
                 <div class="gmap_canvas">
-                    <iframe width="800" height="500" id="gmap_canvas" 
+                    <iframe id="gmap_canvas" 
                     src="https://maps.google.com/maps?q=Av.%20Leon%20Febres%20Cordero%20y%20Victor%20Urbano&t=&z=15&ie=UTF8&iwloc=&output=embed" ></iframe>
-                    <a href="https://putlocker-is.org"></a><br>
-                    
-                    <style>.mapouter{position:relative;text-align:right;height:500px;width:800px;}</style>
+                    <a href="https://putlocker-is.org"></a><br>                    
                     <a href="https://www.embedgooglemap.net">add map to website</a>
-                    <style>.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:800px;}</style>
                 </div>
             </div>
-        
-               
-
-            <h2>Contactame</h2>
-                <div>
-                    <label><img src="image/subIcon1.jpg" width="15" alt="icon"></label>
-                    <input type="text" placeholder="Nombre">
-                    <br>
-
-                    <label><img src="image/subIcon2.png" width="15" alt="icon"></label>
-                    <input type="text" placeholder="Asunto">
-                    <br>
-
-                    <label><img src="image/subIcon3.png" width="15" alt="icon"></label>
-                    <input type="email" placeholder="Correo">
-                    <br>
-
-                    <label><img src="image/subIcon4.png" width="15" alt="icon"></label>
-                    <textarea name="mensaje" placeholder="Mensaje" rows="5" cols="21" maxlength="21"></textarea>
-                    <br>
-
-                    <button>Enviar</button>
-                </div>
-
-                <div>
-                    <label><b>Celular: </b></label><br>
-                    <label>+593 99 184 8675</label>
-                    <br>
-
-                    <label><b>Correo: </b></label><br>
-                    <label>gabamald@espol.edu.ec</label>
-                    <br>
-
-                    <label><b>Dirrecion: </b></label><br>
-                    <label>Av. León Febres Cordero y
-                        vial 10 xxxxxxxxx Mz. 9 Villa. 29</label>
-                    <br>
-                </div>
+            
+                
         </section>
 
         <footer>
             <figure>
                 <a href="https://github.com/gabreilAlexKH" target="_blank" ><object data="image/logoGit.png" width="30"></object></a>
-                
                 <a href="https://ec.linkedin.com/in/gabriel-maldonado-rodriguez-a6782322a?trk=people-guest_people_search-card" target="_blank"><object data="image/logoLin.png" width="30"></object></a>
             </figure>
 
             <p>© 2022 , Diseñado por Gabriel Maldonado</p>
         </footer>
-</body>
+    </body>
 
 </html>
