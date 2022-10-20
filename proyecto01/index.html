@@ -4,26 +4,39 @@
     <head>
         <title>CV - Gabriel Maldonado</title>
         <meta charset="UTF-8">
+
         <link rel='stylesheet' href='stylesheets/style.css'/>
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Maven+Pro&display=swap" rel="stylesheet">
+        
     </head>
 
     <body>
 
         <header>
-            <figure >
-                <img  class="profile_img" src="image/perfil.jpeg" alt="foto de perfil" id="foto_perfil" width="140" height="140">
-            </figure>
-            <hgroup class="name_title">
-                <h1>Gabriel Maldonado</h1>
-                <hr>
-                <h4>Estudiante de Computacion</h4>
-            </hgroup>
+            <div class="profile">
+                <figure>
+                    <img  class="profile_img" src="image/perfil.jpeg" alt="foto de perfil" id="foto_perfil" width="140" height="140">
+                </figure>
+    
+                <hgroup class="name_title">
+                    <h1>Gabriel Maldonado</h1>
+                    <hr>
+                    <h4>Estudiante de Computacion</h4>
+                </hgroup>
+            </div>
+            <div class="triangle">triangle</div>
+
         </header>
 
-        <section id="sec_presentacion" class="pres_contaner" >
+
+        <section class="pres_container" >
 
             <h2 >Presentacion</h2>
-            <div>
+
+            <div class="pres_wrapper">
 
                 <div>
                     <p>Soy xxxxxxxxxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxxxxxx xxxxxxxxxxx xxxxxxxxxxxxxxxxxxxxxxxxxx
@@ -61,14 +74,14 @@
 
         </section>
 
-        <section class="bloque_habilidad">
-            <figure class="sec_container">
+        <section class="habi_container">
+            <figure class="habi_title">
                 <h2>Educación</h2>
                 <img src="image/icon_estudios.png" alt="icono1" id="icon_estudios" width="67" height="67">
             </figure>
 
 
-            <div class="info_container">
+            <div class="habi_content">
                 <table class="table1">
                     <thead>
                         <tr>
@@ -96,13 +109,13 @@
             </div>
         </section>
 
-        <section class="bloque_habilidad" >
-            <figure class="sec_container">
+        <section class="habi_container" >
+            <figure class="habi_title">
                 <h2>Idiomas</h2>
                 <img src="image/icon_idiomas.png" alt="icono2" id="icon_idiomas" width="67" height="67">
             </figure>
 
-            <div class="info_container">
+            <div class="habi_content">
                 <ul>
                     <li><b>Español:</b> Lengua nativa</li>
                     <li><b>Inglés: </b> Nivel medio (IB English B HL)</li>
@@ -115,13 +128,13 @@
 
         </section>
 
-        <section class="bloque_habilidad" > 
-            <figure class="sec_container">
+        <section class="habi_container" > 
+            <figure class="habi_title">
                 <h2>Habilidades</h2>
                 <img src="image/icon_habilidades.png" alt="icono3" id="icon_habilidades" width="67" height="67">
             </figure>
 
-            <div class = "info_container" >
+            <div class = "habi_content" >
                 <ul>
                     <li>Ofimática
                         <ul>
@@ -150,9 +163,6 @@
         </section>
 
         <section class="contact_contaner">
-
-            
-            
                 
             <div class="contact_wraper">
 
@@ -160,20 +170,26 @@
                 <div>
                     <div>
                         <label><img src="image/subIcon1.png" width="15" alt="icon"></label>
-                        <input type="text" placeholder="Nombre" size = "20">
+                        <input type="text" placeholder="Nombre">
                         <br>
+                        <br>
+
     
                         <label><img src="image/subIcon2.png" width="15" alt="icon"></label>
-                        <input type="text" placeholder="Asunto" size = "20">
+                        <input type="text" placeholder="Asunto">
+                        <br>
                         <br>
     
                         <label><img src="image/subIcon3.png" width="15" alt="icon"></label>
-                        <input type="email" placeholder="Correo" size = "20">
+                        <input type="email" placeholder="Correo">
                         <br>
-    
+                        <br>
+           
                         <label><img src="image/subIcon4.png" width="15" alt="icon"></label>
                         <textarea name="mensaje" placeholder="Mensaje" rows="5" cols="20" maxlength="20"></textarea>
                         <br>
+                        <br>
+
     
                         <button>Enviar</button>
                     </div>
@@ -211,8 +227,8 @@
 
         <footer>
             <figure>
-                <a href="https://github.com/gabreilAlexKH" target="_blank" ><object data="image/logoGit.png" width="30"></object></a>
-                <a href="https://ec.linkedin.com/in/gabriel-maldonado-rodriguez-a6782322a?trk=people-guest_people_search-card" target="_blank"><object data="image/logoLin.png" width="30"></object></a>
+                <a href="https://github.com/gabreilAlexKH" target="_blank" ><object data="image/logoGit.png"></object></a>
+                <a href="https://ec.linkedin.com/in/gabriel-maldonado-rodriguez-a6782322a?trk=people-guest_people_search-card" target="_blank"><object data="image/logoLin.png" ></object></a>
             </figure>
 
             <p>© 2022 , Diseñado por Gabriel Maldonado</p>
