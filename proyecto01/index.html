@@ -2,10 +2,13 @@
 <html lang="es">
 
     <head>
-        <title>CV - Gabriel Maldonado</title>
-        <meta charset="UTF-8">
 
-        <link rel='stylesheet' href='stylesheets/style.css'/>
+        <title>CV - Gabriel Maldonado</title>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel='stylesheet' href='stylesheets/style.css'>
         
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,12 +21,11 @@
         <header>
             <div class="profile">
                 <figure>
-                    <img  class="profile_img" src="image/perfil.jpeg" alt="foto de perfil" id="foto_perfil" width="140" height="140">
+                    <img  class="profile_img" src="image/perfil.jpeg" alt="foto de perfil" id="foto_perfil">
                 </figure>
     
                 <hgroup class="name_title">
                     <h1>Gabriel Maldonado</h1>
-                    <hr>
                     <h4>Estudiante de Computacion</h4>
                 </hgroup>
             </div>
@@ -39,28 +41,30 @@
             <div class="pres_wrapper">
 
                 <div>
-                    <p>Soy xxxxxxxxxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxxxxxx xxxxxxxxxxx xxxxxxxxxxxxxxxxxxxxxxxxxx
-                        xxxxxxxxxxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxxxx
-                        xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxxxxxxxxxxx</p>
+                    <p>Hola. Soy Gabriel Maldonado, estudiante de Ciencias de la Computación en la Escuela Superior Politécnica del Litoral (ESPOL)</p>
+                    <br>
+                    <p>Listo para aprender y adaptarme a cualquier tipo de tecnología o herramienta que la situación requiera. Siempre aspirando a
+                         hacer el mejor trabajo posible dentro del tiempo establecido y abierto a ayudar a otros a con sus trabajos.</p>
                 </div>
     
                 <div>
-                    <br>
                     <label><b>Nombre: </b></label>
                     <span>Gabriel Alexander Maldonado Rodriguez</span>
                     <br>
+                    <br>
     
                     <label><b>Fecha de Nacimiento: </b></label>
-                    <span>2000-11-29</span>
+                    <span>29/11/2000</span>
+                    <br>
                     <br>
     
                     <label><b>Nacionalidad: </b></label>
                     <span>Ecuatoriana</span>
                     <br>
+                    <br>
     
                     <label><b>Intereses: </b></label>
                     <span>Música, Videojuegos, Cocina, Repostería</span>
-                    <br>
     
                     <!--  
                     <audio controls autoplay >
@@ -153,10 +157,11 @@
                         </ul>
                     </li>
     
-                    <li>Redes:</li>
+                    <li>Redes:
                         <ul>
                             <li>CCNA Introduction to Networks</li>
                         </ul>
+                    </li>
                 </ul>
             </div>
             
@@ -164,44 +169,40 @@
 
         <section class="contact_contaner">
                 
-            <div class="contact_wraper">
+            <div class="contact_window">
 
                 <h2>Contactame</h2>
-                <div>
-                    <div>
-                        <label><img src="image/subIcon1.png" width="15" alt="icon"></label>
-                        <input type="text" placeholder="Nombre">
-                        <br>
-                        <br>
+                <div class="contact_wraper">
+                    <form >
+                        <label><img class="icon" src="image/subIcon1.png"  alt="icon"></label>
+                        <input type="text" placeholder="Nombre" required="required">
+                        <br> <br>
 
     
-                        <label><img src="image/subIcon2.png" width="15" alt="icon"></label>
-                        <input type="text" placeholder="Asunto">
-                        <br>
-                        <br>
+                        <label><img class="icon" src="image/subIcon2.png"  alt="icon"></label>
+                        <input type="text" placeholder="Asunto" required="required">
+                        <br><br>
     
-                        <label><img src="image/subIcon3.png" width="15" alt="icon"></label>
-                        <input type="email" placeholder="Correo">
-                        <br>
-                        <br>
+                        <label><img class="icon"  src="image/subIcon3.png"  alt="icon"></label>
+                        <input type="email" placeholder="Correo" required="required">
+                        <br><br>
            
-                        <label><img src="image/subIcon4.png" width="15" alt="icon"></label>
-                        <textarea name="mensaje" placeholder="Mensaje" rows="5" cols="20" maxlength="20"></textarea>
-                        <br>
-                        <br>
-
+                        <label><img class="icon"  src="image/subIcon4.png"  alt="icon"></label>
+                        <textarea name="mensaje" placeholder="Mensaje" required="required" ></textarea>
+                        <br><br>
     
-                        <button>Enviar</button>
-                    </div>
+                        <button type="submit" >Enviar</button>
+                    </form>
     
                     <div>
                         <label><b>Celular: </b></label><br>
                         <span>+593 99 184 8675</span>
-                        <br>
+                        <br><br>
+                        
     
                         <label><b>Correo: </b></label><br>
                         <span>gabamald@espol.edu.ec</span>
-                        <br>
+                        <br><br>
     
                         <label><b>Dirrecion: </b></label><br>
                         <span>Av. León Febres Cordero y
@@ -226,10 +227,10 @@
         </section>
 
         <footer>
-            <figure>
-                <a href="https://github.com/gabreilAlexKH" target="_blank" ><object data="image/logoGit.png"></object></a>
-                <a href="https://ec.linkedin.com/in/gabriel-maldonado-rodriguez-a6782322a?trk=people-guest_people_search-card" target="_blank"><object data="image/logoLin.png" ></object></a>
-            </figure>
+            
+            <a href="https://github.com/gabreilAlexKH" target="_blank" ><object class="link_icon" data="image/logoGit.png"></object></a>
+            <a href="https://ec.linkedin.com/in/gabriel-maldonado-rodriguez-a6782322a?trk=people-guest_people_search-card" target="_blank"><object class="link_icon" data="image/logoLin.png" ></object></a>
+            
 
             <p>© 2022 , Diseñado por Gabriel Maldonado</p>
         </footer>
