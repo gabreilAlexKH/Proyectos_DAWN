@@ -1,0 +1,79 @@
+
+@media only screen and (max-width: 640px) {
+
+    /*Cabecera*/
+
+    .profile {
+  
+        flex-direction: column;
+        justify-content: center ;
+    
+      }
+
+    .triangle{
+        
+        height: rem;
+    }
+    
+
+    /*Presentacion*/
+
+    .pres_container{
+        width: 90%;
+    }
+
+    .pres_wrapper{
+        flex-direction: column;
+    }
+
+    .pres_wrapper> div{
+        flex-basis: 100%;
+    }
+
+
+    /*Habilidades*/
+    .habi_container{
+        flex-direction: column;
+        width: 90%;
+    }
+
+    .habi_title{
+
+        width: 100%;
+        height: 10rem;
+        padding: 0;
+    }
+
+    .habi_content{
+
+        width: 100%;
+        padding: 0;
+        border-radius: 0% 0% 1.4rem 1.4rem ;
+        
+    }
+
+    .table1{
+        margin: 3%;
+        width: fit-content;
+        height: auto;
+    }
+
+    .table1 th ,.table1 td{
+        padding: 0.5rem;
+    
+    }
+
+    .habi_container{
+
+        border-radius: 0%  1.4rem 1.4rem;
+    
+    }
+
+    /*Contactos*/
+
+    .contact_window{
+        width: 70%;
+    }
+
+}
+
