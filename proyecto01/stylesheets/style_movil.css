@@ -69,6 +69,12 @@
     
     }
 
+    .portafolio_entry{
+        width: 80%;
+        height: auto;
+        padding: 1rem 0;
+    }
+
     /*Contactos*/
 
     .contact_window{
