@@ -28,7 +28,6 @@
 h1{
     font-family: 'Josefin Sans', sans-serif;
     font-size: var(--h1Size);  
-    margin: 0;
     color: white;
     border-bottom: 4px solid var(--color4) ;
 }
@@ -38,21 +37,11 @@ h2{
     font-family: "Josefin Sans" , 'Lucida Sans', sans-serif;
     font-size: var(--h2Size);
     line-height: 1.5;
-    margin: 0;
-    padding: 0;
 }
 
 h4{
     font-family: "Josefin Sans" , 'Lucida Sans' , sans-serif;
-    margin: 0;
     color: white;
-}
-
-
-
-span , p{
-    margin: 0;
-    
 }
 
 
@@ -91,18 +80,8 @@ body::-webkit-scrollbar-thumb:hover{
 /*Body*/
 
 body{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    align-content: center;
-
-
-    margin: 0;
-    padding: 0;
     background-color:var(--backgroundColor);
 }
-
-
 
 
 /*Cabecera*/
@@ -110,8 +89,6 @@ body{
 header{
     width: 100%;
     height: fit-content;
-    margin: 0;
-    padding: 0;
 }
 
 
@@ -120,35 +97,16 @@ header{
 
     background-color: var(--color1);
     background-size: auto auto;
-
     border-bottom:  2px solid var(--color1);;
-
-    display: flex;
-    justify-content:left;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items:center;
-    
+ 
     width: 100%;
-
     height: min-content;;
-    padding: 0;
-    margin: 0;
+   
 }
 
 .triangle{
-    width: 100%;
-    height: 1.9rem;
-    color: transparent;
-    background-color: var(--color1);
-    border-top:  2px solid var(--color1);
-
-
-    clip-path: polygon(25% 100%, 0 0, 100% 0);
     margin: 0;
     padding: 0;
-
-   
 }
 
 .profile_img{
@@ -170,39 +128,19 @@ header{
 
     background-color: white;
     border-radius: 1.5rem ;
-    margin: 1rem  0;
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
     width: 80%;
     height: fit-content;
-
-    display: flex;
-    flex-direction: column;
-   
 }
 
 .pres_container> h2{
     color: var(--color1);
-    padding-left: 0.7rem;
-    margin-top: 0.7rem;
 
 }
 
-.pres_wrapper{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-content: space-around;
-    justify-content: space-around;
-
-    margin: 0;
-
-}
 
 .pres_wrapper> div{
-
-    margin: 0 0 1rem 0;
-    padding: 0 0.7rem; 
-    flex-basis: 45%;
+    width: 45%;
     height: auto;
 }
 
@@ -210,13 +148,8 @@ header{
 /*Habilidades*/
 .habi_container{
 
-    display: flex;
-    flex-direction: row;
-
     width: 80%;
-    margin: 1em  0;
     border-radius: 0% 1.4rem 1.4rem 0%;
-
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
@@ -228,69 +161,31 @@ header{
     color: white; 
     
     width: 30%;
-    margin: 0;
-    padding: 5rem 0;
-
-    
-    display: flex;
-    text-align: center;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
 }
 
 .icon_hab{
-
     width: 4.5rem;
     height: auto;
-    margin: 0;
-    padding: 0;
+   
 }
 
 .habi_title> h2{
-    margin: 0;
-    padding: 0;
     color: white;
 }
 
 .habi_content{
 
     background-color: white;
-    
-    margin: 0;
+
     width: 70%;
-    display: flex;
-    align-items: center;
-    justify-content: left;
-    padding: 1rem ;
-
     border-radius: 0% 1.4rem 1.4rem 0%;
-
 }
 
-.portafolio_content{
 
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-    align-content: center;
-    flex-direction: row;
-    gap: 0.5rem;
-}
 
 .portafolio_entry{
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
     width: 17rem;
-    height: auto;
-
-    padding: 0;
-    margin: 0;
+    height: auto; 
 }
 
 .portafolio_entry> video{
@@ -302,15 +197,14 @@ header{
 
 
 .table1{
-    table-layout: auto;
     border-collapse: collapse;
     line-height: 1;
     color: black;
+    width: 95%
 }
 
 .table1 th ,.table1 td{
     border: 2px solid gray;
-    padding: 1rem;
     text-align: center;
 
 }
@@ -323,47 +217,14 @@ header{
 
 /*Contactos*/
 .contact_contaner{
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-
     width: 100%;
-    margin: 1rem  0; 
-}
-
-.mapouter{
-    position: absolute;
-    text-align:right;
-    height:auto;
-    width:auto;
-    margin: 0;
-    padding: 0;
-
-    top: 0;
-    left: 0;
-    z-index: -100;
-    width: 100%; 
-    height: 100%;
-
-}
-.gmap_canvas{
-    overflow:hidden;
-    background:none;
-    height:100%;
-    width:100%;
-    margin: 0;
-    padding: 0;
+  
 }
 
 
 .gmap_canvas iframe{
     height:100%;
     width:100%;
-    border: 0;
-    margin: 0;
-    padding: 0;
 }
 
 .contact_window{
@@ -372,17 +233,7 @@ header{
     border-radius: 1.4rem ;
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 
-    margin: 3rem ;
-    z-index: 100;
-
-    width: 50%;  
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex-wrap: nowrap;
-    
-    
+    width: 50%;    
 }
 
 .contact_window> h2{
@@ -390,27 +241,8 @@ header{
     
 }
 
-.contact_wraper{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-
-    margin: 0;
-    position: relative;
-    z-index: 100;
-
-}
-
 .contact_wraper> div , form {
-    display: block;
-    margin: 0;
-    padding: 0%  0.5rem 0.8rem 0.5rem ; 
-    flex-basis: 45%;
-    position: relative;
-    z-index: 100;
-    margin: 0.2rem  0;
-    
+    width: 45%;
 }
 
 .contact_wraper> form input , textarea{
@@ -442,32 +274,10 @@ button:hover{
 }
 
 
-@media screen and (max-width: 850px) {
-
-    .contact_wraper> div , form {
-        flex-basis: 100%;
-        padding: 0%  1rem 0.7rem 1rem ;
-    }
-
-    .contact_window{
-
-        width: 50%;
-    }
-
-}
-
-
 
 /*Pie de pagina*/
 footer{
-    margin: 1em  0;
     width: 100%;
-
-    text-align: center;
-    position: relative;
-     
-    justify-content: center;
-    vertical-align: middle;
 }
 
 .link_icon{

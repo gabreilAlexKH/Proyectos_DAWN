@@ -3,14 +3,14 @@
 
     <head>
 
-        <title>CV - Gabriel Maldonado</title>
-
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-        <link rel='stylesheet' href='stylesheets/style_web.css'>
-        <link rel='stylesheet' href='stylesheets/style_movil.css'>
-        
+        <title>CV - Gabriel Maldonado</title>
+
+        <link rel='stylesheet' href='public/stylesheets/style.css'>
+        <link rel='stylesheet' href='public/stylesheets/layout.css'>
+        <link rel='stylesheet' href='public/stylesheets/layout_movil.css'>        
         
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,7 +24,7 @@
 
             <div class="profile">
                 <figure>
-                    <img  class="profile_img" src="image/perfil.jpeg" alt="foto de perfil" id="foto_perfil">
+                    <img  class="profile_img" src="public/image/perfil.jpeg" alt="foto de perfil" id="foto_perfil">
                 </figure>
     
                 <hgroup class="name_title">
@@ -35,226 +35,228 @@
         </header>
 
 
-        <section class="pres_container" >
+        <main>
+            <section class="pres_container" >
 
-            <h2 >Presentacion</h2>
-
-            <div class="pres_wrapper">
-
-                <div>
-                    <p>Hola. Soy Gabriel Maldonado, estudiante de Ciencias de la Computación en la Escuela Superior Politécnica del Litoral (ESPOL)</p>
-                    <br>
-                    <p>Listo para aprender y adaptarme a cualquier tipo de tecnología o herramienta que la situación requiera. Siempre aspirando a
-                         hacer el mejor trabajo posible dentro del tiempo establecido y abierto a ayudar a otros a con sus trabajos.</p>
-                </div>
+                <h2 >Presentacion</h2>
     
-                <div>
-                    <label><b>Nombre: </b></label>
-                    <span>Gabriel Alexander Maldonado Rodriguez</span>
-                    <br>
-                    <br>
-    
-                    <label><b>Fecha de Nacimiento: </b></label>
-                    <span>29/11/2000</span>
-                    <br>
-                    <br>
-    
-                    <label><b>Nacionalidad: </b></label>
-                    <span>Ecuatoriana</span>
-                    <br>
-                    <br>
-    
-                    <label><b>Intereses: </b></label>
-                    <span>Música, Videojuegos, Cocina, Repostería</span>
-    
-                      
-    
-                </div>
-            </div>
-            
-
-        </section>
-
-        <section class="habi_container">
-            <figure class="habi_title">
-                <h2>Educación</h2>
-                <img src="image/icon_estudios.png" alt="icono1" class="icon_hab" width="67" height="67">
-            </figure>
-
-
-            <div class="habi_content">
-                <table class="table1">
-                    <thead>
-                        <tr>
-                            <th>Titulo</th>
-                            <th>Institucion</th>
-                            <th>Años</th>
-                        </tr>
-                    </thead>
-        
-                    <tbody>
-                        <tr>
-                            <td>Bachiller en Ciencias</td>
-                            <td>Colegio Alemán Humboldt de Guayaquil</td>
-                            <td>2009-2019</td>
-                        </tr>
-        
-                        <tr>
-                            <td>Ingeniero en Ciencias de la Computación<br>
-                                (En progreso)</td>
-                            <td>Escuela Superior Politécnica del Litoral</td>
-                            <td>2019-presente</td>
-                        </tr>
-                    </tbody>
-                </table> 
-            </div>
-        </section>
-
-        <section class="habi_container" >
-            <figure class="habi_title">
-                <h2>Idiomas</h2>
-                <img src="image/icon_idiomas.png" alt="icono2" class="icon_hab">
-            </figure>
-
-            <div class="habi_content">
-                <ul>
-                    <li><b>Español:</b> Lengua nativa</li>
-                    <li><b>Inglés: </b> Nivel medio (IB English B HL)</li>
-                    <li><b>Aleman:</b> B2 (Deutsche Sprachdiplom II)</li>
-                </ul>
-
-            </div>
-
-            
-
-        </section>
-
-        <section class="habi_container" > 
-            <figure class="habi_title">
-                <h2>Habilidades</h2>
-                <img src="image/icon_habilidades.png" alt="icono3" class="icon_hab">
-            </figure>
-
-            <div class = "habi_content" >
-                <ul>
-                    <li>Ofimática
-                        <ul>
-                            <li>Word: Nivel medio</li>
-                            <li>Power Point: Nivel medio</li>
-                            <li>Exel: Nivel medio bajo</li>
-                        </ul>
-                    </li>
-    
-                    <li>Programación
-                        <ul>
-                            <li>Phython: Nivel medio bajo</li>
-                            <li>C: Nivel bajo</li>
-                            <li>Java: Nivel medio</li>
-                            <li>SQL: Nivel medio bajo</li>
-                        </ul>
-                    </li>
-    
-                    <li>Redes:
-                        <ul>
-                            <li>CCNA Introduction to Networks</li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-            
-        </section>
-
-        <section class="habi_container" > 
-
-            <figure class="habi_title">
-                <h2>Proyectos</h2>
-                <img src="image/icon_portafolio.png" alt="icono" class="icon_hab">
-            </figure>
-
-            <div class = "habi_content portafolio_content">
-
-                <div class = "portafolio_entry">
-                    <label><b>BiciApp</b></label>
-                    <video src="media/proy1.mp4" controls muted></video>
-                </div>
-
-                <div class = "portafolio_entry">
-                    <label><b>Registro de datos</b></label>
-                    <video src="media/proy2.mp4" controls muted></video>
-                </div>
-
-                <div class = "portafolio_entry">
-                    <label><b>Control de ingresos</b></label>
-                    <video src="media/proy3.mp4" controls muted></video>
-                </div>
-                
-            </div>
-            
-        </section>
-
-        <section class="contact_contaner">
-                
-            <div class="contact_window">
-
-                <h2>Contactame</h2>
-                <div class="contact_wraper">
-                    <form >
-                        <label><img class="icon" src="image/subIcon1.png"  alt="icon"></label>
-                        <input type="text" placeholder="Nombre" required="required">
-                        <br> <br>
-
-    
-                        <label><img class="icon" src="image/subIcon2.png"  alt="icon"></label>
-                        <input type="text" placeholder="Asunto" required="required">
-                        <br><br>
-    
-                        <label><img class="icon"  src="image/subIcon3.png"  alt="icon"></label>
-                        <input type="email" placeholder="Correo" required="required">
-                        <br><br>
-           
-                        <label><img class="icon"  src="image/subIcon4.png"  alt="icon"></label>
-                        <textarea name="mensaje" placeholder="Mensaje" required="required" ></textarea>
-                        <br><br>
-    
-                        <button type="submit" >Enviar</button>
-                    </form>
+                <div class="pres_wrapper">
     
                     <div>
-                        <label><b>Celular: </b></label><br>
-                        <span>+593 99 184 8675</span>
-                        <br><br>
-                        
-    
-                        <label><b>Correo: </b></label><br>
-                        <span>gabamald@espol.edu.ec</span>
-                        <br><br>
-    
-                        <label><b>Dirrecion: </b></label><br>
-                        <span>Av. León Febres Cordero y
-                            vial 10 xxxxxxxxx Mz. 9 Villa. 29</span>
+                        <p>Hola. Soy Gabriel Maldonado, estudiante de Ciencias de la Computación en la Escuela Superior Politécnica del Litoral (ESPOL)</p>
                         <br>
+                        <p>Listo para aprender y adaptarme a cualquier tipo de tecnología o herramienta que la situación requiera. Siempre aspirando a
+                             hacer el mejor trabajo posible dentro del tiempo establecido y abierto a ayudar a otros a con sus trabajos.</p>
+                    </div>
+        
+                    <div>
+                        <label><b>Nombre: </b></label>
+                        <span>Gabriel Alexander Maldonado Rodriguez</span>
+                        <br>
+                        <br>
+        
+                        <label><b>Fecha de Nacimiento: </b></label>
+                        <span>29/11/2000</span>
+                        <br>
+                        <br>
+        
+                        <label><b>Nacionalidad: </b></label>
+                        <span>Ecuatoriana</span>
+                        <br>
+                        <br>
+        
+                        <label><b>Intereses: </b></label>
+                        <span>Música, Videojuegos, Cocina, Repostería</span>
+        
+                          
+        
                     </div>
                 </div>
-
-            </div>
-
-            
-            <div class="mapouter">
-                <div class="gmap_canvas">
-                    <iframe id="gmap_canvas" 
-                    src="https://maps.google.com/maps?q=Av.%20Leon%20Febres%20Cordero%20y%20Victor%20Urbano&t=&z=15&ie=UTF8&iwloc=&output=embed" ></iframe>
-                    <a href="https://putlocker-is.org"></a><br>                    
-                    <a href="https://www.embedgooglemap.net">add map to website</a>
-                </div>
-            </div>
-            
                 
-        </section>
+    
+            </section>
+    
+            <section class="habi_container">
+                <figure class="habi_title">
+                    <h2>Educación</h2>
+                    <img src="public/image/icon_estudios.png" alt="icono1" class="icon_hab" width="67" height="67">
+                </figure>
+    
+    
+                <div class="habi_content">
+                    <table class="table1">
+                        <thead>
+                            <tr>
+                                <th>Titulo</th>
+                                <th>Institucion</th>
+                                <th>Años</th>
+                            </tr>
+                        </thead>
+            
+                        <tbody>
+                            <tr>
+                                <td>Bachiller en Ciencias</td>
+                                <td>Colegio Alemán Humboldt de Guayaquil</td>
+                                <td>2009-2019</td>
+                            </tr>
+            
+                            <tr>
+                                <td>Ingeniero en Ciencias de la Computación<br>
+                                    (En progreso)</td>
+                                <td>Escuela Superior Politécnica del Litoral</td>
+                                <td>2019-presente</td>
+                            </tr>
+                        </tbody>
+                    </table> 
+                </div>
+            </section>
+    
+            <section class="habi_container" >
+                <figure class="habi_title">
+                    <h2>Idiomas</h2>
+                    <img src="public/image/icon_idiomas.png" alt="icono2" class="icon_hab">
+                </figure>
+    
+                <div class="habi_content">
+                    <ul>
+                        <li><b>Español:</b> Lengua nativa</li>
+                        <li><b>Inglés: </b> Nivel medio (IB English B HL)</li>
+                        <li><b>Aleman:</b> B2 (Deutsche Sprachdiplom II)</li>
+                    </ul>
+    
+                </div>
+    
+                
+    
+            </section>
+    
+            <section class="habi_container" > 
+                <figure class="habi_title">
+                    <h2>Habilidades</h2>
+                    <img src="public/image/icon_habilidades.png" alt="icono3" class="icon_hab">
+                </figure>
+    
+                <div class = "habi_content" >
+                    <ul>
+                        <li>Ofimática
+                            <ul>
+                                <li>Word: Nivel medio</li>
+                                <li>Power Point: Nivel medio</li>
+                                <li>Exel: Nivel medio bajo</li>
+                            </ul>
+                        </li>
+        
+                        <li>Programación
+                            <ul>
+                                <li>Phython: Nivel medio bajo</li>
+                                <li>C: Nivel bajo</li>
+                                <li>Java: Nivel medio</li>
+                                <li>SQL: Nivel medio bajo</li>
+                            </ul>
+                        </li>
+        
+                        <li>Redes:
+                            <ul>
+                                <li>CCNA Introduction to Networks</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                
+            </section>
+    
+            <section class="habi_container" > 
+    
+                <figure class="habi_title">
+                    <h2>Proyectos</h2>
+                    <img src="public/image/icon_portafolio.png" alt="icono" class="icon_hab">
+                </figure>
+    
+                <div class = "habi_content portafolio_content">
+    
+                    <div class = "portafolio_entry">
+                        <label><b>BiciApp</b></label>
+                        <video src="public/media/proy1.mp4" controls muted></video>
+                    </div>
+    
+                    <div class = "portafolio_entry">
+                        <label><b>Registro de datos</b></label>
+                        <video src="public/media/proy2.mp4" controls muted></video>
+                    </div>
+    
+                    <div class = "portafolio_entry">
+                        <label><b>Control de ingresos</b></label>
+                        <video src="public/media/proy3.mp4" controls muted></video>
+                    </div>
+                    
+                </div>
+                
+            </section>
+    
+            <section class="contact_contaner">
+                    
+                <div class="contact_window">
+    
+                    <h2>Contactame</h2>
+                    <div class="contact_wraper">
+                        <form >
+                            <label><img class="icon" src="public/image/subIcon1.png"  alt="icon"></label>
+                            <input type="text" placeholder="Nombre" required="required">
+                            <br> <br>
+    
+        
+                            <label><img class="icon" src="public/image/subIcon2.png"  alt="icon"></label>
+                            <input type="text" placeholder="Asunto" required="required">
+                            <br><br>
+        
+                            <label><img class="icon"  src="public/image/subIcon3.png"  alt="icon"></label>
+                            <input type="email" placeholder="Correo" required="required">
+                            <br><br>
+               
+                            <label><img class="icon"  src="public/image/subIcon4.png"  alt="icon"></label>
+                            <textarea name="mensaje" placeholder="Mensaje" required="required" ></textarea>
+                            <br><br>
+        
+                            <button type="submit" >Enviar</button>
+                        </form>
+        
+                        <div>
+                            <label><b>Celular: </b></label><br>
+                            <span>+593 99 184 8675</span>
+                            <br><br>
+                            
+        
+                            <label><b>Correo: </b></label><br>
+                            <span>gabamald@espol.edu.ec</span>
+                            <br><br>
+        
+                            <label><b>Dirrecion: </b></label><br>
+                            <span>Av. León Febres Cordero y
+                                vial 10 xxxxxxxxx Mz. 9 Villa. 29</span>
+                            <br>
+                        </div>
+                    </div>
+    
+                </div>
+    
+                
+                <div class="mapouter">
+                    <div class="gmap_canvas">
+                        <iframe id="gmap_canvas" 
+                        src="https://maps.google.com/maps?q=Av.%20Leon%20Febres%20Cordero%20y%20Victor%20Urbano&t=&z=15&ie=UTF8&iwloc=&output=embed" ></iframe>
+                        <a href="https://putlocker-is.org"></a><br>                    
+                        <a href="https://www.embedgooglemap.net">add map to website</a>
+                    </div>
+                </div>
+                
+                    
+            </section>
+        </main>
 
         <footer>
             
-            <a href="https://github.com/gabreilAlexKH" target="_blank" ><object class="link_icon" data="image/logoGit.png"></object></a>
-            <a href="https://ec.linkedin.com/in/gabriel-maldonado-rodriguez-a6782322a?trk=people-guest_people_search-card" target="_blank"><object class="link_icon" data="image/logoLin.png" ></object></a>
+            <a href="https://github.com/gabreilAlexKH" target="_blank" ><object class="link_icon" data="public/image/logoGit.png"></object></a>
+            <a href="https://ec.linkedin.com/in/gabriel-maldonado-rodriguez-a6782322a?trk=people-guest_people_search-card" target="_blank"><object class="link_icon" data="public/image/logoLin.png" ></object></a>
             
 
             <p>© 2022 , Diseñado por Gabriel Maldonado</p>

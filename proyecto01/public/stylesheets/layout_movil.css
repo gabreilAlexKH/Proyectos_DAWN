@@ -28,6 +28,7 @@
 
     .pres_wrapper> div{
         flex-basis: 100%;
+        width: 100%;
     }
 
 
@@ -58,8 +59,8 @@
         height: auto;
     }
 
-    .table1 th ,.table1 td{
-        padding: 0.5rem;
+    .table1 th , .table1 td{
+        padding: 1rem 0.1rem;
     
     }
 
