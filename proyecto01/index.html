@@ -32,6 +32,7 @@
                     <h4>Estudiante de Computacion</h4>
                 </hgroup>
             </div>
+            <div class="triangle"></div>
         </header>
 
 
@@ -56,7 +57,7 @@
                         <br>
         
                         <label><b>Fecha de Nacimiento: </b></label>
-                        <span>29/11/2000</span>
+                        <span><time datetime="2000-11-29">29/11/2000</time></span>
                         <br>
                         <br>
         
@@ -200,21 +201,21 @@
                     <h2>Contactame</h2>
                     <div class="contact_wraper">
                         <form >
-                            <label><img class="icon" src="public/image/subIcon1.png"  alt="icon"></label>
-                            <input type="text" placeholder="Nombre" required="required">
+                            <label for="nombre"><img class="icon" src="public/image/subIcon1.png"  alt="icon"></label>
+                            <input type="text" id="nombre" name="nombre" placeholder="Nombre" required="required">
                             <br> <br>
     
         
-                            <label><img class="icon" src="public/image/subIcon2.png"  alt="icon"></label>
-                            <input type="text" placeholder="Asunto" required="required">
+                            <label for="asunto"><img class="icon" src="public/image/subIcon2.png"  alt="icon"></label>
+                            <input type="text" id="asunto" name="asunto" placeholder="Asunto" required="required">
                             <br><br>
         
-                            <label><img class="icon"  src="public/image/subIcon3.png"  alt="icon"></label>
-                            <input type="email" placeholder="Correo" required="required">
+                            <label for="correo"><img class="icon"  src="public/image/subIcon3.png"  alt="icon"></label>
+                            <input type="email" id="correo" name="correo" placeholder="Correo" required="required">
                             <br><br>
                
-                            <label><img class="icon"  src="public/image/subIcon4.png"  alt="icon"></label>
-                            <textarea name="mensaje" placeholder="Mensaje" required="required" ></textarea>
+                            <label for="mensaje"><img class="icon"  src="public/image/subIcon4.png"  alt="icon"></label>
+                            <textarea id="mensaje" name="mensaje" placeholder="Mensaje" required="required" ></textarea>
                             <br><br>
         
                             <button type="submit" >Enviar</button>
