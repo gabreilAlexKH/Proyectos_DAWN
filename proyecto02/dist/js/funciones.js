@@ -2,8 +2,9 @@ Chart.defaults.global.defaultFontFamily = '-apple-system,system-ui,BlinkMacSyste
 Chart.defaults.global.defaultFontColor = '#292b2c';
 
 const mesesTodos = ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dis"];
-const paisesTodos = ["Estados Unidos", "Canada", "China", "Japon", "Congo", "Sudafrica", "Reino Unido", "Alemania", "Ecuador", "Colombia"];
-const acronimos = ["US", "CA", "CN", "JP", "CG", "ZA", "GB", "DE", "EC", "CO"];
+const paisesTodos = ["Estados Unidos", "Canada", "China", "Japon", "Congo", "Sudafrica", "Reino Unido", "Alemania", "Ecuador", "Colombia" , "Brazil"];
+const acronimos = ["US", "CA", "CN", "JP", "CG", "ZA", "GB", "DE", "EC", "CO" , "BR"];
+
 
 let generarPaises = () => {
 
@@ -19,7 +20,7 @@ let generarPaises = () => {
 let hacerConsulta = async (codigoPais) => {
 
     try {
-        const respuesta = axios.get('https://api.getfestivo.com/v2/holidays', {
+        const respuesta = await axios.get('https://api.getfestivo.com/v2/holidays', {
             params: {
                 api_key: "71eb14469314f3967a9fef615e4f138d",
                 country: codigoPais,
@@ -27,40 +28,58 @@ let hacerConsulta = async (codigoPais) => {
                 format: "json"
             }
         })
-        return respuesta;
+
+        const data = respuesta.data;
+        const status = data.status;
+
+        if( status == 200){
+
+            return data;
+        }
+
+        window.alert("Codigo de status no es el correcto: " + status);
+        return null;
 
     } catch (error) {
-        console.log(error);
+
+        const status = error.response.status;
+
+        switch (status) {
+            case 400:
+                window.alert("Error de validacion. \nCodigo de pais no valido: " + codigoPais);
+                break;
+
+            case 401:
+                window.alert("Error de autorisacion. \API-Token para la API es incorecto.");
+                break;
+
+            case 402:
+                window.alert("Solisitud supera permisos de la version gratis de la API");
+                break;
+            
+            case 403:
+                window.alert("Error de autorisacion. \nLimite de solisitudes mesnuales exedidas.");
+                break;
+            
+            case 429:
+                window.alert("Rate limit exedido. \nPor favor trate de nuevo mas tarde");
+                break; 
+            
+            case 500:
+                window.alert("Error fatal del lado del usuario. \nContacte al provedor de la API")
+                break;
+        
+            default:
+                window.alert("Error desconosido ha sido detectado: " + status);
+                break;
+
+        
+        }
         return null;
     }
 }
 
 
-let crearTabla = (holidays, mesIncio = "01", mesFinal = "12") => {
-
-    let selectorPaises = document.querySelector("#tablaFeriadoPais> tbody");
-    selectorPaises.innerHTML = "";
-
-    for (let index = 0; index < holidays.length; index++) {
-
-        let feriado = holidays[index];
-        let mes = feriado.date.split("-")[1];
-
-        if (mesIncio <= mes && mes <= mesFinal) {
-
-            let entradaTabla = `
-            <tr>
-                <td>`+ feriado.name + `</th>
-                <td>`+ feriado.date + `</th>
-                <td>`+ feriado.substitute + `</th>
-                <td>`+ feriado.type + `</th>
-            </tr>`
-            selectorPaises.innerHTML += entradaTabla;
-        }
-
-
-    }
-}
 
 let feriadosPorMeses = (holidays, mesIncio, mesFinal) => {
 
@@ -73,11 +92,15 @@ let feriadosPorMeses = (holidays, mesIncio, mesFinal) => {
         feriadosMes[parseInt(mes - 1)] += 1;
     }
 
-    let mesesRango = mesesTodos.slice(parseInt(mesIncio) - 1, parseInt(mesFinal));
-    let feriadosMesRango = feriadosMes.slice(parseInt(mesIncio) - 1, parseInt(mesFinal));
-
-    return { mesesRango, feriadosMesRango };
+    return feriadosMes.slice(parseInt(mesIncio) - 1, parseInt(mesFinal));
 }
+
+let mesesRango = (mesIncio, mesFinal) =>{
+
+    return mesesTodos.slice(parseInt(mesIncio) - 1, parseInt(mesFinal));
+}
+
+
 
 let getPaisesSelecionados = () => {
 
@@ -109,9 +132,34 @@ let getNameFromAcronim = (acronumPaises) =>{
 
 }
 
+let crearTabla = (holidays, mesIncio = "01", mesFinal = "12") => {
+
+    let selectorPaises = document.querySelector("#tablaFeriadoPais> tbody");
+    selectorPaises.innerHTML = "";
+
+    for (let index = 0; index < holidays.length; index++) {
+
+        let feriado = holidays[index];
+        let mes = feriado.date.split("-")[1];
+
+        if (mesIncio <= mes && mes <= mesFinal) {
+
+            let entradaTabla = `
+            <tr>
+                <td>`+ feriado.name + `</th>
+                <td>`+ feriado.date + `</th>
+                <td>`+ feriado.substitute + `</th>
+                <td>`+ feriado.type + `</th>
+            </tr>`
+            selectorPaises.innerHTML += entradaTabla;
+        }
+
+
+    }
+}
+
 function renderisarGraficoLineas(meses, feriadosPorMes) {
 
-    let maxFeriados = Math.max(feriadosPorMes);
 
     var ctx = document.getElementById("myAreaChart");
     var myLineChart = new Chart(ctx, {
@@ -149,7 +197,6 @@ function renderisarGraficoLineas(meses, feriadosPorMes) {
                 yAxes: [{
                     ticks: {
                         min: 0,
-                        max: maxFeriados,
                         maxTicksLimit: 10
                     },
                     gridLines: {
@@ -162,6 +209,8 @@ function renderisarGraficoLineas(meses, feriadosPorMes) {
             }
         }
     });
+
+    return myLineChart;
 }
 
 function renderisarGraficoBar(paises, feriadosPorPais) {
@@ -191,7 +240,6 @@ function renderisarGraficoBar(paises, feriadosPorPais) {
           yAxes: [{
             ticks: {
               min: 0,
-              max: 300,
               maxTicksLimit: 6
             },
             gridLines: {
@@ -204,5 +252,20 @@ function renderisarGraficoBar(paises, feriadosPorPais) {
         }
       }
     });
+
+    return myLineChart;
   }
   
+function updateGraficoBar( grafico, paises, feriadosPorPais){
+
+    grafico.data.labels = paises
+    grafico.data.datasets[0].data = feriadosPorPais
+    grafico.update();
+}
+
+function updateGraficoLineas( grafico, meses, feriadosPorMes){
+
+    grafico.data.labels = meses
+    grafico.data.datasets[0].data = feriadosPorMes
+    grafico.update();
+}

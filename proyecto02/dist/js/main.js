@@ -1,4 +1,13 @@
 
+generarPaises();
+let barras = renderisarGraficoBar(paisesTodos , [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
+let lineas = renderisarGraficoLineas ( mesesTodos ,  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ])
+
+
+
+
+
+
 
 let btnConsultar = document.getElementById("filtroPais");
 btnConsultar.addEventListener('click', () =>{
@@ -12,10 +21,14 @@ btnConsultar.addEventListener('click', () =>{
     if(mesInicio <= mesFinal){
         console.log(mesInicio + " " + mesFinal);
         
-        hacerConsulta(pais).then( (val) => {
-            crearTabla(val.data.holidays , mesInicio , mesFinal);
-            let areglos = feriadosPorMeses(val.data.holidays , mesInicio , mesFinal);
-            renderisarGraficoLineas(areglos.mesesRango , areglos.feriadosMesRango);
+        hacerConsulta(pais).then( (data) => {
+
+            if(data != null){
+                crearTabla(data.holidays , mesInicio , mesFinal);
+                let feriados = feriadosPorMeses(data.holidays , mesInicio , mesFinal);
+                let meses = mesesRango( mesInicio , mesFinal);
+                updateGraficoLineas( lineas , meses , feriados);
+            }
         });
         
 
@@ -27,7 +40,7 @@ btnConsultar.addEventListener('click', () =>{
 
 
 let btnComparacion = document.getElementById("comparacionPaises");
-btnComparacion.addEventListener('click', () =>{
+btnComparacion.addEventListener('click', async () =>{
 
     let acronumPaises = getPaisesSelecionados();
     let namePaises = getNameFromAcronim(acronumPaises);
@@ -42,14 +55,15 @@ btnComparacion.addEventListener('click', () =>{
         
         for (let index = 0; index < namePaises.length; index++) {
             
-            hacerConsulta(acronumPaises[index]).then( (val) => {
-                crearTabla(val.data.holidays , mesInicio , mesFinal);
-                let areglos = feriadosPorMeses(val.data.holidays , mesInicio , mesFinal);
-                feriadosPorPais[index] = areglos.feriadosMesRango.reduce((partialSum, a) => partialSum + a, 0);
-            });  
-                     
+            let data = await hacerConsulta(acronumPaises[index])
+
+            if(data != null){
+                let feriados = feriadosPorMeses(data.holidays , mesInicio , mesFinal);
+                feriadosPorPais[index] = feriados.reduce((partialSum, a) => partialSum + a, 0);
+            }           
         }
-        renderisarGraficoBar(namePaises , feriadosPorPais);
+
+        updateGraficoBar( barras , namePaises , feriadosPorPais);
         console.log(namePaises + "\n" + feriadosPorPais);
         
         
@@ -60,9 +74,6 @@ btnComparacion.addEventListener('click', () =>{
     }
 })
 
-
-generarPaises();
-renderisarGraficoBar(paisesTodos , [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
 
 
 

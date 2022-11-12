@@ -16,8 +16,8 @@ src: https://boguz.github.io/Spinners/#
 **Ballons.css**
 src: http://kazzkiq.github.io/balloon.css/
 
-**Charts.css**
-src: https://chartscss.org/
+**Charts.js**
+src: https://www.chartjs.org/
 
 
 ## API
