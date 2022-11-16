@@ -23,4 +23,12 @@ window.addEventListener('DOMContentLoaded', event => {
         });
     }
 
+    let spiners = document.getElementsByClassName("spinningCircle");
+
+    for (let spiner of spiners) {
+        spiner.style.display = "none"
+    }
+
+    generarPaises()
+    renderisarTabla()
 });

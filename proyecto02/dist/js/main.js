@@ -1,13 +1,6 @@
-
-generarPaises();
 let barras = renderisarGraficoBar(paisesTodos , [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
 let lineas = renderisarGraficoLineas ( mesesTodos ,  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ])
-
-
-
-
-
-
+let table = renderisarTabla()
 
 let btnConsultar = document.getElementById("filtroPais");
 btnConsultar.addEventListener('click', () =>{
@@ -24,7 +17,7 @@ btnConsultar.addEventListener('click', () =>{
         hacerConsulta(pais).then( (data) => {
 
             if(data != null){
-                crearTabla(data.holidays , mesInicio , mesFinal);
+                updateTabla(data.holidays , mesInicio , mesFinal , table);
                 let feriados = feriadosPorMeses(data.holidays , mesInicio , mesFinal);
                 let meses = mesesRango( mesInicio , mesFinal);
                 updateGraficoLineas( lineas , meses , feriados);
@@ -73,7 +66,4 @@ btnComparacion.addEventListener('click', async () =>{
         console.log("Meses fuera de rango");
     }
 })
-
-
-
 
