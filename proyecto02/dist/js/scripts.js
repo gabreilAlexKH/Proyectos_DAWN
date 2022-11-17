@@ -23,11 +23,13 @@ window.addEventListener('DOMContentLoaded', event => {
         });
     }
 
-    let spiners = document.getElementsByClassName("spinningCircle");
+    let spiners = document.getElementsByClassName("loader");
 
+    
     for (let spiner of spiners) {
         spiner.style.display = "none"
     }
+    
 
     generarPaises()
     renderisarTabla()

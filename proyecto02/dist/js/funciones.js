@@ -85,7 +85,6 @@ let hacerConsulta = async (codigoPais) => {
         const status = data.status;
 
         if( status == 200){
-
             return data;
         }
 
@@ -125,6 +124,7 @@ let hacerConsulta = async (codigoPais) => {
                 window.alert("Error desconosido ha sido detectado: " + status);
                 break;        
         }
+
         return null;
     }
 }

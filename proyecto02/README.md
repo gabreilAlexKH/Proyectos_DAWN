@@ -13,9 +13,6 @@ src: https://themewagon.com/themes/free-bootstrap-5-admin-template-sb-admin/
 **CSS SPINNERS**
 src: https://boguz.github.io/Spinners/#
 
-**Ballons.css**
-src: http://kazzkiq.github.io/balloon.css/
-
 **Charts.js**
 src: https://www.chartjs.org/
 

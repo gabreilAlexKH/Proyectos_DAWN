@@ -2,29 +2,54 @@ let barras = renderisarGraficoBar(paisesTodos , [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
 let lineas = renderisarGraficoLineas ( mesesTodos ,  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ])
 let table = renderisarTabla()
 
+const sleep = async (milliseconds) => {
+    await new Promise(resolve => {
+        return setTimeout(resolve, milliseconds)
+    });
+};
+
+
 let btnConsultar = document.getElementById("filtroPais");
-btnConsultar.addEventListener('click', () =>{
+btnConsultar.addEventListener('click',  async () =>{
 
     let selectPais = document.getElementById("paises");
     let pais = selectPais.value;
-    console.log(selectPais + "" + pais);
+
     let mesInicio = document.getElementById("mesInicio2").value;
     let mesFinal = document.getElementById("mesFinal2").value;
 
+    
     if(mesInicio <= mesFinal){
         console.log(mesInicio + " " + mesFinal);
-        
-        hacerConsulta(pais).then( (data) => {
 
-            if(data != null){
-                updateTabla(data.holidays , mesInicio , mesFinal , table);
-                let feriados = feriadosPorMeses(data.holidays , mesInicio , mesFinal);
-                let meses = mesesRango( mesInicio , mesFinal);
-                updateGraficoLineas( lineas , meses , feriados);
-            }
-        });
+        let loader = document.getElementById("LineChart_loader")
+        let loader_tab = document.getElementById("tablaFeriadoPais_loader")
+        let container_tab = document.getElementById("tablaFeriadoPais_container")
+
+        loader.style.display = ""        
+        loader_tab.style.display = ""
+        container_tab.style.display = "none"
+
+        
+        const data = await hacerConsulta(pais)
+
+        if(data != null){
+
+            updateTabla(data.holidays , mesInicio , mesFinal , table);
+            let feriados = feriadosPorMeses(data.holidays , mesInicio , mesFinal);
+            let meses = mesesRango( mesInicio , mesFinal);
+            updateGraficoLineas( lineas , meses , feriados);
+        }
+            
+        loader.style.display = "none"
+        loader_tab.style.display = "none"
+        container_tab.style.display = "" 
+
+            
         
 
+            
+        
     }else{
 
         console.log("Meses fuera de rango");
@@ -43,8 +68,11 @@ btnComparacion.addEventListener('click', async () =>{
     let mesFinal = document.getElementById("mesFinal").value;
 
     if(mesInicio <= mesFinal){
-        console.log(mesInicio + " " + mesFinal);
+
         let feriadosPorPais = new Array(acronumPaises.length).fill(0);
+        let loader = document.getElementById("BarChart_loader")
+        loader.style.display = ""
+
         
         for (let index = 0; index < namePaises.length; index++) {
             
@@ -57,7 +85,7 @@ btnComparacion.addEventListener('click', async () =>{
         }
 
         updateGraficoBar( barras , namePaises , feriadosPorPais);
-        console.log(namePaises + "\n" + feriadosPorPais);
+        loader.style.display = "none"
         
         
 
