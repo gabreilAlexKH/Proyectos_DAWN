@@ -14,12 +14,8 @@
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
 
     <!--Librerias de estilos-->
-    <link rel="stylesheet" href="https://unpkg.com/balloon-css/balloon.min.css">
     <link rel='stylesheet' href='css/spinners/spinnerAnimations.css' />
     <link rel='stylesheet' href='css/spinners//spinners.css' />
-
-    <!--Librerias para graficos-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/charts.css/dist/charts.min.css">
 
     <!--CSS-->
     <link href="css/styles.css" rel="stylesheet" />
@@ -249,6 +245,9 @@
                                     <div class="row align-items-center justify-content-center mb-2">
                                         <button type="button" class="btn btn-primary btn-sm col-5" id="comparacionPaises">Filtrar</button>
                                     </div>
+                                    <div class="row align-items-center justify-content-center">
+                                        <span id="error_comparacion" class="text-danger fs-6"></span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -318,7 +317,7 @@
                                         </div>
                                         <div class="row align-items-center justify-content-center mb-3">
                                             <div class="col-2 text-wrap">
-                                                <label class=" form-label fs-sm-5 fs-6 fw-bold">Paise:</label>
+                                                <label class=" form-label fs-sm-5 fs-6 fw-bold">Pais:</label>
                                             </div>
                                             <div class="form-floating col-10 d-flex flex-wrap align-self-center justify-content-center">
                                                 <select class="form-select" id="paises">
@@ -330,6 +329,9 @@
                                         </div>
                                         <div class="row align-items-center justify-content-center mb-2">
                                             <button  type="button" class="btn btn-primary btn-sm col-5" id="filtroPais">Filtrar</button>
+                                        </div>
+                                        <div class="row align-items-center justify-content-center">
+                                            <span id="error_consulta" class="text-danger fs-6"></span>
                                         </div>
                                     </div>
                                 </div>
@@ -403,7 +405,6 @@
     <script src="js/funciones.js"></script>
     <script src="js/graficos.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/scripts.js"></script>
 
 </body>
 

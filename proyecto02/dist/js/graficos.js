@@ -5,14 +5,11 @@ function renderisarTabla(){
     if (datatablesSimple) {
       table = new simpleDatatables.DataTable(datatablesSimple);
     }
-
     return table
-    
 }
 
 
 function clearTabla(table){
-
   table.refresh()
   table.data = []
   table.rows.add(["" , "" , "" , ""])
@@ -24,16 +21,12 @@ function updateTabla(holidays, mesIncio = "01", mesFinal = "12" , table){
   
   clearTabla(table)
 
-    for (let index = 0; index < holidays.length; index++) {
-        let feriado = holidays[index];
-        let mes = feriado.date.split("-")[1];
-
-        if (mesIncio <= mes && mes <= mesFinal) {
-
-          table.rows.add([feriado.name , feriado.date , feriado.substitute.toString() , feriado.type])
-        }   
-    }
-
+  for (const feriado of holidays) {
+    let mes = feriado.date.split("-")[1];
+    if (mesIncio <= mes && mes <= mesFinal) {
+      table.rows.add([feriado.name , feriado.date , feriado.substitute.toString() , feriado.type])
+    }    
+  }
 }
 
 function renderisarGraficoLineas(meses, feriadosPorMes) {
@@ -90,6 +83,12 @@ function renderisarGraficoLineas(meses, feriadosPorMes) {
     return myLineChart;
 }
 
+function updateGraficoLineas( grafico, meses, feriadosPorMes){
+  grafico.data.labels = meses
+  grafico.data.datasets[0].data = feriadosPorMes
+  grafico.update();
+}
+
 function renderisarGraficoBar(paises, feriadosPorPais) {
 
     var ctx = document.getElementById("BarChart");
@@ -134,15 +133,8 @@ function renderisarGraficoBar(paises, feriadosPorPais) {
   }
   
 function updateGraficoBar( grafico, paises, feriadosPorPais){
-
     grafico.data.labels = paises
     grafico.data.datasets[0].data = feriadosPorPais
     grafico.update();
 }
 
-function updateGraficoLineas( grafico, meses, feriadosPorMes){
-
-    grafico.data.labels = meses
-    grafico.data.datasets[0].data = feriadosPorMes
-    grafico.update();
-}

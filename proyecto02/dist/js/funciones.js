@@ -2,8 +2,68 @@ Chart.defaults.global.defaultFontFamily = '-apple-system,system-ui,BlinkMacSyste
 Chart.defaults.global.defaultFontColor = '#292b2c';
 
 const mesesTodos = ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dis"];
-const paisesTodos = ["Estados Unidos", "Canada", "China", "Japon", "Congo", "Sudafrica", "Reino Unido", "Alemania", "Ecuador", "Colombia" , "Brazil"];
-const acronimos = ["US", "CA", "CN", "JP", "CG", "ZA", "GB", "DE", "EC", "CO" , "BR"];
+
+let paisesTodos = new Array() //["Estados Unidos", "Canada", "China", "Japon", "Congo", "Sudafrica", "Reino Unido", "Alemania", "Ecuador", "Colombia" , "Brazil"];
+let acronimos = new Array() //["US", "CA", "CN", "JP", "CG", "ZA", "GB", "DE", "EC", "CO" , "BR"];
+
+/*!
+    * Start Bootstrap - SB Admin v7.0.4 (https://startbootstrap.com/template/sb-admin)
+    * Copyright 2013-2021 Start Bootstrap
+    * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-sb-admin/blob/master/LICENSE)
+    */
+    // 
+// Scripts
+// 
+
+window.addEventListener('DOMContentLoaded', event => {
+
+    //De la palntilla
+    const sidebarToggle = document.body.querySelector('#sidebarToggle');
+    if (sidebarToggle) {
+        if (localStorage.getItem('sb|sidebar-toggle') === 'true') {
+             document.body.classList.toggle('sb-sidenav-toggled');
+        }
+
+        sidebarToggle.addEventListener('click', event => {
+            event.preventDefault();
+            document.body.classList.toggle('sb-sidenav-toggled');
+            localStorage.setItem('sb|sidebar-toggle', document.body.classList.contains('sb-sidenav-toggled'));
+        });
+    }
+
+    //Del la desarrolador
+    fetch("/dist/assets/paises.json")
+        .then(response => response.json())
+        .then(paises =>{
+
+            for (const pais of paises) {
+                paisesTodos.push(pais.name)
+                acronimos.push(pais.codeAlpha2)
+            }
+
+            generarPaises()
+
+    })
+    .catch(error => {
+        window.alert("No se ha podido cargar los datos de paises \nDesctivando consultas");
+        let btnConsultar = document.getElementById("filtroPais");
+        btnConsultar.disabled = true
+    });
+
+    let spiners = document.getElementsByClassName("loader");
+    for (let spiner of spiners) {
+        spiner.style.display = "none"
+    }
+
+    let errorSpans = document.getElementsByClassName("text-danger")
+    for (let span of errorSpans) {
+        span.style.display = "none"
+    }  
+});
+
+async function getPaises(paisesTodos , acronimos){
+    
+}
 
 
 let generarPaises = () => {
@@ -11,9 +71,12 @@ let generarPaises = () => {
     let selectorPaises = document.querySelector("#paises");
 
     for (let index = 0; index < paisesTodos.length; index++) {
+
         let newSelect = document.createElement("option")
+
         newSelect.setAttribute("value" , acronimos[index])
         newSelect.textContent = paisesTodos[index]
+
         selectorPaises.appendChild(newSelect)
     }
 }
@@ -42,30 +105,26 @@ let mesesRango = (mesIncio, mesFinal) =>{
 let getPaisesSelecionados = () => {
 
     let paisesSel = new Array();
-    let checks = document.querySelectorAll("#paisCheck> div> input");
+    const checks = document.querySelectorAll("#paisCheck> div> input");
 
-    for (let index = 0; index < checks.length; index++) {
-        
-        let check = checks[index];
+    for (const check of checks) {
         if(check.checked){
             paisesSel.unshift(check.value); 
-        }
+        }        
     }
-
     return paisesSel;
 }
 
 let getNameFromAcronim = (acronumPaises) =>{
 
     let namePaises = new Array();
-
-    for (let index = 0; index < acronumPaises.length; index++) {
-        let i = acronimos.indexOf(acronumPaises[index]);
+    
+    for (const acronum of acronumPaises) {
+        let i = acronimos.indexOf(acronum);
         namePaises.push(paisesTodos[i]); 
     }
 
     return namePaises;
-
 }
 
 let hacerConsulta = async (codigoPais) => {
@@ -81,21 +140,39 @@ let hacerConsulta = async (codigoPais) => {
             }
         })
 
-        const data = respuesta.data;
-        const status = data.status;
+        var data
+        var status
 
-        if( status == 200){
+        if (respuesta.hasOwnProperty("data")){
+            data = respuesta.data
+            status = ( data.hasOwnProperty("status") ? data.status : 666)
+        }else{
+            window.alert("Json resibido incumple el formato: " + status);
+            return null;
+        }
+        
+        if(status == 200){
             return data;
+
+        }else if (status == 666){
+            window.alert("Json resibido no contiene estado:")
+
+        }else{
+            window.alert("Codigo de status resibido no es el correcto: " + status);
+            return null;
         }
 
-        window.alert("Codigo de status no es el correcto: " + status);
-        return null;
-
     } catch (error) {
+        
+        if(!error.hasOwnProperty("response")){
+            window.alert("Error con dentro del js detectado, por favor contacte al desarrolador")
+            return null;
 
-        const status = error.response.status;
+        }
+        const respuesta = error.response
+        const estado =  (respuesta.hasOwnProperty("status") ? error.response.status : 666)
 
-        switch (status) {
+        switch (estado) {
             case 400:
                 window.alert("Error de validacion. \nCodigo de pais no valido: " + codigoPais);
                 break;
@@ -121,12 +198,66 @@ let hacerConsulta = async (codigoPais) => {
                 break;
         
             default:
-                window.alert("Error desconosido ha sido detectado: " + status);
+                window.alert("Error desconosido ha sido detectado: " + estado);
                 break;        
         }
-
+        
         return null;
     }
 }
+
+
+let consultaFeriadosPais = async (pais , mesInicio , mesFinal , tabla , lineas) =>{
+
+    let loader = document.getElementById("LineChart_loader")
+    let loader_tab = document.getElementById("tablaFeriadoPais_loader")
+    let container_tab = document.getElementById("tablaFeriadoPais_container")
+
+    loader.style.display = ""        
+    loader_tab.style.display = ""
+    container_tab.style.display = "none"
+
+    
+    const data = await hacerConsulta(pais)
+
+    if(data != null){
+        let feriados = feriadosPorMeses(data.holidays , mesInicio , mesFinal);
+        let meses = mesesRango( mesInicio , mesFinal);
+        updateGraficoLineas( lineas , meses , feriados);  
+        updateTabla(data.holidays , mesInicio , mesFinal , tabla);
+
+    }
+        
+    loader.style.display = "none"
+    loader_tab.style.display = "none"
+    container_tab.style.display = ""    
+}
+
+
+let comparaFeriadosPaises = async (acronumPaises , mesInicio , mesFinal , barras) =>{
+
+    let namePaises = getNameFromAcronim(acronumPaises);
+    let feriadosPorPais = new Array(acronumPaises.length).fill(0);
+    
+    let loader = document.getElementById("BarChart_loader")
+    loader.style.display = ""
+
+    for (let index = 0; index < namePaises.length; index++) {
+            
+        let data = await hacerConsulta(acronumPaises[index])
+        if(data != null){
+            let feriados = feriadosPorMeses(data.holidays , mesInicio , mesFinal);
+            feriadosPorPais[index] = feriados.reduce((partialSum, a) => partialSum + a, 0);
+        }else{
+            return
+        }          
+    }
+
+    updateGraficoBar( barras , namePaises , feriadosPorPais);
+    loader.style.display = "none"
+
+
+}
+
 
 
