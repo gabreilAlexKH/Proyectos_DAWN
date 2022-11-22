@@ -2,9 +2,10 @@ Chart.defaults.global.defaultFontFamily = '-apple-system,system-ui,BlinkMacSyste
 Chart.defaults.global.defaultFontColor = '#292b2c';
 
 const mesesTodos = ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dis"];
-
-let paisesTodos = new Array() //["Estados Unidos", "Canada", "China", "Japon", "Congo", "Sudafrica", "Reino Unido", "Alemania", "Ecuador", "Colombia" , "Brazil"];
-let acronimos = new Array() //["US", "CA", "CN", "JP", "CG", "ZA", "GB", "DE", "EC", "CO" , "BR"];
+const pasisesBarra = ["Estados Unidos", "Canada", "China", "Japon", "Congo", "Sudafrica", "Reino Unido", "Alemania", "Ecuador", "Colombia" , "Brazil"];
+const acronimosBarra = ["US", "CA", "CN", "JP", "CG", "ZA", "GB", "DE", "EC", "CO" , "BR"];
+let paisesTodos = new Array() 
+let acronimos = new Array() 
 
 /*!
     * Start Bootstrap - SB Admin v7.0.4 (https://startbootstrap.com/template/sb-admin)
@@ -32,7 +33,7 @@ window.addEventListener('DOMContentLoaded', event => {
     }
 
     //Del la desarrolador
-    fetch("/dist/assets/paises.json")
+    fetch("/assets/paises.json")
         .then(response => response.json())
         .then(paises =>{
 
@@ -50,6 +51,7 @@ window.addEventListener('DOMContentLoaded', event => {
         btnConsultar.disabled = true
     });
 
+    
     let spiners = document.getElementsByClassName("loader");
     for (let spiner of spiners) {
         spiner.style.display = "none"
@@ -59,6 +61,7 @@ window.addEventListener('DOMContentLoaded', event => {
     for (let span of errorSpans) {
         span.style.display = "none"
     }  
+    
 });
 
 async function getPaises(paisesTodos , acronimos){

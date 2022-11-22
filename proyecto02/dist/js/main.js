@@ -1,4 +1,4 @@
-let barras = renderisarGraficoBar(paisesTodos , [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
+let barras = renderisarGraficoBar(pasisesBarra , [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
 let lineas = renderisarGraficoLineas ( mesesTodos ,  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ])
 let tabla = renderisarTabla()
 

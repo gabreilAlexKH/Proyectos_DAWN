@@ -20,3 +20,7 @@ src: https://www.chartjs.org/
 ## API
 **Festivo Public Holidays
 src: https://docs.getfestivo.com/docs/products/public-holidays-api/intro/
+
+
+## Instruciones
+Arranque un servidor usando: python -m http.server 8030 en la carpeta dist (cd dist)

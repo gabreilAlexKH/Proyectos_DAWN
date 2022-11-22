@@ -24,7 +24,18 @@ function updateTabla(holidays, mesIncio = "01", mesFinal = "12" , table){
   for (const feriado of holidays) {
     let mes = feriado.date.split("-")[1];
     if (mesIncio <= mes && mes <= mesFinal) {
-      table.rows.add([feriado.name , feriado.date , feriado.substitute.toString() , feriado.type])
+
+      let substitute = "No"
+      if(feriado.substitute){
+        substitute="Si"
+      }
+
+      let type = "festivo"
+      if(feriado.type == "public"){
+        type="feriado"
+      }
+
+      table.rows.add([feriado.name , feriado.date , substitute , type])
     }    
   }
 }
@@ -37,7 +48,7 @@ function renderisarGraficoLineas(meses, feriadosPorMes) {
         data: {
             labels: meses,
             datasets: [{
-                label: "Feriados",
+                label: "total",
                 lineTension: 0,
                 backgroundColor: "rgba(0,0,0,0)",
                 borderColor: "rgba(2,117,216,1)",
@@ -97,7 +108,7 @@ function renderisarGraficoBar(paises, feriadosPorPais) {
       data: {
         labels: paises,
         datasets: [{
-          label: "Revenue",
+          label: "total",
           backgroundColor: "rgba(2,117,216,1)",
           borderColor: "rgba(2,117,216,1)",
           data: feriadosPorPais,

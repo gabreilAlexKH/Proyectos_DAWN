@@ -39,354 +39,332 @@
             <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                 <div class="sb-sidenav-menu">
                     <div class="nav">
-                        <div class="sb-sidenav-menu-heading">Core</div>
-                        <a class="nav-link" href="index.html">
-                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                            Dashboard
+
+                        <div class="sb-sidenav-menu-heading">Navegacion</div>
+                        <a class="nav-link" href="#barras">
+                            <div class="sb-nav-link-icon"><i class="fas fa-chart-bar me-1"></i></div>
+                            Comparativa por paises
                         </a>
-                        <div class="sb-sidenav-menu-heading">Interface</div>
-                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
-                            data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-                            <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                            Layouts
-                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        <a class="nav-link" href="#lineas">
+                            <div class="sb-nav-link-icon"><i class="fas fa-chart-area me-1"></i></div>
+                            Distribucion de un pais
                         </a>
-                        <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne"
-                            data-bs-parent="#sidenavAccordion">
-                            <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="layout-static.html">Static Navigation</a>
-                                <a class="nav-link" href="layout-sidenav-light.html">Light Sidenav</a>
-                            </nav>
-                        </div>
-                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages"
-                            aria-expanded="false" aria-controls="collapsePages">
-                            <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
-                            Pages
-                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        <a class="nav-link" href="#tabla">
+                            <div class="sb-nav-link-icon"><i class="fas fa-table me-1"></i></div>
+                            Tabla dias festivos y feriados
                         </a>
-                        <div class="collapse" id="collapsePages" aria-labelledby="headingTwo"
-                            data-bs-parent="#sidenavAccordion">
-                            <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
-                                    data-bs-target="#pagesCollapseAuth" aria-expanded="false"
-                                    aria-controls="pagesCollapseAuth">
-                                    Authentication
-                                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                                </a>
-                                <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne"
-                                    data-bs-parent="#sidenavAccordionPages">
-                                    <nav class="sb-sidenav-menu-nested nav">
-                                        <a class="nav-link" href="login.html">Login</a>
-                                        <a class="nav-link" href="register.html">Register</a>
-                                        <a class="nav-link" href="password.html">Forgot Password</a>
-                                    </nav>
-                                </div>
-                                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
-                                    data-bs-target="#pagesCollapseError" aria-expanded="false"
-                                    aria-controls="pagesCollapseError">
-                                    Error
-                                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                                </a>
-                                <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne"
-                                    data-bs-parent="#sidenavAccordionPages">
-                                    <nav class="sb-sidenav-menu-nested nav">
-                                        <a class="nav-link" href="401.html">401 Page</a>
-                                        <a class="nav-link" href="404.html">404 Page</a>
-                                        <a class="nav-link" href="500.html">500 Page</a>
-                                    </nav>
-                                </div>
-                            </nav>
-                        </div>
-                        <div class="sb-sidenav-menu-heading">Addons</div>
-                        <a class="nav-link" href="charts.html">
-                            <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                            Charts
+                        
+                        <div class="sb-sidenav-menu-heading">Librerias</div>
+                        <a class="nav-link" href="https://boguz.github.io/Spinners/#" target="_blank">
+                            <div class="sb-nav-link-icon"><i class="fas fa-spinner me-1"></i></div>
+                            CSS SPINNERS
                         </a>
-                        <a class="nav-link" href="tables.html">
-                            <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                            Tables
+                        <a class="nav-link" href="https://www.chartjs.org/" target="_blank">
+                            <div class="sb-nav-link-icon"><i class="fas fa-book-open sl me-1"></i></div>
+                            Charts.js
+                        </a>
+
+                        <div class="sb-sidenav-menu-heading">API</div>
+                        <a class="nav-link" href="https://docs.getfestivo.com/docs/products/public-holidays-api/intro/" target="_blank">
+                            <div class="sb-nav-link-icon"><i class="fas fa-calendar me-1"></i></div>
+                            Festivo Public Holidays
                         </a>
                     </div>
-                </div>
-                <div class="sb-sidenav-footer">
-                    <div class="small">Logged in as:</div>
-                    Start Bootstrap
                 </div>
             </nav>
         </div>
         <div id="layoutSidenav_content">
             <main>
+
                 <div class="container-fluid px-4">
-                    <h1 class="mt-4">Dashboard</h1>
+
+                    <h1 class="mt-4">Dias festivos y feriados alrededor del mundo</h1>
                     <ol class="breadcrumb mb-4">
                         <li class="breadcrumb-item active">Dashboard</li>
                     </ol>
 
-                    <div class="row">
-                        <div class="col-xl-7">
-                            <div class="card mb-4">
-                                <div class="card-header">
-                                    <i class="fas fa-chart-bar me-1"></i>
-                                    Comparativa feriados por paises
-                                </div>
-                                <div class="card-body">
-                                    <div class="position-absolute top-50 start-50 translate-middle loader" id="BarChart_loader">
-                                        <div class="mul8 mx-auto">
-                                            <div class="mul8circ1"></div>
-                                            <div class="mul8circ2"></div>
-                                        </div>
-                                        <label class="form-label m-1">Cargando datos grafico...</label>
-                                    </div>
-                                    <div id = "BarChart_container" class="mx-auto">
-                                        <canvas id="BarChart" width="100%" height="45"></canvas></div>
-                                    </div>
-                                    
-                            </div>
+
+                    <div class="card mb-4" id="barras">
+                        <div class="card-header">
+                            <i class="fas fa-chart-bar me-1"></i>
+                            Comparativa dias festivos y feriados por paises
                         </div>
-                        <div class="col-xl-5 ">
-                            <div class="card mb-4">
-                                <div class="card-body">
-                                    <div class="row align-items-center justify-content-center mb-3">
-                                        <div class="col-2 text-wrap">
-                                            <label class=" form-label fs-sm-5 fs-6 fw-bold">Meses:</label>
-                                        </div>
-                                        <div class="form-floating col-5">
-                                            <select class="form-select" id="mesInicio">
-                                                <option selected value="01">Ene</option>
-                                                <option value="02">Feb</option>
-                                                <option value="03">Mar</option>
-                                                <option value="04">Abr</option>
-                                                <option value="05">May</option>
-                                                <option value="06">Jun</option>
-                                                <option value="07">Jul</option>
-                                                <option value="08">Ago</option>
-                                                <option value="09">Sep</option>
-                                                <option value="10">Oct</option>
-                                                <option value="11">Nov</option>
-                                                <option value="12">Dec</option>
-                                            </select>
-                                            <label for="mesInicio">Mes inicio</label>
-                                        </div>
-                                        <div class="form-floating col-5">
-                                            <select class="form-select" id="mesFinal">
-                                                <option value="01">Ene</option>
-                                                <option value="02">Feb</option>
-                                                <option value="03">Mar</option>
-                                                <option value="04">Abr</option>
-                                                <option value="05">May</option>
-                                                <option value="06">Jun</option>
-                                                <option value="07">Jul</option>
-                                                <option value="08">Ago</option>
-                                                <option value="09">Sep</option>
-                                                <option value="10">Oct</option>
-                                                <option value="11">Nov</option>
-                                                <option selected value="12">Dec</option>
-                                            </select>
-                                            <label for="mesFinal">Mes final</label>
-                                        </div>
-                                    </div>
-                                    <div class="row align-items-center justify-content- mb-3">
-                                        <div class="col-2 text-wrap">
-                                            <label class=" form-label fs-sm-5 fs-6 fw-bold">Paises:</label>
-                                        </div>
-                                        <div class="col-10 d-flex flex-wrap align-self-left justify-content-left" id="paisCheck" >
-                                            <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" value="US"
-                                                    id="checkPais">
-                                                <label class="form-check-label" for="checkPais">Estados Unidos</label>
-                                            </div>
-                                            <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" value="CA"
-                                                    id="checkPais">
-                                                <label class="form-check-label" for="checkPais">Canada</label>
-                                            </div>
-                                            <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" value="CN"
-                                                    id="checkPais">
-                                                <label class="form-check-label" for="checkPais">China
-                                            </div>
-                                            <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" value="JP"
-                                                    id="checkPais">
-                                                <label class="form-check-label" for="checkPais">Japan</label>
-                                            </div>
-                                            <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" value="CG"
-                                                    id="checkPais">
-                                                <label class="form-check-label" for="checkPais">Congo</label>
-                                            </div>
-                                            <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" value="ZA"
-                                                    id="checkPais">
-                                                <label class="form-check-label" for="checkPais">SupAfrica</label>
-                                            </div>
-                                            <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" value="GB"
-                                                    id="checkPais">
-                                                <label class="form-check-label" for="checkPais">Reino Unido</label>
-                                            </div>
-                                            <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" value="DE"
-                                                    id="checkPais">
-                                                <label class="form-check-label" for="checkPais">Alemania</label>
-                                            </div>
-                                            <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" value="EC"
-                                                    id="checkPais">
-                                                <label class="form-check-label" for="checkPais">Ecuador</label>
-                                            </div>
-                                            <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" value="BR"
-                                                    id="checkPais">
-                                                <label class="form-check-label" for="checkPais">Brazil</label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row align-items-center justify-content-center mb-2">
-                                        <button type="button" class="btn btn-primary btn-sm col-5" id="comparacionPaises">Filtrar</button>
-                                    </div>
-                                    <div class="row align-items-center justify-content-center">
-                                        <span id="error_comparacion" class="text-danger fs-6"></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xl-7">
-                                <div class="card mb-4">
-                                    <div class="card-header">
-                                        <i class="fas fa-chart-area me-1"></i>
-                                        Feriados de un pais
-                                    </div>
-                                    <div class="card-body ">
-                                        <div class="position-absolute top-50 start-50 translate-middle loader" id="LineChart_loader">
-                                            <div class="mul8 mx-auto">
-                                                <div class="mul8circ1"></div>
-                                                <div class="mul8circ2"></div>
-                                            </div>
-                                            <label class="form-label m-1">Cargando datos grafico...</label>
-                                        </div>
-                                        <div id = "LineChart_container" class = "mx-auto">
-                                            <canvas id="LineChart" width="100%" height="45"></canvas>
-                                        </div>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-5 ">
-                                <div class="card mb-4">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="card mb-4 col-xl-4 ">
                                     <div class="card-body">
-                                        <div class="row align-items-center justify-content-center mb-3">
-                                            <div class="col-2 text-wrap">
+                                        <div class="row align-items-center justify-content-center mb-4">
+                                            <div class="col-sm-2 col-3 text-wrap">
                                                 <label class=" form-label fs-sm-5 fs-6 fw-bold">Meses:</label>
                                             </div>
-                                            <div class="form-floating col-5">
-                                                <select class="form-select" id="mesInicio2">
-                                                    <option selected value="01">Ene</option>
-                                                    <option value="02">Feb</option>
-                                                    <option value="03">Mar</option>
-                                                    <option value="04">Abr</option>
-                                                    <option value="05">May</option>
-                                                    <option value="06">Jun</option>
-                                                    <option value="07">Jul</option>
-                                                    <option value="08">Ago</option>
-                                                    <option value="09">Sep</option>
-                                                    <option value="10">Oct</option>
-                                                    <option value="11">Nov</option>
-                                                    <option value="12">Dec</option>
-                                                </select>
-                                                <label for="mesInicio2">Mes inicio</label>
-                                            </div>
-                                            <div class="form-floating col-5">
-                                                <select class="form-select" id="mesFinal2">
-                                                    <option value="01">Ene</option>
-                                                    <option value="02">Feb</option>
-                                                    <option value="03">Mar</option>
-                                                    <option value="04">Abr</option>
-                                                    <option value="05">May</option>
-                                                    <option value="06">Jun</option>
-                                                    <option value="07">Jul</option>
-                                                    <option value="08">Ago</option>
-                                                    <option value="09">Sep</option>
-                                                    <option value="10">Oct</option>
-                                                    <option value="11">Nov</option>
-                                                    <option selected value="12">Dec</option>
-                                                </select>
-                                                <label for="mesFinal2">Mes final</label>
+                                            <div class="row row col-sm-10 col-9 gy-2">
+                                                <div class="form-floating col-xl-12 col-lg-6 col-sm-6 col-12 ">
+                                                    <select class="form-select" id="mesInicio">
+                                                        <option selected value="01">Ene</option>
+                                                        <option value="02">Feb</option>
+                                                        <option value="03">Mar</option>
+                                                        <option value="04">Abr</option>
+                                                        <option value="05">May</option>
+                                                        <option value="06">Jun</option>
+                                                        <option value="07">Jul</option>
+                                                        <option value="08">Ago</option>
+                                                        <option value="09">Sep</option>
+                                                        <option value="10">Oct</option>
+                                                        <option value="11">Nov</option>
+                                                        <option value="12">Dec</option>
+                                                    </select>
+                                                    <label for="mesInicio">Mes inicio</label>
+                                                </div>
+                                                <div class="form-floating col-xl-12 col-lg-6 col-sm-6 col-12">
+                                                    <select class="form-select" id="mesFinal">
+                                                        <option value="01">Ene</option>
+                                                        <option value="02">Feb</option>
+                                                        <option value="03">Mar</option>
+                                                        <option value="04">Abr</option>
+                                                        <option value="05">May</option>
+                                                        <option value="06">Jun</option>
+                                                        <option value="07">Jul</option>
+                                                        <option value="08">Ago</option>
+                                                        <option value="09">Sep</option>
+                                                        <option value="10">Oct</option>
+                                                        <option value="11">Nov</option>
+                                                        <option selected value="12">Dec</option>
+                                                    </select>
+                                                    <label for="mesFinal">Mes final</label>
+                                                </div>
                                             </div>
                                         </div>
+                                        <div class="row align-items-center justify-content- mb-3">
+                                            <div class="col-sm-2 col-3 text-wrap">
+                                                <label class=" form-label fs-sm-5 fs-6 fw-bold">Paises:</label>
+                                            </div>
+                                            <div class="col-sm-10 col-9  d-flex flex-wrap align-self-left justify-content-left"
+                                                id="paisCheck">
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" value="US"
+                                                        id="checkPais">
+                                                    <label class="form-check-label" for="checkPais">Estados
+                                                        Unidos</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" value="CA"
+                                                        id="checkPais">
+                                                    <label class="form-check-label" for="checkPais">Canada</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" value="CN"
+                                                        id="checkPais">
+                                                    <label class="form-check-label" for="checkPais">China
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" value="JP"
+                                                        id="checkPais">
+                                                    <label class="form-check-label" for="checkPais">Japan</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" value="CG"
+                                                        id="checkPais">
+                                                    <label class="form-check-label" for="checkPais">Congo</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" value="ZA"
+                                                        id="checkPais">
+                                                    <label class="form-check-label" for="checkPais">SupAfrica</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" value="GB"
+                                                        id="checkPais">
+                                                    <label class="form-check-label" for="checkPais">Reino Unido</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" value="DE"
+                                                        id="checkPais">
+                                                    <label class="form-check-label" for="checkPais">Alemania</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" value="EC"
+                                                        id="checkPais">
+                                                    <label class="form-check-label" for="checkPais">Ecuador</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" value="BR"
+                                                        id="checkPais">
+                                                    <label class="form-check-label" for="checkPais">Brazil</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row align-items-center justify-content-center mb-3">
+                                            <button type="button" class="btn btn-primary btn-sm col-5"
+                                                id="comparacionPaises">Filtrar</button>
+                                        </div>
+                                        <div class="row align-items-center justify-content-center">
+                                            <span id="error_comparacion" class="text-danger fs-6"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-8">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="position-absolute top-50 start-50 translate-middle loader"
+                                                id="BarChart_loader">
+                                                <div class="mul8 mx-auto">
+                                                    <div class="mul8circ1"></div>
+                                                    <div class="mul8circ2"></div>
+                                                </div>
+                                                <label class="form-label m-1">Cargando datos grafico...</label>
+                                            </div>
+                                            <div id="BarChart_container" class="mx-auto">
+                                                <canvas id="BarChart" width="100%" height="45"></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card mb-4" id="lineas">
+                        <div class="card-header">
+                            <i class="fas fa-chart-area me-1"></i>
+                            Distribucion dias festivos y feriados de un pais
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class=" card mb-4 col-xl-4 ">
+                                    <div class="card-body">
+                                        <div class="row align-items-center justify-content-center mb-4">
+                                            <div class="col-sm-2 col-3 text-wrap">
+                                                <label class=" form-label fs-sm-5 fs-6 fw-bold">Meses:</label>
+                                            </div>
+                                            <div class="row col-sm-10 col-9 gy-2">
+                                                <div class="form-floating col-xl-12 col-lg-6 col-sm-6 col-12 ">
+                                                    <select class="form-select" id="mesInicio2">
+                                                        <option selected value="01">Ene</option>
+                                                        <option value="02">Feb</option>
+                                                        <option value="03">Mar</option>
+                                                        <option value="04">Abr</option>
+                                                        <option value="05">May</option>
+                                                        <option value="06">Jun</option>
+                                                        <option value="07">Jul</option>
+                                                        <option value="08">Ago</option>
+                                                        <option value="09">Sep</option>
+                                                        <option value="10">Oct</option>
+                                                        <option value="11">Nov</option>
+                                                        <option value="12">Dec</option>
+                                                    </select>
+                                                    <label for="mesInicio">Mes inicio</label>
+                                                </div>
+                                                <div class="form-floating col-xl-12 col-lg-6 col-sm-6 col-12">
+                                                    <select class="form-select" id="mesFinal2">
+                                                        <option value="01">Ene</option>
+                                                        <option value="02">Feb</option>
+                                                        <option value="03">Mar</option>
+                                                        <option value="04">Abr</option>
+                                                        <option value="05">May</option>
+                                                        <option value="06">Jun</option>
+                                                        <option value="07">Jul</option>
+                                                        <option value="08">Ago</option>
+                                                        <option value="09">Sep</option>
+                                                        <option value="10">Oct</option>
+                                                        <option value="11">Nov</option>
+                                                        <option selected value="12">Dec</option>
+                                                    </select>
+                                                    <label for="mesFinal">Mes final</label>
+                                                </div>
+                                            </div>
+                                        </div>
+
                                         <div class="row align-items-center justify-content-center mb-3">
                                             <div class="col-2 text-wrap">
                                                 <label class=" form-label fs-sm-5 fs-6 fw-bold">Pais:</label>
                                             </div>
-                                            <div class="form-floating col-10 d-flex flex-wrap align-self-center justify-content-center">
+                                            <div
+                                                class="form-floating col-10 d-flex flex-wrap align-self-center justify-content-center">
                                                 <select class="form-select" id="paises">
                                                 </select>
                                                 <label for="pais">Pais</label>
-
-
                                             </div>
                                         </div>
-                                        <div class="row align-items-center justify-content-center mb-2">
-                                            <button  type="button" class="btn btn-primary btn-sm col-5" id="filtroPais">Filtrar</button>
+                                        <div class="row align-items-center justify-content-center mb-3">
+                                            <button type="button" class="btn btn-primary btn-sm col-5"
+                                                id="filtroPais">Filtrar</button>
                                         </div>
                                         <div class="row align-items-center justify-content-center">
                                             <span id="error_consulta" class="text-danger fs-6"></span>
                                         </div>
                                     </div>
+
                                 </div>
-                            </div>
-                        </div>
-                        <div class="card mb-4">
-                            <div class="card-header">
-                                <i class="fas fa-table me-1"></i>
-                                Tabla Feriados
-                            </div>
-                            <div class="card-body">
-                                <div class="m-5 loader" id="tablaFeriadoPais_loader">
-                                    <div class="mul8 mx-auto">
-                                        <div class="mul8circ1"></div>
-                                        <div class="mul8circ2"></div>
+                                <div class="col-xl-8">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="position-absolute top-50 start-50 translate-middle loader"
+                                                id="LineChart_loader">
+                                                <div class="mul8 mx-auto">
+                                                    <div class="mul8circ1"></div>
+                                                    <div class="mul8circ2"></div>
+                                                </div>
+                                                <label class="form-label m-1">Cargando datos grafico...</label>
+                                            </div>
+                                            <div id="LineChart_container" class="mx-auto">
+                                                <canvas id="LineChart" width="100%" height="45"></canvas>
+                                            </div>
+
+                                        </div>
                                     </div>
-                                    <label class="form-label m-1">Cargando datos de tabla ...</label>
                                 </div>
-                                <div id = "tablaFeriadoPais_container" class="mx-auto">
-                                    <table id="tablaFeriadoPais">
-                                        <thead>
-                                            <tr>
-                                                <th>Nombre</th>
-                                                <th>Fecha</th>
-                                                <th>Sustituto</th>
-                                                <th>Tipo</th>
-                                            </tr>
-                                        </thead>
-                                        <tfoot>
-                                            <tr>
-                                                <th>Nombre</th>
-                                                <th>Fecha</th>
-                                                <th>Sustituto</th>
-                                                <th>Tipo</th>
-                                            </tr>
-                                        </tfoot>
-                                        <tbody>
-                                            
-                                        </tbody>
-                                    </table>
-                                </div>
-                                
                             </div>
                         </div>
                     </div>
+
+
+
+                    <div class="card mb-4" id="tabla">
+                        <div class="card-header">
+                            <i class="fas fa-table me-1"></i>
+                            Tabla dias festivos y feriados
+                        </div>
+                        <div class="card-body">
+                            <div class="m-5 loader" id="tablaFeriadoPais_loader">
+                                <div class="mul8 mx-auto">
+                                    <div class="mul8circ1"></div>
+                                    <div class="mul8circ2"></div>
+                                </div>
+                                <label class="form-label m-1">Cargando datos de tabla ...</label>
+                            </div>
+                            <div id="tablaFeriadoPais_container" class="mx-auto">
+                                <table id="tablaFeriadoPais">
+                                    <thead>
+                                        <tr>
+                                            <th>Nombre</th>
+                                            <th>Fecha</th>
+                                            <th>Sustituto</th>
+                                            <th>Tipo</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <th>Nombre</th>
+                                            <th>Fecha</th>
+                                            <th>Sustituto</th>
+                                            <th>Tipo</th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
             </main>
+
             <footer class="py-4 bg-light mt-auto">
                 <div class="container-fluid px-4">
                     <div class="d-flex align-items-center justify-content-between small">
-                        <div class="text-muted">Copyright &copy; Your Website 2021</div>
-                        <div>
-                            <a href="#">Privacy Policy</a>
-                            &middot;
-                            <a href="#">Terms &amp; Conditions</a>
-                        </div>
+                        <div class="text-muted">Copyright &copy; Gabriel Maldonado 2022</div>
                     </div>
                 </div>
             </footer>
