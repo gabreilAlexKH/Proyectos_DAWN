@@ -43,7 +43,6 @@ btnComparacion.addEventListener('click', async () =>{
         error.style.display = "none"
         comparaFeriadosPaises(acronumPaises , mesInicio , mesFinal , barras)
         
-        
     }else{
         let errores = "Error: " + ( !(mesInicio <= mesFinal) ? "Mes final mayor a mes inicio" : "" ) 
                                 + ( (!(mesInicio <= mesFinal) && (acronumPaises.length == 0)) ? "\n": "")

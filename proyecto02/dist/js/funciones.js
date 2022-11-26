@@ -64,10 +64,6 @@ window.addEventListener('DOMContentLoaded', event => {
     
 });
 
-async function getPaises(paisesTodos , acronimos){
-    
-}
-
 
 let generarPaises = () => {
 
@@ -167,10 +163,14 @@ let hacerConsulta = async (codigoPais) => {
 
     } catch (error) {
         
+        if(error.hasOwnProperty("message") && error.hasOwnProperty("code")){
+            window.alert("Error con api detectado:\n Message: " + error.message + "  code: " + error.code)
+            return null;
+        }
+        
         if(!error.hasOwnProperty("response")){
             window.alert("Error con dentro del js detectado, por favor contacte al desarrolador")
             return null;
-
         }
         const respuesta = error.response
         const estado =  (respuesta.hasOwnProperty("status") ? error.response.status : 666)
@@ -228,7 +228,6 @@ let consultaFeriadosPais = async (pais , mesInicio , mesFinal , tabla , lineas) 
         let meses = mesesRango( mesInicio , mesFinal);
         updateGraficoLineas( lineas , meses , feriados);  
         updateTabla(data.holidays , mesInicio , mesFinal , tabla);
-
     }
         
     loader.style.display = "none"
@@ -244,7 +243,7 @@ let comparaFeriadosPaises = async (acronumPaises , mesInicio , mesFinal , barras
     
     let loader = document.getElementById("BarChart_loader")
     loader.style.display = ""
-
+    
     for (let index = 0; index < namePaises.length; index++) {
             
         let data = await hacerConsulta(acronumPaises[index])
@@ -252,6 +251,7 @@ let comparaFeriadosPaises = async (acronumPaises , mesInicio , mesFinal , barras
             let feriados = feriadosPorMeses(data.holidays , mesInicio , mesFinal);
             feriadosPorPais[index] = feriados.reduce((partialSum, a) => partialSum + a, 0);
         }else{
+            loader.style.display = "none"
             return
         }          
     }
