@@ -1,0 +1,24 @@
+<mat-drawer-container class="example-container" autosize>
+
+  <mat-drawer #enlaces class="example-sidenav" mode="over">
+    <ul>
+      <li><a routerLink="/ve1">V1</a></li>
+      <li><a routerLink="/ve2">V2</a></li>
+      <li><a routerLink="/ve3">V3</a></li>
+      <li><a routerLink="/ve4">V4</a></li>
+    </ul>
+  </mat-drawer>
+
+  <!--Toolbar-->
+  <mat-toolbar color="primary">
+    <button mat-icon-button color="accent" aria-label="menu" (click)="menu(enlaces)">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>Album fotográfico</span>
+  </mat-toolbar>
+
+  <p>Texto de relleno</p>
+  <br>
+  <p>remplase por componentes</p>
+
+</mat-drawer-container>
