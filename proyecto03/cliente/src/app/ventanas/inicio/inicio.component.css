@@ -1,0 +1,11 @@
+.flex-column{
+
+    gap: 1.7rem;
+    justify-content:center;
+    align-items: center;
+}
+
+
+button{
+    width: 80%;
+}
