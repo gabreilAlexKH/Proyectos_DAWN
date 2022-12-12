@@ -1,53 +1,22 @@
+<div id="inputFeriado" class=" row p-3  m-1 gx-3 gy-3 justify-content-center">
 
-<img src="https://www.unilibre.edu.co/bogota/images/calendario.jpg">
-<h1>Feriados por Pais</h1>
-<div>
-    <p>Consulte todos los feriados de sus paises favoritos dentro de un rango de meses</p>
-</div>
+    <img class ="col-12 " src="https://www.unilibre.edu.co/bogota/images/calendario.jpg" width="100%" >
 
-<form>
-    <div class="form-floating col-xl-12 col-lg-6 col-sm-6 col-12 ">
-        <select class="form-select" id="mesInicio">
-            <option selected value="01">Ene</option>
-            <option value="02">Feb</option>
-            <option value="03">Mar</option>
-            <option value="04">Abr</option>
-            <option value="05">May</option>
-            <option value="06">Jun</option>
-            <option value="07">Jul</option>
-            <option value="08">Ago</option>
-            <option value="09">Sep</option>
-            <option value="10">Oct</option>
-            <option value="11">Nov</option>
-            <option value="12">Dec</option>
-        </select>
-        <label for="mesInicio">Mes inicio</label>
+    <h1 class ="col-12 ">Feriados por Pais</h1>
+    <div  class="p-3 mb-2 infoContainer text-white col-12">
+        <p>Consulte todos los feriados de sus paises favoritos dentro de un rango de meses</p>
     </div>
-    <div class="form-floating col-xl-12 col-lg-6 col-sm-6 col-12">
-        <select class="form-select" id="mesFinal">
-            <option value="01">Ene</option>
-            <option value="02">Feb</option>
-            <option value="03">Mar</option>
-            <option value="04">Abr</option>
-            <option value="05">May</option>
-            <option value="06">Jun</option>
-            <option value="07">Jul</option>
-            <option value="08">Ago</option>
-            <option value="09">Sep</option>
-            <option value="10">Oct</option>
-            <option value="11">Nov</option>
-            <option selected value="12">Dec</option>
-        </select>
-        <label for="mesFinal">Mes final</label>
+
+    <form class="d-flex flex-column justify-content-center col-11">
+
+        <app-meses-form></app-meses-form>
+
+        <app-pais-form></app-pais-form>
+
+    </form>
+
+    <div class="col-12 d-flex justify-content-center">
+        <button mat-raised-button color="accent" >Dias Festivos</button>
     </div>
-    <div
-    class="form-floating col-10 d-flex flex-wrap align-self-center justify-content-center">
-    <select class="form-select" id="paises">
-    </select>
-    <label for="pais">Pais</label>
+
 </div>
-
-</form>
-
-
-<button >Dias Festivos</button>

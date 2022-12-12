@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class MesesFormComponent {
 
+  mesInit:string = '01';
+  mesFin:string  = '12';
 }

@@ -1,0 +1,6 @@
+<mat-form-field appearance="outline" color="accent">
+    <mat-label>Pais</mat-label>
+    <mat-select [(value)]="pais">
+        <mat-option *ngFor="let pais of paises" [value]="pais.codeAlpha2">{{pais.name}}</mat-option>
+    </mat-select>
+</mat-form-field>
