@@ -1,0 +1,36 @@
+<div id="inputComparacion" class=" row p-3  m-1 gx-3 gy-3 justify-content-center">
+
+    <img class ="col-12 " src="https://www.unilibre.edu.co/bogota/images/calendario.jpg" width="100%" >
+
+    <h1 class ="col-12 ">Feriados por Pais</h1>
+    <div  class="p-3 mb-2 infoContainer text-white col-12">
+        <p>Compare la cantidad de dias festivos entres varios paises</p>
+    </div>
+
+    <form class="d-flex flex-column justify-content-center col-11">
+
+        <app-meses-form (onSelected)="onSelectedMeses($event)"></app-meses-form>
+
+        <app-pais-form (onSelected)="onSelectedPais($event)"></app-pais-form>
+
+
+        <label color = "accent"> {{paises.size}}/10</label >
+
+        <mat-label> Meses: {{meses}}</mat-label>
+
+        <mat-chip-grid #chipGrid aria-label="Fruit selection" color="accent">
+          <mat-chip-row color="warn" selected *ngFor="let pais of paises" (removed)="paises.delete(pais)" >
+            {{pais}}
+            <button matChipRemove [attr.aria-label]="'remove ' + pais" >
+              <mat-icon>cancel</mat-icon>
+            </button>
+          </mat-chip-row>
+        </mat-chip-grid>
+    </form>
+
+    <div class="col-12 d-flex justify-content-center">
+        <button mat-raised-button color="accent" >Dias Festivos</button>
+    </div>
+
+</div>
+

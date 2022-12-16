@@ -7,4 +7,17 @@ import { Component } from '@angular/core';
 })
 export class FeriadosInputComponent {
 
+  pais:string = "";
+  meses:string = "01-12";
+
+  onSelectedPais(pais:string) {
+    this.pais = pais;
+
+  }
+
+  onSelectedMeses(meses:string) {
+    this.meses = meses;
+
+  }
+
 }

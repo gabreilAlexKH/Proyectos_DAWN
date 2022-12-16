@@ -4,10 +4,14 @@ import {InicioComponent} from "./ventanas/inicio/inicio.component";
 import {PaisesDiaComponent} from "./ventanas/paises-dia/paises-dia.component"
 import {FeriadosInputComponent} from "./ventanas/feriados-input/feriados-input.component"
 import {FeriadosPaisComponent} from "./ventanas/feriados-pais/feriados-pais.component"
+import {ComparacionInputComponent} from "./ventanas/comparacion-input/comparacion-input.component"
+
+
 const routes: Routes = [
   {path:"paisDia", component:PaisesDiaComponent},
   {path:"feriadoInput", component:FeriadosInputComponent},
   {path:"feriadosPais", component:FeriadosPaisComponent},
+  {path:"compInput", component:ComparacionInputComponent},
   {path:"**", component:InicioComponent},
 
 ];

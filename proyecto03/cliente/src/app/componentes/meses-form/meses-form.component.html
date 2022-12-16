@@ -1,7 +1,7 @@
 <div class="d-flex flex-column justify-content-center">
     <mat-form-field appearance="outline" color="accent">
         <mat-label>Mes Inicio</mat-label>
-        <mat-select [(value)]="mesInit">
+        <mat-select [(value)]="mesInit" (click)="  onSelectedMeses()">
             <mat-option value="01">Ene</mat-option>
             <mat-option value="02">Feb</mat-option>
             <mat-option value="03">Mar</mat-option>
@@ -20,7 +20,7 @@
 
     <mat-form-field appearance="outline" color="accent">
         <mat-label>Mes final</mat-label>
-        <mat-select [(value)]="mesFin">
+        <mat-select [(value)]="mesFin" (click)="  onSelectedMeses()">
             <mat-option value="01">Ene</mat-option>
             <mat-option value="02">Feb</mat-option>
             <mat-option value="03">Mar</mat-option>
@@ -35,5 +35,6 @@
             <mat-option value="12">Dec</mat-option>
         </mat-select>
     </mat-form-field>
+
     <mat-error *ngIf="mesInit>mesFin">Mes inicial mayor al final</mat-error>
 </div>

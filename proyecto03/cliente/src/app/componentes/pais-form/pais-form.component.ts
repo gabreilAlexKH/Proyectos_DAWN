@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import {CodigosPaisesService} from '../../servicios/codigos-paises.service'
 import {PaisAlpha2} from '../../interfases/pais-alpha2'
 
@@ -10,8 +10,15 @@ import {PaisAlpha2} from '../../interfases/pais-alpha2'
 export class PaisFormComponent {
   pais:string = "";
   paises:PaisAlpha2[] =[];
+  @Output() onSelected = new EventEmitter<any>();
 
   constructor(private codPaisService:CodigosPaisesService) {
     this.paises = codPaisService.obtenerPaises() as Array<PaisAlpha2>;
+  }
+
+  onSelectedPais(pais:any){
+
+    console.log(pais);
+    this.onSelected.emit(pais)
   }
 }

@@ -9,14 +9,22 @@
 
     <form class="d-flex flex-column justify-content-center col-11">
 
-        <app-meses-form></app-meses-form>
+        <app-meses-form (onSelected)="onSelectedMeses($event)"></app-meses-form>
 
-        <app-pais-form></app-pais-form>
+        <app-pais-form (onSelected)="onSelectedPais($event)"></app-pais-form>
+
+        <label>Pais: {{pais}}  Mese: {{meses}}</label>
+
 
     </form>
 
+
     <div class="col-12 d-flex justify-content-center">
         <button mat-raised-button color="accent" >Dias Festivos</button>
+
+
     </div>
+
+
 
 </div>
