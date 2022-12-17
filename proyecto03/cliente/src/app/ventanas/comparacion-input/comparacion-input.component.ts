@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {CodigosPaisesService} from '../../servicios/codigos-paises.service'
+
 
 @Component({
   selector: 'app-comparacion-input',
@@ -7,16 +9,22 @@ import { Component } from '@angular/core';
 })
 export class ComparacionInputComponent {
 
-  paises = new Set();
+  constructor(private codPaisService:CodigosPaisesService){
+
+  }
+
+  paisesCodes = new Set();
   meses:string = "01-12";
 
   onSelectedPais(pais:string) {
 
-    if(this.paises.size<10){
-      this.paises.add(pais);
+    if(this.paisesCodes.size<10){
+      this.paisesCodes.add(pais);
     }
+  }
 
-
+  getPaisName(code:any){
+    return CodigosPaisesService.paisCod.get(code);
   }
 
   onSelectedMeses(meses:string) {

@@ -13,12 +13,11 @@ export class PaisFormComponent {
   @Output() onSelected = new EventEmitter<any>();
 
   constructor(private codPaisService:CodigosPaisesService) {
-    this.paises = codPaisService.obtenerPaises() as Array<PaisAlpha2>;
+    this.paises = this.codPaisService.obtenerPaises() as Array<PaisAlpha2>;
   }
 
   onSelectedPais(pais:any){
 
-    console.log(pais);
-    this.onSelected.emit(pais)
+    this.onSelected.emit(pais);
   }
 }

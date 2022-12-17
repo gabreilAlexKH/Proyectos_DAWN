@@ -1,39 +1,39 @@
 <mat-card appearance="raised">
     <mat-card-header>
-      <mat-card-title><b>The United Kingdom</b></mat-card-title>
+      <mat-card-title><b>{{infoPais.name}}</b></mat-card-title>
     </mat-card-header>
     <mat-card-content>
       <div class="row">
         <div class="col-6 d-flex flex-column ">
 
-            <img mat-card-image src="https://countryflagsapi.com/png/GB" width="100%" class="mb-1 mt-2">
+            <img mat-card-image src="https://countryflagsapi.com/png/{{infoPais.alphaCode}}" width="100%" class="mb-1 mt-2">
 
 
               <mat-form-field  color="warn" appearance="fill">
                 <mat-label>Moneda</mat-label>
-                <input matInput readonly="true" value="GBP" >
+                <input matInput readonly="true" value="{{infoPais.moneda}}" >
               </mat-form-field>
 
               <mat-form-field  color="warn" appearance="fill">
                 <mat-label>Cod tel</mat-label>
-                <input matInput readonly="true" value="+44">
+                <input matInput readonly="true" value="+{{infoPais.telCode}}">
               </mat-form-field>
 
         </div>
         <div class="col-6 d-flex flex-column ">
           <mat-form-field color="warn" appearance="fill">
             <mat-label>Capital</mat-label>
-            <input matInput readonly="true" value="Londres">
+            <input matInput readonly="true" value="{{infoPais.capital}}">
           </mat-form-field>
 
           <mat-form-field color="warn" appearance="fill">
             <mat-label>Porvincias/estados</mat-label>
-            <input matInput readonly="true" value="nn">
+            <input matInput readonly="true" value="{{infoPais.nEstados}}">
           </mat-form-field>
 
           <mat-form-field color="warn" appearance="fill">
             <mat-label>Ciudades</mat-label>
-            <input matInput readonly="true" value="nn">
+            <input matInput readonly="true" value="{{infoPais.nCiudades}}">
           </mat-form-field>
 
         </div>

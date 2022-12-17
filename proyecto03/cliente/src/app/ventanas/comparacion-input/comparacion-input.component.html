@@ -14,14 +14,14 @@
         <app-pais-form (onSelected)="onSelectedPais($event)"></app-pais-form>
 
 
-        <label color = "accent"> {{paises.size}}/10</label >
+        <label color = "accent"> {{paisesCodes.size}}/10</label >
 
         <mat-label> Meses: {{meses}}</mat-label>
 
         <mat-chip-grid #chipGrid aria-label="Fruit selection" color="accent">
-          <mat-chip-row color="warn" selected *ngFor="let pais of paises" (removed)="paises.delete(pais)" >
-            {{pais}}
-            <button matChipRemove [attr.aria-label]="'remove ' + pais" >
+          <mat-chip-row color="warn" selected *ngFor="let code of paisesCodes" (removed)="paisesCodes.delete(code)" >
+            {{getPaisName(code)}}
+            <button matChipRemove [attr.aria-label]="'remove ' + code" >
               <mat-icon>cancel</mat-icon>
             </button>
           </mat-chip-row>
