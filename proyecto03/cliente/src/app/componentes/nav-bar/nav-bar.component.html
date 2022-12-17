@@ -1,6 +1,23 @@
-<ul>
-    <li><a routerLink="">Inicio</a></li>
-    <li><a routerLink="/paisDia">Paises del Dia</a></li>
-    <li><a routerLink="/feriadoInput">Feriados Pais</a></li>
-    <li><a routerLink="/compInput">Comparacion Feriados por pais</a></li>
-</ul>
+<mat-toolbar color="primary">
+  <span>Menu</span>
+</mat-toolbar>
+
+<mat-selection-list #page [multiple]="false" (click)="changeRoute(page.selectedOptions.selected[0].value); page.deselectAll();">
+  <mat-list-option value="" >
+    <mat-icon  matListItemIcon color="accent">radio_button_unchecked</mat-icon>
+    Inicio
+  </mat-list-option >
+  <mat-list-option value='/paisDia'>
+    <mat-icon matListItemIcon color="accent">radio_button_unchecked</mat-icon>
+    Paises del Dia
+  </mat-list-option >
+  <mat-list-option value="/feriadoInput">
+    <mat-icon matListItemIcon color="accent">radio_button_unchecked</mat-icon>
+    Feriados Pais
+  </mat-list-option >
+  <mat-list-option value="/compInput">
+    <mat-icon matListItemIcon color="accent">radio_button_unchecked</mat-icon>
+    <p>Comparacion Feriados</p>
+  </mat-list-option>
+</mat-selection-list>
+

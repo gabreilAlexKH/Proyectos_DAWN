@@ -11,10 +11,8 @@
 
         <app-meses-form (onSelected)="onSelectedMeses($event)"></app-meses-form>
 
+        <mat-error *ngIf='pais==""'>*Selecciones un pais</mat-error>
         <app-pais-form (onSelected)="onSelectedPais($event)"></app-pais-form>
-
-        <label>Pais: {{pais}}  Mese: {{meses}}</label>
-
 
     </form>
 

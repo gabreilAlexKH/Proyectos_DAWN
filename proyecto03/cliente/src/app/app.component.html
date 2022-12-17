@@ -1,17 +1,21 @@
-<mat-drawer-container class="example-container" autosize>
 
-  <mat-drawer #enlaces class="example-sidenav" mode="over">
+
+<mat-sidenav-container class="example-container" autosize>
+
+  <mat-sidenav #enlaces mode="over">
     <app-nav-bar></app-nav-bar>
-  </mat-drawer>
+  </mat-sidenav>
 
-  <mat-toolbar color="primary">
-    <button mat-icon-button color="accent" aria-label="menu" (click)="menu(enlaces)">
-      <mat-icon>menu</mat-icon>
-    </button>
-    <span>Holidays Worldwide</span>
-  </mat-toolbar>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button mat-icon-button color="accent" aria-label="menu" (click)="menu(enlaces)">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>Holidays Worldwide</span>
+    </mat-toolbar>
 
-  <router-outlet></router-outlet>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
 
 
-</mat-drawer-container>
+</mat-sidenav-container>

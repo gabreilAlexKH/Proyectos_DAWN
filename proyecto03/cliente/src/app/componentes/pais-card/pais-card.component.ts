@@ -7,9 +7,9 @@ import { PaisInfo } from '../../interfases/pais-info';
   templateUrl: './pais-card.component.html',
   styleUrls: ['./pais-card.component.css']
 })
-export class PaisCardComponent {
+export class PaisCardComponent{
 
-  @Input() infoPais:PaisInfo= {
+  @Input() infoPais:PaisInfo={
     alphaCode: "GB",
     name: "Default",
     telCode: "00",

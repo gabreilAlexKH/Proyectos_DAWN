@@ -11,12 +11,10 @@
 
         <app-meses-form (onSelected)="onSelectedMeses($event)"></app-meses-form>
 
+        <mat-error *ngIf='paisesCodes.size==0'>*Selecciones al menos un pais</mat-error>
         <app-pais-form (onSelected)="onSelectedPais($event)"></app-pais-form>
 
-
-        <label color = "accent"> {{paisesCodes.size}}/10</label >
-
-        <mat-label> Meses: {{meses}}</mat-label>
+        <label class="counter"> {{paisesCodes.size}}/10</label >
 
         <mat-chip-grid #chipGrid aria-label="Fruit selection" color="accent">
           <mat-chip-row color="warn" selected *ngFor="let code of paisesCodes" (removed)="paisesCodes.delete(code)" >
