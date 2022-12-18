@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-feriados-input',
@@ -8,15 +9,34 @@ import { Component } from '@angular/core';
 export class FeriadosInputComponent {
 
   pais:string = "";
-  meses:string = "01-12";
+  mesInit:string = '01';
+  mesFin:string  = '12';
 
   onSelectedPais(pais:string) {
     this.pais = pais;
 
   }
 
-  onSelectedMeses(meses:string) {
-    this.meses = meses;
+  onSelectedMeses(mesesStr:string) {
+
+    let meses = Array<string>();
+    meses = mesesStr.split("-");
+
+    this.mesInit = meses[0];
+    this.mesFin = meses[1];
+  }
+
+  constructor(private router: Router) {
+
+  }
+
+  goToResponse(){
+
+    if(this.pais!="" ){
+      let ruta:string = `feriadosPais/${this.pais}/${this.mesInit}/${this.mesFin}`;
+      this.router.navigate([ruta]);
+    }
+
 
   }
 

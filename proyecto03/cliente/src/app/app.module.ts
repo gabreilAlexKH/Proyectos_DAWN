@@ -31,6 +31,7 @@ import { NavBarComponent } from './componentes/nav-bar/nav-bar.component';
 import { PaisFormComponent } from './componentes/pais-form/pais-form.component';
 import { PaisCardComponent } from './componentes/pais-card/pais-card.component';
 import { ComparacionInputComponent } from './ventanas/comparacion-input/comparacion-input.component';
+import { ComparacionPaisesComponent } from './ventanas/comparacion-paises/comparacion-paises.component';
 
 
 @NgModule({
@@ -47,6 +48,7 @@ import { ComparacionInputComponent } from './ventanas/comparacion-input/comparac
     PaisFormComponent,
     PaisCardComponent,
     ComparacionInputComponent,
+    ComparacionPaisesComponent,
 
   ],
   imports: [

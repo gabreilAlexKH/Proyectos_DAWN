@@ -9,9 +9,14 @@ h1{
 }
 
 h2{
-    color: white;
+    color: black;
+    size: 20
 }
 
+h3{
+  color: black;
+  size: 18
+}
 
 p{
     color: black;

@@ -10,7 +10,7 @@ import {ComparacionInputComponent} from "./ventanas/comparacion-input/comparacio
 const routes: Routes = [
   {path:"paisDia", component:PaisesDiaComponent},
   {path:"feriadoInput", component:FeriadosInputComponent},
-  {path:"feriadosPais", component:FeriadosPaisComponent},
+  {path:"feriadosPais/:cod/:init/:fin", component:FeriadosPaisComponent},
   {path:"compInput", component:ComparacionInputComponent},
   {path:"**", component:InicioComponent},
 

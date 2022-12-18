@@ -25,6 +25,12 @@ export class CodigosPaisesService {
     return paises;
   }
 
+
+
+  getPaisByCode(code:string){
+    return CodigosPaisesService.paisCod.get(code);
+  }
+
   getRandomSample(n:number){
 
     let keys:string[] = Array.from(CodigosPaisesService.paisCod.keys()) as Array<string>;

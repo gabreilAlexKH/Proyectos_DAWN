@@ -24,7 +24,7 @@ export class ComparacionInputComponent {
   }
 
   getPaisName(code:any){
-    return CodigosPaisesService.paisCod.get(code);
+    return this.codPaisService.getPaisByCode(code as string);
   }
 
   onSelectedMeses(meses:string) {
