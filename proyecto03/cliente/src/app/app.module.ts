@@ -18,20 +18,22 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatListModule} from '@angular/material/list';
-
+import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 import { InicioComponent } from './ventanas/inicio/inicio.component';
 import { FeriadosInputComponent } from './ventanas/feriados-input/feriados-input.component';
 import { FeriadosPaisComponent } from './ventanas/feriados-pais/feriados-pais.component';
 import { PaisesDiaComponent } from './ventanas/paises-dia/paises-dia.component';
 import { MesesFormComponent } from './componentes/meses-form/meses-form.component';
-import { TablaFeriadosComponent } from './componentes/tabla-feriados/tabla-feriados.component';
 import { LineasFeriadosComponent } from './componentes/lineas-feriados/lineas-feriados.component';
 import { NavBarComponent } from './componentes/nav-bar/nav-bar.component';
 import { PaisFormComponent } from './componentes/pais-form/pais-form.component';
 import { PaisCardComponent } from './componentes/pais-card/pais-card.component';
 import { ComparacionInputComponent } from './ventanas/comparacion-input/comparacion-input.component';
 import { ComparacionPaisesComponent } from './ventanas/comparacion-paises/comparacion-paises.component';
+import { DataTableComponent } from './componentes/data-table/data-table.component';
+import { ToolbarComponent } from './componentes/toolbar/toolbar.component';
 
 
 @NgModule({
@@ -42,13 +44,14 @@ import { ComparacionPaisesComponent } from './ventanas/comparacion-paises/compar
     FeriadosPaisComponent,
     PaisesDiaComponent,
     MesesFormComponent,
-    TablaFeriadosComponent,
     LineasFeriadosComponent,
     NavBarComponent,
     PaisFormComponent,
     PaisCardComponent,
     ComparacionInputComponent,
     ComparacionPaisesComponent,
+    DataTableComponent,
+    ToolbarComponent,
 
   ],
   imports: [
@@ -68,6 +71,8 @@ import { ComparacionPaisesComponent } from './ventanas/comparacion-paises/compar
     MatInputModule,
     MatChipsModule,
     MatListModule,
+    MatTableModule,
+    MatPaginatorModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

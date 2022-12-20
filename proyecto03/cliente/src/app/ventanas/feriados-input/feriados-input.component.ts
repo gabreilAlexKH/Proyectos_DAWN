@@ -12,6 +12,10 @@ export class FeriadosInputComponent {
   mesInit:string = '01';
   mesFin:string  = '12';
 
+  constructor(private router: Router) {
+
+  }
+
   onSelectedPais(pais:string) {
     this.pais = pais;
 
@@ -26,18 +30,14 @@ export class FeriadosInputComponent {
     this.mesFin = meses[1];
   }
 
-  constructor(private router: Router) {
 
-  }
 
   goToResponse(){
 
-    if(this.pais!="" ){
+    if(this.pais!="" && this.mesInit<this.mesFin){
       let ruta:string = `feriadosPais/${this.pais}/${this.mesInit}/${this.mesFin}`;
       this.router.navigate([ruta]);
     }
-
-
   }
 
 }

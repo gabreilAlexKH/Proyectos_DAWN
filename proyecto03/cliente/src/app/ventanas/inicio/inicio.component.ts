@@ -20,9 +20,15 @@ export class InicioComponent {
     this.changeRoute("/feriadoInput");
   }
 
+  toCompInput(){
+    this.changeRoute("/compInput");
+  }
+
   toPaisDia(){
     this.changeRoute("/paisDia");
   }
+
+
 
 }
 

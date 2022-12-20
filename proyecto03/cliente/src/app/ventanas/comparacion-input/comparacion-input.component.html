@@ -15,19 +15,18 @@
         <app-pais-form (onSelected)="onSelectedPais($event)"></app-pais-form>
 
         <label class="counter"> {{paisesCodes.size}}/10</label >
-
-        <mat-chip-grid #chipGrid aria-label="Fruit selection" color="accent">
-          <mat-chip-row color="warn" selected *ngFor="let code of paisesCodes" (removed)="paisesCodes.delete(code)" >
-            {{getPaisName(code)}}
-            <button matChipRemove [attr.aria-label]="'remove ' + code" >
-              <mat-icon>cancel</mat-icon>
-            </button>
-          </mat-chip-row>
-        </mat-chip-grid>
+          <mat-chip-set color="warn">
+            <mat-chip-row color="warn" selected *ngFor="let code of paisesCodes" (removed)="paisesCodes.delete(code)" >
+              {{getPaisName(code)}}
+              <button matChipRemove [attr.aria-label]="'remove ' + code" >
+                <mat-icon>cancel</mat-icon>
+              </button>
+            </mat-chip-row>
+        </mat-chip-set>
     </form>
 
     <div class="col-12 d-flex justify-content-center">
-        <button mat-raised-button color="accent" >Dias Festivos</button>
+        <button mat-raised-button color="accent" (click)="goToResponse()" >Dias Festivos</button>
     </div>
 
 </div>

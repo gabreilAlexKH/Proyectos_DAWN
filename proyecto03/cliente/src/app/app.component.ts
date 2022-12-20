@@ -12,7 +12,7 @@ export class AppComponent {
   constructor(private infosService: PaisesInfoService , private codigoService:CodigosPaisesService) {
 
   }
-  title = 'cliente';
+  title = 'Holudays';
 
 
   menu(enlaces: any) {

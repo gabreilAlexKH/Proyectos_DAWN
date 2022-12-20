@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { PaisInfo } from '../../interfases/pais-info';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -18,6 +19,16 @@ export class PaisCardComponent{
     nCiudades: 0,
     nEstados: 0
   };
+
+  constructor(private router: Router) {
+  }
+
+
+  goToResponse(){
+
+    let ruta:string = `feriadosPais/${this.infoPais.alphaCode}/01/12`;
+    this.router.navigate([ruta]);
+  }
 
 
 }

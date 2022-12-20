@@ -28,7 +28,19 @@ export class CodigosPaisesService {
 
 
   getPaisByCode(code:string){
-    return CodigosPaisesService.paisCod.get(code);
+    return CodigosPaisesService.paisCod.get(code) ;
+  }
+
+  getPaisesByCode(codes:string[]){
+
+    let paises:string[] = [];
+
+    for (const code of codes) {
+
+      paises.push(CodigosPaisesService.paisCod.get(code) as string);
+    }
+
+    return paises;
   }
 
   getRandomSample(n:number){

@@ -1,6 +1,13 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CodigosPaisesService } from 'src/app/servicios/codigos-paises.service';
+import { Chart, registerables } from 'node_modules/chart.js';
+import { FeriadoTabla } from 'src/app/interfases/feriado-tabla';
+import { PaisFeriadosService } from 'src/app/servicios/pais-feriados.service';
+import { MesesService } from 'src/app/servicios/meses.service';
+
+Chart.register(...registerables);
+
 
 @Component({
   selector: 'app-feriados-pais',
@@ -11,37 +18,127 @@ import { CodigosPaisesService } from 'src/app/servicios/codigos-paises.service';
 
 export class FeriadosPaisComponent {
 
-  paisCod:string = "";
-  paisName:string =""
-  mesInit:string = '';
-  mesFin:string  = '';
+  paisCod: string = "";
+  paisName: string = ""
+  mesInit: string = '01';
+  mesFin: string = '12';
 
-  constructor(private route: ActivatedRoute , private codigos: CodigosPaisesService){
+  gafLineas:Chart|null = null;
+
+  ELEMENT_DATA: FeriadoTabla[] = [];
+
+  constructor(private route: ActivatedRoute, private codigos: CodigosPaisesService, private feriado: PaisFeriadosService , private mesesSer: MesesService) {
+
 
   }
 
-  ngOnInit(){
+  ngOnInit() {
 
-    this.route.params.subscribe(params =>{
+    this.gafLineas = this.renderisarGraficoLineas(this.mesesSer.getMesesRange(parseInt(this.mesInit) , parseInt(this.mesFin)) , new Array(12).fill(0));
+    console.log("inicio");
+
+    this.route.params.subscribe(params => {
 
       this.paisCod = params['cod'];
       this.paisName = this.codigos.getPaisByCode(this.paisCod) as string;
       this.mesInit = params['init'];
       this.mesFin = params['fin'];
-
-      console.log(this.paisCod + " " + this.mesInit + "-" + this.mesFin);
-
+      //this.consultaFeriadosPais(this.paisCod, this.mesInit , this.mesFin  , this.gafLineas as Chart);
     })
-
-    /*
-    let table
-    const datatablesSimple = document.getElementById('tablaFeriadoPais');
-    if (datatablesSimple) {
-      table = new simpleDatatables.DataTable(datatablesSimple);
-    }
-    return table
-    */
   }
+
+  private renderisarGraficoLineas(labels:string[] , data:number[] ):Chart {
+
+    const ctx: any = document.getElementById('LineChart');
+
+    const char = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: labels,
+        datasets: [{
+          label: "total",
+          backgroundColor: "rgba(0,0,0,0)",
+          borderColor: "rgba(2,117,216,1)",
+          pointRadius: 5,
+          pointBackgroundColor: "rgba(2,117,216,1)",
+          pointBorderColor: "rgba(255,255,255,0.8)",
+          pointHoverRadius: 5,
+          pointHoverBackgroundColor: "rgba(2,117,216,1)",
+          pointHitRadius: 50,
+          pointBorderWidth: 2,
+          data: data,
+        }],
+      },
+      options: {
+        scales: {
+          x: {
+            time: {
+              unit: 'month'
+            },
+            ticks: {
+              maxTicksLimit: 12
+            },
+            grid: {
+              display: false
+            },
+          },
+          y: {
+            min:0,
+            ticks: {
+              maxTicksLimit: 10
+            },
+            grid: {
+              color: "rgba(0, 0, 0, .125)",
+            }
+          },
+
+        },
+        plugins: {
+          legend: {
+            display: false,
+          }
+        }
+
+      }
+    });
+
+    return char;
+  }
+
+  updateGraficoLineas( grafico:Chart, labels:string[] , data:number[]){
+    grafico.data.labels = labels;
+    grafico.data.datasets[0].data = data;
+    grafico.update();
+  }
+
+
+  private async consultaFeriadosPais(pais: string, mesInicio: string, mesFinal: string , lineas:Chart) {
+
+    const data: any | null = await this.feriado.fetchFeriadosPais(pais);
+
+    if (data != null) {
+      console.log(data);
+      let feriadosPais: FeriadoTabla[] = this.feriado.filterFeriados(this.mesInit, this.mesFin, data["holidays"]);
+      let meses:string[] = this.mesesSer.getMesesRange(parseInt(mesInicio) , parseInt(mesFinal));
+      let linearData: number[] = this.feriado.feriadosPerMonth(feriadosPais , this.mesInit, this.mesFin);
+
+      console.log(feriadosPais);
+      this.updateGraficoLineas(lineas , meses , linearData);
+      //this.updateTable(feriadosPais);
+    }
+
+  }
+
+  private updateTable(newData: FeriadoTabla[]) {
+
+    for (const entry of newData) {
+
+      this.ELEMENT_DATA.push(entry);
+
+    }
+  }
+
+
+
+
 }
-
-

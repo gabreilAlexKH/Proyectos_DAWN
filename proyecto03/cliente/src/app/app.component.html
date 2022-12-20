@@ -1,5 +1,4 @@
 
-
 <mat-sidenav-container class="example-container" autosize>
 
   <mat-sidenav #enlaces mode="over">
@@ -7,14 +6,11 @@
   </mat-sidenav>
 
   <mat-sidenav-content>
-    <mat-toolbar color="primary">
-      <button mat-icon-button color="accent" aria-label="menu" (click)="menu(enlaces)">
-        <mat-icon>menu</mat-icon>
-      </button>
-      <span>Holidays Worldwide</span>
-    </mat-toolbar>
+
+    <app-toolbar [enlaces]=enlaces ></app-toolbar>
 
     <router-outlet></router-outlet>
+
   </mat-sidenav-content>
 
 

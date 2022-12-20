@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TablaFeriadosComponent } from './tabla-feriados.component';
+import { DataTableComponent } from './data-table.component';
 
-describe('TablaFeriadosComponent', () => {
-  let component: TablaFeriadosComponent;
-  let fixture: ComponentFixture<TablaFeriadosComponent>;
+describe('DataTableComponent', () => {
+  let component: DataTableComponent;
+  let fixture: ComponentFixture<DataTableComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TablaFeriadosComponent ]
+      declarations: [ DataTableComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(TablaFeriadosComponent);
+    fixture = TestBed.createComponent(DataTableComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
