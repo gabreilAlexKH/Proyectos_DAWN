@@ -12,20 +12,20 @@ export class InicioComponent {
 
   }
 
-  changeRoute(route:string){
+  changeRoute(route: string) {
     this.router.navigate([route]);
   }
 
   toFeriadoInput(){
-    this.changeRoute("/feriadoInput");
+    this.changeRoute("/main/feriadoInput");
   }
 
   toCompInput(){
-    this.changeRoute("/compInput");
+    this.changeRoute("/main/compInput");
   }
 
   toPaisDia(){
-    this.changeRoute("/paisDia");
+    this.changeRoute("/main/paisDia");
   }
 
 

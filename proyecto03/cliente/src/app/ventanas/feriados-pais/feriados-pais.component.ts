@@ -18,6 +18,7 @@ Chart.register(...registerables);
 
 export class FeriadosPaisComponent {
 
+  last:string = "/main/feriadoInput";
   paisCod: string = "";
   paisName: string = ""
   mesInit: string = '01';

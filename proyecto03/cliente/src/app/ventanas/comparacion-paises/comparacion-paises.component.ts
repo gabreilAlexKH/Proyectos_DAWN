@@ -13,6 +13,7 @@ import { FeriadoTabla } from 'src/app/interfases/feriado-tabla';
 })
 export class ComparacionPaisesComponent {
 
+  last:string = "/main/compInput"
   paisesCodes: string[] = new Array();
   mesInit: string = '';
   mesFin: string = '';

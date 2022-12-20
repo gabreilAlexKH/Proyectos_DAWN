@@ -1,0 +1,16 @@
+<mat-sidenav-container class="example-container" autosize>
+
+  <mat-sidenav #enlaces mode="over">
+    <app-nav-bar></app-nav-bar>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+
+    <app-toolbar [enlaces]=enlaces ></app-toolbar>
+
+    <router-outlet></router-outlet>
+
+  </mat-sidenav-content>
+
+
+</mat-sidenav-container>

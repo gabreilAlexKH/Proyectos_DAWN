@@ -34,6 +34,8 @@ import { ComparacionInputComponent } from './ventanas/comparacion-input/comparac
 import { ComparacionPaisesComponent } from './ventanas/comparacion-paises/comparacion-paises.component';
 import { DataTableComponent } from './componentes/data-table/data-table.component';
 import { ToolbarComponent } from './componentes/toolbar/toolbar.component';
+import { MainComponent } from './ventanas/main/main.component';
+import { RevbarComponent } from './componentes/revbar/revbar.component';
 
 
 @NgModule({
@@ -52,6 +54,8 @@ import { ToolbarComponent } from './componentes/toolbar/toolbar.component';
     ComparacionPaisesComponent,
     DataTableComponent,
     ToolbarComponent,
+    MainComponent,
+    RevbarComponent,
 
   ],
   imports: [
