@@ -39,16 +39,12 @@ export class PaisesInfoService {
         info.telCode = respuestaCoun.phonecode;
         info.capital = respuestaCoun.capital;
         info.moneda = respuestaCoun.currency;
-        console.log(info);
-
 
         let estados:State[] = res[1] as Array<State>;
-        info.nCiudades = estados.length;
-        console.log(info.nCiudades);
+        info.nEstados = estados.length;
 
         let ciudades:City[] = res[2] as Array<City>;
-        info.nEstados = ciudades.length;
-        console.log(info.nEstados);
+        info.nCiudades = ciudades.length;
 
         PaisesInfoService.paisesDia.push(info);
 

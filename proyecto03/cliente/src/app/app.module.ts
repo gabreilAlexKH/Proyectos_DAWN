@@ -20,6 +20,8 @@ import {MatChipsModule} from '@angular/material/chips';
 import {MatListModule} from '@angular/material/list';
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+
 
 import { InicioComponent } from './ventanas/inicio/inicio.component';
 import { FeriadosInputComponent } from './ventanas/feriados-input/feriados-input.component';
@@ -77,6 +79,7 @@ import { RevbarComponent } from './componentes/revbar/revbar.component';
     MatListModule,
     MatTableModule,
     MatPaginatorModule,
+    MatProgressSpinnerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

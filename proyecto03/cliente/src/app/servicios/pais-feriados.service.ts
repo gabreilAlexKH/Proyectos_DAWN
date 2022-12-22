@@ -97,8 +97,6 @@ export class PaisFeriadosService {
   }
 
 
-
-
   filterFeriados(mesInicio: string, mesFinal: string, holidays: any): FeriadoTabla[] {
 
     let feriadosPais: FeriadoTabla[] = [];

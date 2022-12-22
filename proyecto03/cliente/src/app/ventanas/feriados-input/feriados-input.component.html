@@ -1,28 +1,21 @@
-<div id="inputFeriado" class=" row p-3  m-1 gx-3 gy-3 justify-content-center">
+<div id="inputFeriado" class="row p-3  mx-1  gx-3 gy-3 justify-content-center">
 
-    <img class ="col-12 " src="https://www.unilibre.edu.co/bogota/images/calendario.jpg" width="100%" >
+    <img class ="col-12 " src="../../../assets/fotos/calendario1.jpg" width="100%" >
 
     <h1 class ="col-12 ">Feriados por Pais</h1>
     <div  class="p-3 mb-2 infoContainer shadow col-12">
         <p>Consulte todos los feriados de sus paises favoritos dentro de un rango de meses</p>
     </div>
 
-    <form class="d-flex flex-column justify-content-center col-11">
-
+    <form class="col-12" d-flex flex-column justify-content-center >
         <app-meses-form (onSelected)="onSelectedMeses($event)"></app-meses-form>
 
         <mat-error *ngIf='pais==""'>*Selecciones un pais</mat-error>
         <app-pais-form (onSelected)="onSelectedPais($event)"></app-pais-form>
-
     </form>
-
 
     <div class="col-12 d-flex justify-content-center">
         <button mat-raised-button color="accent" (click)="goToResponse()">Dias Festivos</button>
-
-
     </div>
-
-
 
 </div>

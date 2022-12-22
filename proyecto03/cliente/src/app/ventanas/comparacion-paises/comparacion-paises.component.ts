@@ -17,6 +17,8 @@ export class ComparacionPaisesComponent {
   paisesCodes: string[] = new Array();
   mesInit: string = '';
   mesFin: string = '';
+
+  grafColor:string = "rgba(85, 83, 211, 1)"
   gafBar:Chart|null = null;
 
 
@@ -27,21 +29,17 @@ export class ComparacionPaisesComponent {
   ngOnInit() {
 
     let paisesName:string[] = this.codigos.getPaisesByCode(this.paisesCodes);
-    this.gafBar = this.renderisarGraficoBar(["NIN" , "NIN" ] ,[0 , 0] );
+    this.gafBar = this.renderisarGraficoBar(["NIN" , "NIN" , "NIN"] ,[0 , 0] );
 
     this.route.params.subscribe(params => {
 
       let allCodes: string = params['codigos'] as string;
-      console.log(allCodes);
       this.paisesCodes = allCodes.split("-");
       this.mesInit = params['init'];
       this.mesFin = params['fin'];
 
-      /*
-      let paisesName:string[] = this.codigos.getPaisesByCode(this.paisesCodes);
-      let random:number[] = new Array<number>(paisesName.length).fill(10);
-      this.updateGraficoBar(this.gafBar as Chart , paisesName , random);
-      */
+
+
       //this.comparaFeriadosPaises(this.paisesCodes, this.mesInit , this.mesFin , this.gafBar as Chart);
     })
   }
@@ -55,29 +53,33 @@ export class ComparacionPaisesComponent {
         labels: paises,
         datasets: [{
           label: "total",
-          backgroundColor: "rgba(2,117,216,1)",
+          backgroundColor: this.grafColor,
           borderColor: "rgba(2,117,216,1)",
           data: feriadosPorPais,
         }],
       },
       options: {
+        maintainAspectRatio:false,
         indexAxis: 'y',
         scales: {
 
           x: {
             grid: {
-              display: false
+              display: true
             },
             ticks: {
-              maxTicksLimit: 10
+              maxTicksLimit: 10,
             }
           },
           y: {
             ticks: {
-              maxTicksLimit: 10
+              maxTicksLimit: 10,
+              autoSkip: false,
+              maxRotation: 50,
+              minRotation: 50
             },
             grid: {
-              display: true
+              display: false
             }
           },
         },

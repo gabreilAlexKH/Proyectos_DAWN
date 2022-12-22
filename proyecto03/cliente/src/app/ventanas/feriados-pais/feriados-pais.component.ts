@@ -24,6 +24,8 @@ export class FeriadosPaisComponent {
   mesInit: string = '01';
   mesFin: string = '12';
 
+
+  grafColor:string = "rgba(58, 158, 253, 1)"
   gafLineas:Chart|null = null;
 
   ELEMENT_DATA: FeriadoTabla[] = [];
@@ -44,7 +46,8 @@ export class FeriadosPaisComponent {
       this.paisName = this.codigos.getPaisByCode(this.paisCod) as string;
       this.mesInit = params['init'];
       this.mesFin = params['fin'];
-      //this.consultaFeriadosPais(this.paisCod, this.mesInit , this.mesFin  , this.gafLineas as Chart);
+      this.consultaFeriadosPais(this.paisCod, this.mesInit , this.mesFin  , this.gafLineas as Chart);
+      console.log(this.ELEMENT_DATA);
     })
   }
 
@@ -58,19 +61,20 @@ export class FeriadosPaisComponent {
         labels: labels,
         datasets: [{
           label: "total",
-          backgroundColor: "rgba(0,0,0,0)",
-          borderColor: "rgba(2,117,216,1)",
-          pointRadius: 5,
-          pointBackgroundColor: "rgba(2,117,216,1)",
-          pointBorderColor: "rgba(255,255,255,0.8)",
-          pointHoverRadius: 5,
-          pointHoverBackgroundColor: "rgba(2,117,216,1)",
-          pointHitRadius: 50,
-          pointBorderWidth: 2,
           data: data,
+          backgroundColor: "rgba(0,0,0,0)",
+          borderColor: this.grafColor,
+          pointRadius: 6,
+          pointBackgroundColor: this.grafColor,
+          pointBorderColor: "rgba(255,255,255,0.8)",
+          pointHoverRadius: 7,
+          pointHoverBackgroundColor: this.grafColor,
+          pointHitRadius: 40,
+          pointBorderWidth: 2,
         }],
       },
       options: {
+        maintainAspectRatio:false,
         scales: {
           x: {
             time: {
@@ -84,7 +88,7 @@ export class FeriadosPaisComponent {
             },
           },
           y: {
-            min:0,
+            beginAtZero: true,
             ticks: {
               maxTicksLimit: 10
             },
@@ -125,7 +129,7 @@ export class FeriadosPaisComponent {
 
       console.log(feriadosPais);
       this.updateGraficoLineas(lineas , meses , linearData);
-      //this.updateTable(feriadosPais);
+      this.updateTable(feriadosPais);
     }
 
   }

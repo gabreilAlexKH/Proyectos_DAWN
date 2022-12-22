@@ -1,0 +1,21 @@
+
+#comparacionPaises{
+   height: 90%;
+}
+
+#BarChart_container{
+
+  height: 95%;
+  width: 100%;
+
+}
+
+@media only screen and (max-width: 400px) {
+
+  #BarChart_containerr{
+
+    height: 90%;
+
+  }
+
+}

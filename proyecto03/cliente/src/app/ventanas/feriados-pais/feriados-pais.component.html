@@ -1,10 +1,10 @@
 
 <app-revbar [last]=last></app-revbar>
 
-<div class="d-flex flex-column p-3 m-1 gx-3 gy-3 justify-content-center">
+<div class="d-flex flex-column p-3  mx-1  gx-3 gy-3 justify-content-center">
 
   <div class="row pt-3 pb-3  infoContainer shadow mb-3" >
-      <img class="col-5" src="https://countryflagsapi.com/png/{{paisCod}}" loading="eager" width="100%">
+      <img class="col-5" src="https://flagcdn.com/w160/{{paisCod.toLowerCase( )}}.jpg" loading="eager" width="100%">
       <h3 class="col-7 d-flex align-items-center">{{paisName}}</h3>
   </div>
   <h1>Feriados 2021</h1>
@@ -13,9 +13,10 @@
     <app-data-table [data]=ELEMENT_DATA ></app-data-table>
   </div>
 
-
   <div id="LineChart_container" class=" infoContainer shadow mb-3 p-1">
-    <canvas id="LineChart" width="100%" height="45"></canvas>
+    <canvas id="LineChart"></canvas>
   </div>
 
+
 </div>
+
