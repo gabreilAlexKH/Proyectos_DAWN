@@ -18,6 +18,7 @@ export class ComparacionPaisesComponent {
   mesInit: string = '';
   mesFin: string = '';
 
+  loadinData:boolean = true;
   grafColor:string = "rgba(85, 83, 211, 1)"
   gafBar:Chart|null = null;
 
@@ -33,14 +34,13 @@ export class ComparacionPaisesComponent {
 
     this.route.params.subscribe(params => {
 
+      this.loadinData = true;
       let allCodes: string = params['codigos'] as string;
       this.paisesCodes = allCodes.split("-");
       this.mesInit = params['init'];
       this.mesFin = params['fin'];
+      this.comparaFeriadosPaises(this.paisesCodes, this.mesInit , this.mesFin , this.gafBar as Chart);
 
-
-
-      //this.comparaFeriadosPaises(this.paisesCodes, this.mesInit , this.mesFin , this.gafBar as Chart);
     })
   }
 
@@ -114,12 +114,13 @@ async comparaFeriadosPaises(paisesCode:string[] , mesInit:string , mesFin:string
             let feriados = this.feriado.feriadosPerMonth(feriadosPais , mesInit , mesFin);
             feriadosPorPais[index] = feriados.reduce((partialSum, a) => partialSum + a, 0);
         }else{
+            this.loadinData = false;
             return ;
         }
-
         index++;
     }
     this.updateGraficoBar( barras , namePaises , feriadosPorPais);
+    this.loadinData = false;
 
 }
 

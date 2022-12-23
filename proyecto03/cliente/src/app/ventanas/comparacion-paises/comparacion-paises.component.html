@@ -6,6 +6,15 @@
 
   <div id="BarChart_container" class=" infoContainer shadow mb-3">
     <canvas id="BarChart"></canvas>
+
+    <div *ngIf="loadinData" id="BarChartLoader" class=" position-absolute top-50 start-50 translate-middle  ">
+      <div  class="d-flex flex-column  align-items-center pt-3">
+        <mat-progress-spinner  color="accent" mode=indeterminate diameter="90">
+        </mat-progress-spinner>
+        <h6 class="text-center">Cargando datos grafico </h6>
+      </div>
+    </div>
+
   </div>
 
 </div>

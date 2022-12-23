@@ -20,7 +20,7 @@ export class AppComponent {
   }
 
   ngOnInit(){
-    //this.fetchPaisInfo();
+    this.fetchPaisInfo();
   }
 
   private async fetchPaisInfo(){

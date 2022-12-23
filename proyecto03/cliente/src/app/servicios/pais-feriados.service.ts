@@ -105,8 +105,16 @@ export class PaisFeriadosService {
 
       let mes: string = feriado.date.split("-")[1];
       if (mesInicio <= mes && mes <= mesFinal) {
-        feriadosPais.push({ fecha: feriado["date"], feriado: feriado["name"] });
+
+        let esSustituto:boolean = feriado["substitute"] as boolean;
+        let feriadoName:string = feriado["name"] + (esSustituto ? " (feriado)": "");
+        let fecha:string = esSustituto ? feriado["observed"] : feriado["date"];
+
+
+        feriadosPais.push({ fecha: fecha, feriado: feriadoName , substitute: esSustituto });
+
       }
+
     }
 
     return feriadosPais;
@@ -121,7 +129,10 @@ export class PaisFeriadosService {
     for (const feriado of feriadosPais) {
 
       let mes:number = parseInt(feriado.fecha.split("-")[1]);
-      feriadosMes[mes - 1] += 1;
+
+      if(!feriado.substitute){
+        feriadosMes[mes - 1] += 1;
+      }
     }
 
     return feriadosMes.slice(parseInt(mesInicio) - 1, parseInt(mesFinal));

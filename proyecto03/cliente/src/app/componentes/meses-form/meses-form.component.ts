@@ -15,7 +15,7 @@ export class MesesFormComponent {
   }
 
   onSelectedMeses(){
-    console.log(this.mesInit +"-"+ this.mesFin);
+
     if(this.mesInit>this.mesFin){
       this.onSelected.emit("");
     }else{

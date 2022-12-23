@@ -27,8 +27,12 @@ export class FeriadosPaisComponent {
 
   grafColor:string = "rgba(58, 158, 253, 1)"
   gafLineas:Chart|null = null;
+  loadinData:boolean = true;
 
-  ELEMENT_DATA: FeriadoTabla[] = [];
+  ELEMENT_DATA: FeriadoTabla[] = [{fecha:"2022-12-21" , feriado:"feriado con texto my largo" , substitute:false},
+  {fecha:"2022-12-21" , feriado:"feriado con texto my largo" , substitute:false},
+  {fecha:"2022-12-21" , feriado:"feriado con texto my largo" , substitute:false},
+{fecha:"2022-12-21" , feriado:"feriado con texto my largo" , substitute:false},];
 
   constructor(private route: ActivatedRoute, private codigos: CodigosPaisesService, private feriado: PaisFeriadosService , private mesesSer: MesesService) {
 
@@ -38,16 +42,16 @@ export class FeriadosPaisComponent {
   ngOnInit() {
 
     this.gafLineas = this.renderisarGraficoLineas(this.mesesSer.getMesesRange(parseInt(this.mesInit) , parseInt(this.mesFin)) , new Array(12).fill(0));
-    console.log("inicio");
 
-    this.route.params.subscribe(params => {
+    this.route.params.subscribe(async params => {
+
+      this.loadinData = false
 
       this.paisCod = params['cod'];
       this.paisName = this.codigos.getPaisByCode(this.paisCod) as string;
       this.mesInit = params['init'];
       this.mesFin = params['fin'];
       this.consultaFeriadosPais(this.paisCod, this.mesInit , this.mesFin  , this.gafLineas as Chart);
-      console.log(this.ELEMENT_DATA);
     })
   }
 
@@ -122,25 +126,22 @@ export class FeriadosPaisComponent {
     const data: any | null = await this.feriado.fetchFeriadosPais(pais);
 
     if (data != null) {
-      console.log(data);
       let feriadosPais: FeriadoTabla[] = this.feriado.filterFeriados(this.mesInit, this.mesFin, data["holidays"]);
       let meses:string[] = this.mesesSer.getMesesRange(parseInt(mesInicio) , parseInt(mesFinal));
       let linearData: number[] = this.feriado.feriadosPerMonth(feriadosPais , this.mesInit, this.mesFin);
 
-      console.log(feriadosPais);
       this.updateGraficoLineas(lineas , meses , linearData);
       this.updateTable(feriadosPais);
     }
+    this.loadinData = false;
+
 
   }
 
   private updateTable(newData: FeriadoTabla[]) {
 
-    for (const entry of newData) {
+    this.ELEMENT_DATA=newData;
 
-      this.ELEMENT_DATA.push(entry);
-
-    }
   }
 
 

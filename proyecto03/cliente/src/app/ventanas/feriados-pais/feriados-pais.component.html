@@ -9,12 +9,32 @@
   </div>
   <h1>Feriados 2021</h1>
 
-  <div id="tablaFeriadoPais_container" class=" infoContainer shadow mb-3 p-2">
-    <app-data-table [data]=ELEMENT_DATA ></app-data-table>
+  <div id="tablaFeriadoPais_container" class=" infoContainer shadow mb-3 p-2 d-flex justify-content-center ">
+
+    <div *ngIf="!loadinData" >
+      <app-data-table  [data]=ELEMENT_DATA></app-data-table>
+    </div>
+
+    <div *ngIf="loadinData" id="tablaLoader" class="d-flex flex-column  align-items-center pt-3">
+      <mat-progress-spinner *ngIf="loadinData" color="accent" mode=indeterminate diameter="90">
+      </mat-progress-spinner>
+      <h6 class="text-center">Cargando datos tabla</h6>
+    </div>
+
   </div>
 
-  <div id="LineChart_container" class=" infoContainer shadow mb-3 p-1">
+  <div id="LineChart_container" class=" infoContainer shadow mb-3 p-1 position-relative">
+
     <canvas id="LineChart"></canvas>
+
+    <div *ngIf="loadinData" id="LineChartLoader" class=" position-absolute top-50 start-50 translate-middle  ">
+      <div class="d-flex flex-column  align-items-center pt-3">
+        <mat-progress-spinner color="accent" mode=indeterminate diameter="90">
+        </mat-progress-spinner>
+        <h6 class="text-center">Cargando datos grafico </h6>
+      </div>
+    </div>
+
   </div>
 
 

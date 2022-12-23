@@ -28,7 +28,6 @@ import { FeriadosInputComponent } from './ventanas/feriados-input/feriados-input
 import { FeriadosPaisComponent } from './ventanas/feriados-pais/feriados-pais.component';
 import { PaisesDiaComponent } from './ventanas/paises-dia/paises-dia.component';
 import { MesesFormComponent } from './componentes/meses-form/meses-form.component';
-import { LineasFeriadosComponent } from './componentes/lineas-feriados/lineas-feriados.component';
 import { NavBarComponent } from './componentes/nav-bar/nav-bar.component';
 import { PaisFormComponent } from './componentes/pais-form/pais-form.component';
 import { PaisCardComponent } from './componentes/pais-card/pais-card.component';
@@ -48,7 +47,6 @@ import { RevbarComponent } from './componentes/revbar/revbar.component';
     FeriadosPaisComponent,
     PaisesDiaComponent,
     MesesFormComponent,
-    LineasFeriadosComponent,
     NavBarComponent,
     PaisFormComponent,
     PaisCardComponent,
