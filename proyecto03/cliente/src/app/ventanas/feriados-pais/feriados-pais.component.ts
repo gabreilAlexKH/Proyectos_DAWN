@@ -29,10 +29,7 @@ export class FeriadosPaisComponent {
   gafLineas:Chart|null = null;
   loadinData:boolean = true;
 
-  ELEMENT_DATA: FeriadoTabla[] = [{fecha:"2022-12-21" , feriado:"feriado con texto my largo" , substitute:false},
-  {fecha:"2022-12-21" , feriado:"feriado con texto my largo" , substitute:false},
-  {fecha:"2022-12-21" , feriado:"feriado con texto my largo" , substitute:false},
-{fecha:"2022-12-21" , feriado:"feriado con texto my largo" , substitute:false},];
+  ELEMENT_DATA: FeriadoTabla[] = [];
 
   constructor(private route: ActivatedRoute, private codigos: CodigosPaisesService, private feriado: PaisFeriadosService , private mesesSer: MesesService) {
 
@@ -45,7 +42,7 @@ export class FeriadosPaisComponent {
 
     this.route.params.subscribe(async params => {
 
-      this.loadinData = false
+      this.loadinData = true;
 
       this.paisCod = params['cod'];
       this.paisName = this.codigos.getPaisByCode(this.paisCod) as string;
