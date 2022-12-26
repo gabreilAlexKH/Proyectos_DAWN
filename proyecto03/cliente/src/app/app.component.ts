@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import {PaisesInfoService } from './servicios/paises-info.service';
 import {CodigosPaisesService} from './servicios/codigos-paises.service'
+import { PaisInfo } from './interfases/pais-info';
+
 
 @Component({
   selector: 'app-root',
@@ -20,18 +22,39 @@ export class AppComponent {
   }
 
   ngOnInit(){
+
     this.fetchPaisInfo();
+
   }
 
   private async fetchPaisInfo(){
 
-    let codPaises:Set<string> = this.codigoService.getRandomSample(10);
 
-    this.infosService.fetchInfoPaises(codPaises);
+    let codPaisesDia = JSON.parse(localStorage.getItem("codPaisesDia")!) as string[];
+
+    if(!codPaisesDia){
+      codPaisesDia = this.codigoService.getRandomSample(10);
+      localStorage.setItem( "codPaisesDia" ,  JSON.stringify(codPaisesDia));
+    }
+
+
+    let paisesDiaInfo = JSON.parse(localStorage.getItem("paisesDiaInfo")!) as PaisInfo;
 
     const sleep = (ms:number) => new Promise(r => setTimeout(r, ms));
 
-    await sleep(4000);
+
+    if(!paisesDiaInfo){
+
+      this.infosService.fetchInfoPaises(new Set<string>(codPaisesDia)).subscribe( (respuestas) => {
+
+         let paisesDia:PaisInfo[] = this.infosService.procesFetch(respuestas);
+
+        localStorage.setItem( "paisesDiaInfo" , JSON.stringify(paisesDia));
+
+      });
+
+      console.log("Paises del dia completos");
+    }
   }
 
 }

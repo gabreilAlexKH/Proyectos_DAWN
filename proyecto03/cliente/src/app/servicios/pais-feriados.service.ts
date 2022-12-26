@@ -7,6 +7,8 @@ import { FeriadoTabla } from '../interfases/feriado-tabla';
 })
 export class PaisFeriadosService {
 
+  anio:number = new Date().getFullYear() - 1;
+
   constructor() { }
 
 
@@ -17,7 +19,7 @@ export class PaisFeriadosService {
             params: {
                 api_key: "71eb14469314f3967a9fef615e4f138d",
                 country: codigoPais,
-                year: 2021,
+                year: this.anio,
                 format: "json",
                 language: "es"
             }

@@ -6,7 +6,15 @@
 
     <div>
 
-        <app-pais-card *ngFor="let pais of paisesDia"  [infoPais]=pais ></app-pais-card>
+      <div class="infoContainer p-2 my-2" *ngIf="paisesDia.length <=0" >
+
+        <p>Los datos de los paises aun no se an cargado. Por favor recarge la pagina</p>
+
+      </div>
+
+      <app-pais-card *ngFor="let pais of paisesDia"  [infoPais]=pais ></app-pais-card>
+
+
 
     </div>
 

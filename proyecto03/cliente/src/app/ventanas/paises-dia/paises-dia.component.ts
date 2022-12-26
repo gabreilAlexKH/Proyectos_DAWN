@@ -11,12 +11,16 @@ import { PaisInfo } from '../../interfases/pais-info';
 
 export class PaisesDiaComponent {
 
-  constructor(){}
+  constructor(private infosService: PaisesInfoService){}
 
   paisesDia: Array<PaisInfo>= new Array<PaisInfo>();
 
   ngOnInit(){
-    this.paisesDia = PaisesInfoService.paisesDia;
 
+    let paisesDiaInfo = JSON.parse(localStorage.getItem("paisesDiaInfo")!) ;
+
+    if(paisesDiaInfo){
+      this.paisesDia = paisesDiaInfo as PaisInfo[];
+    }
   }
 }

@@ -43,7 +43,7 @@ export class CodigosPaisesService {
     return paises;
   }
 
-  getRandomSample(n:number){
+  getRandomSample(n:number):string[]{
 
     let keys:string[] = Array.from(CodigosPaisesService.paisCod.keys()) as Array<string>;
     let keySet:Set<string>  = new Set<string> ();
@@ -53,7 +53,7 @@ export class CodigosPaisesService {
       keySet.add(keys[random]);
     }
 
-    return keySet;
+    return Array.from(keySet);
   }
 
 

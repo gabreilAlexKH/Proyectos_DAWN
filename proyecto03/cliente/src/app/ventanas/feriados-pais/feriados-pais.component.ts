@@ -23,6 +23,7 @@ export class FeriadosPaisComponent {
   paisName: string = ""
   mesInit: string = '01';
   mesFin: string = '12';
+  anio:number = new Date().getFullYear() - 1;
 
 
   grafColor:string = "rgba(58, 158, 253, 1)"
