@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import axios  from 'axios';
+import  axios  from 'axios';
 import { FeriadoTabla } from '../interfases/feriado-tabla';
 
 @Injectable({
@@ -8,14 +8,16 @@ import { FeriadoTabla } from '../interfases/feriado-tabla';
 export class PaisFeriadosService {
 
   anio:number = new Date().getFullYear() - 1;
+  url:string = 'https://api.getfestivo.com/v2/holidays'
 
   constructor() { }
 
 
   async fetchFeriadosPais(codigoPais:string){
+
     try {
 
-        const respuesta = await axios.get('https://api.getfestivo.com/v2/holidays', {
+        const respuesta = await axios.get( this.url, {
             params: {
                 api_key: "71eb14469314f3967a9fef615e4f138d",
                 country: codigoPais,

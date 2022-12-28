@@ -3,7 +3,7 @@
 </mat-toolbar>
 
 <mat-selection-list #page [multiple]="false" (click)="changeRoute(page.selectedOptions.selected[0].value); page.deselectAll();">
-  <mat-list-option value="" >
+  <mat-list-option value="/main/inicio" >
     <mat-icon  matListItemIcon color="accent">radio_button_unchecked</mat-icon>
     Inicio
   </mat-list-option >

@@ -1,5 +1,5 @@
-import {AfterViewInit, ChangeDetectorRef, Component, ViewChild , Input, SimpleChanges} from '@angular/core';
-import {MatPaginator, MatPaginatorIntl} from '@angular/material/paginator';
+import {AfterViewInit, Component, ViewChild , Input, SimpleChanges} from '@angular/core';
+import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
 import { FeriadoTabla } from 'src/app/interfases/feriado-tabla';
 
@@ -16,7 +16,7 @@ export class DataTableComponent implements AfterViewInit {
   @Input() data: FeriadoTabla[] = [];
 
   dataSource = new MatTableDataSource<FeriadoTabla>();
-  @ViewChild(MatPaginator) paginator: MatPaginator = new MatPaginator(new MatPaginatorIntl(), ChangeDetectorRef.prototype);
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
 
 
   ngAfterViewInit() {

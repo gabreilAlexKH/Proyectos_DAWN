@@ -47,13 +47,10 @@ export class AppComponent {
 
       this.infosService.fetchInfoPaises(new Set<string>(codPaisesDia)).subscribe( (respuestas) => {
 
-         let paisesDia:PaisInfo[] = this.infosService.procesFetch(respuestas);
-
+        let paisesDia:PaisInfo[] = this.infosService.procesFetch(respuestas);
         localStorage.setItem( "paisesDiaInfo" , JSON.stringify(paisesDia));
 
       });
-
-      console.log("Paises del dia completos");
     }
   }
 
