@@ -8,19 +8,19 @@ import { Router } from '@angular/router';
 })
 export class FeriadosInputComponent {
 
-  pais:string = "";
-  mesInit:string = '01';
-  mesFin:string  = '12';
+  protected pais: string = "";
+  protected mesInit: string = '01';
+  protected mesFin: string = '12';
 
   constructor(private router: Router) {
 
   }
 
-  onSelectedPais(pais:string) {
+  protected onSelectedPais(pais: string) {
     this.pais = pais;
   }
 
-  onSelectedMeses(mesesStr:string) {
+  protected onSelectedMeses(mesesStr: string) {
 
     let meses = Array<string>();
     meses = mesesStr.split("-");
@@ -31,10 +31,10 @@ export class FeriadosInputComponent {
 
 
 
-  goToResponse(){
+  protected goToResponse() {
 
-    if(this.pais!="" && this.mesInit<this.mesFin){
-      let ruta:string = `feriadosPais/${this.pais}/${this.mesInit}/${this.mesFin}`;
+    if (this.pais != "" && this.mesInit < this.mesFin) {
+      let ruta: string = `feriadosPais/${this.pais}/${this.mesInit}/${this.mesFin}`;
       this.router.navigate([ruta]);
     }
   }

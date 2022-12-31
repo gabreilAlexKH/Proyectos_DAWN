@@ -12,7 +12,7 @@
   <div id="tablaFeriadoPais_container" class=" infoContainer shadow mb-3 p-2 d-flex justify-content-center ">
 
     <div *ngIf="!loadinData" >
-      <app-data-table  [data]=ELEMENT_DATA></app-data-table>
+      <app-data-table  [data]=tableData></app-data-table>
     </div>
 
     <div *ngIf="loadinData" id="tablaLoader" class="d-flex flex-column  align-items-center pt-3">

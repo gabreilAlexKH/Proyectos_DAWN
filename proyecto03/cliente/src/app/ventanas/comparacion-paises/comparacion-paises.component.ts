@@ -13,14 +13,14 @@ import { FeriadoTabla } from 'src/app/interfases/feriado-tabla';
 })
 export class ComparacionPaisesComponent {
 
-  last:string = "/main/compInput"
-  paisesCodes: string[] = new Array();
-  mesInit: string = '';
-  mesFin: string = '';
+  protected last: string = "/main/compInput"
+  protected paisesCodes: string[] = new Array();
+  protected mesInit: string = '';
+  protected mesFin: string = '';
 
-  loadinData:boolean = true;
-  grafColor:string = "rgba(85, 83, 211, 1)"
-  gafBar:Chart|null = null;
+  protected loadinData: boolean = true;
+  protected grafColor: string = "rgba(85, 83, 211, 1)"
+  protected gafBar: Chart | null = null;
 
 
   constructor(private route: ActivatedRoute, private codigos: CodigosPaisesService, private feriado: PaisFeriadosService) {
@@ -29,8 +29,8 @@ export class ComparacionPaisesComponent {
 
   ngOnInit() {
 
-    let paisesName:string[] = this.codigos.getPaisesByCode(this.paisesCodes);
-    this.gafBar = this.renderisarGraficoBar(["NIN" , "NIN" , "NIN"] ,[0 , 0] );
+    let paisesName: string[] = this.codigos.getPaisesByCode(this.paisesCodes);
+    this.gafBar = this.renderisarGraficoBar(["NIN", "NIN", "NIN"], [0, 0]);
 
     this.route.params.subscribe(params => {
 
@@ -39,12 +39,12 @@ export class ComparacionPaisesComponent {
       this.paisesCodes = allCodes.split("-");
       this.mesInit = params['init'];
       this.mesFin = params['fin'];
-      this.comparaFeriadosPaises(this.paisesCodes, this.mesInit , this.mesFin , this.gafBar as Chart);
+      this.comparaFeriadosPaises(this.paisesCodes, this.mesInit, this.mesFin, this.gafBar as Chart);
 
     })
   }
 
-  renderisarGraficoBar(paises: String[], feriadosPorPais: number[]):Chart {
+  private renderisarGraficoBar(paises: String[], feriadosPorPais: number[]): Chart {
 
     var ctx: any = document.getElementById("BarChart");
     var myLineChart = new Chart(ctx, {
@@ -59,7 +59,7 @@ export class ComparacionPaisesComponent {
         }],
       },
       options: {
-        maintainAspectRatio:false,
+        maintainAspectRatio: false,
         indexAxis: 'y',
         scales: {
 
@@ -94,35 +94,35 @@ export class ComparacionPaisesComponent {
     return myLineChart;
   }
 
-  updateGraficoBar( grafico:Chart, paises:string[], feriadosPorPais:number[]){
+  private updateGraficoBar(grafico: Chart, paises: string[], feriadosPorPais: number[]) {
     grafico.data.labels = paises
     grafico.data.datasets[0].data = feriadosPorPais
     grafico.update();
-}
+  }
 
-async comparaFeriadosPaises(paisesCode:string[] , mesInit:string , mesFin:string , barras:Chart){
+  private async comparaFeriadosPaises(paisesCode: string[], mesInit: string, mesFin: string, barras: Chart) {
 
-    let namePaises:string[] = this.codigos.getPaisesByCode(paisesCode);
+    let namePaises: string[] = this.codigos.getPaisesByCode(paisesCode);
     let feriadosPorPais = new Array(paisesCode.length).fill(0);
-    let index:number = 0;
+    let index: number = 0;
 
     for (const pais of paisesCode) {
       let data: any | null = await this.feriado.fetchFeriadosPais(pais);
 
-        if(data != null){
-            let feriadosPais: FeriadoTabla[] = this.feriado.filterFeriados(this.mesInit, this.mesFin, data["holidays"]);
-            let feriados = this.feriado.feriadosPerMonth(feriadosPais , mesInit , mesFin);
-            feriadosPorPais[index] = feriados.reduce((partialSum, a) => partialSum + a, 0);
-        }else{
-            this.loadinData = false;
-            return ;
-        }
-        index++;
+      if (data != null) {
+        let feriadosPais: FeriadoTabla[] = this.feriado.filterFeriados(this.mesInit, this.mesFin, data["holidays"]);
+        let feriados = this.feriado.feriadosPerMonth(feriadosPais, mesInit, mesFin);
+        feriadosPorPais[index] = feriados.reduce((partialSum, a) => partialSum + a, 0);
+      } else {
+        this.loadinData = false;
+        return;
+      }
+      index++;
     }
-    this.updateGraficoBar( barras , namePaises , feriadosPorPais);
+    this.updateGraficoBar(barras, namePaises, feriadosPorPais);
     this.loadinData = false;
 
-}
+  }
 
 
 }

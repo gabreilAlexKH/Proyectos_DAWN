@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {CodigosPaisesService} from '../../servicios/codigos-paises.service'
+import { CodigosPaisesService } from '../../servicios/codigos-paises.service'
 import { Router } from '@angular/router';
 
 
@@ -10,27 +10,27 @@ import { Router } from '@angular/router';
 })
 export class ComparacionInputComponent {
 
-  constructor(private codPaisService:CodigosPaisesService , private router: Router){
+  constructor(private codPaisService: CodigosPaisesService, private router: Router) {
 
   }
 
-  paisesCodes:Set<string> = new Set<string>();
-  mesInit:string = '01';
-  mesFin:string  = '12';
+  protected paisesCodes: Set<string> = new Set<string>();
+  protected mesInit: string = '01';
+  protected mesFin: string = '12';
 
 
-  onSelectedPais(pais:string) {
+  protected onSelectedPais(pais: string) {
 
-    if(this.paisesCodes.size<10){
+    if (this.paisesCodes.size < 10) {
       this.paisesCodes.add(pais);
     }
   }
 
-  getPaisName(code:any){
+  getPaisName(code: any) {
     return this.codPaisService.getPaisByCode(code as string);
   }
 
-  onSelectedMeses(mesesStr:string) {
+  protected onSelectedMeses(mesesStr: string) {
 
     let meses = Array<string>();
     meses = mesesStr.split("-");
@@ -41,14 +41,14 @@ export class ComparacionInputComponent {
 
 
 
-  goToResponse(){
+  protected goToResponse() {
 
-    if(this.paisesCodes.size>0  && this.mesInit<this.mesFin){
+    if (this.paisesCodes.size > 0 && this.mesInit < this.mesFin) {
 
-      let arregloCod:string[] = Array.from(this.paisesCodes);
-      let paisesStr:string=arregloCod.join("-");
+      let arregloCod: string[] = Array.from(this.paisesCodes);
+      let paisesStr: string = arregloCod.join("-");
 
-      let ruta:string = `comparacionFeriados/${paisesStr}/${this.mesInit}/${this.mesFin}`;
+      let ruta: string = `comparacionFeriados/${paisesStr}/${this.mesInit}/${this.mesFin}`;
       this.router.navigate([ruta]);
     }
   }

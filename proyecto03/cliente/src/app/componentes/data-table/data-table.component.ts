@@ -1,6 +1,6 @@
-import {AfterViewInit, Component, ViewChild , Input, SimpleChanges} from '@angular/core';
-import {MatPaginator} from '@angular/material/paginator';
-import {MatTableDataSource} from '@angular/material/table';
+import { AfterViewInit, Component, ViewChild, Input, SimpleChanges } from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
 import { FeriadoTabla } from 'src/app/interfases/feriado-tabla';
 
 

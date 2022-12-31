@@ -18,19 +18,19 @@ Chart.register(...registerables);
 
 export class FeriadosPaisComponent {
 
-  last:string = "/main/feriadoInput";
-  paisCod: string = "";
-  paisName: string = ""
-  mesInit: string = '01';
-  mesFin: string = '12';
-  anio:number = new Date().getFullYear() - 1;
+  protected last:string = "/main/feriadoInput";
+  protected paisCod: string = "";
+  protected paisName: string = ""
+  protected mesInit: string = '01';
+  protected  mesFin: string = '12';
+  protected anio:number = new Date().getFullYear() - 1;
 
 
-  grafColor:string = "rgba(58, 158, 253, 1)"
-  gafLineas:Chart|null = null;
-  loadinData:boolean = true;
+  private grafColor:string = "rgba(58, 158, 253, 1)"
+  private gafLineas:Chart|null = null;
+  protected loadinData:boolean = true;
 
-  ELEMENT_DATA: FeriadoTabla[] = [];
+  protected tableData: FeriadoTabla[] = [];
 
   constructor(private route: ActivatedRoute, private codigos: CodigosPaisesService, private feriado: PaisFeriadosService , private mesesSer: MesesService) {
 
@@ -138,7 +138,7 @@ export class FeriadosPaisComponent {
 
   private updateTable(newData: FeriadoTabla[]) {
 
-    this.ELEMENT_DATA=newData;
+    this.tableData=newData;
 
   }
 

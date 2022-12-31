@@ -8,9 +8,9 @@ import { Router } from '@angular/router';
   templateUrl: './pais-card.component.html',
   styleUrls: ['./pais-card.component.css']
 })
-export class PaisCardComponent{
+export class PaisCardComponent {
 
-  @Input() infoPais:PaisInfo={
+  @Input() infoPais: PaisInfo = {
     alphaCode: "GB",
     name: "Default",
     telCode: "00",
@@ -24,9 +24,9 @@ export class PaisCardComponent{
   }
 
 
-  goToResponse(){
+  goToResponse() {
 
-    let ruta:string = `feriadosPais/${this.infoPais.alphaCode}/01/12`;
+    let ruta: string = `feriadosPais/${this.infoPais.alphaCode}/01/12`;
     this.router.navigate([ruta]);
   }
 

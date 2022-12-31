@@ -13,7 +13,7 @@ export class NavBarComponent {
   }
 
 
-  changeRoute(route:string){
+  changeRoute(route: string) {
     this.router.navigate([route]);
   }
 
