@@ -9,7 +9,9 @@ import {PaisAlpha2} from '../../interfases/pais-alpha2'
 })
 export class PaisFormComponent {
   pais:string = "";
+
   paises:PaisAlpha2[] =[];
+
   @Output() onSelected = new EventEmitter<any>();
 
   constructor(private codPaisService:CodigosPaisesService) {

@@ -18,7 +18,6 @@ export class FeriadosInputComponent {
 
   onSelectedPais(pais:string) {
     this.pais = pais;
-
   }
 
   onSelectedMeses(mesesStr:string) {
