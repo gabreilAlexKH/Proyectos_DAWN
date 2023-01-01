@@ -17,7 +17,15 @@ export class PaisesInfoService {
 
 
 
-
+  /**
+   * Devulve un observer compuesto de una respuesta por cada pais ingresado en el conjunto de codigos ISO 2
+   * Cada repuesta se compone de tres repuestas con:
+   *  1. Get a https://api.countrystatecity.in/v1/countries para el pais codigo ISO 2 del set
+   *  3. Get a https://api.countrystatecity.in/v1//${codigo}/states para el pais codigo ISO 2 del set
+   *  2. Get a https://api.countrystatecity.in/v1/countries/${codigo}/citiespara el pais codigo ISO 2 del set
+   * @param codigos
+   * @returns
+   */
   public fetchInfoPaises(codigos:Set<string>){
 
     let fetches:Observable<any>[] = [];
@@ -35,6 +43,11 @@ export class PaisesInfoService {
   }
 
 
+  /**
+   * Prosesa la repuesta de fetchInfoPaises(codigos:Set<string>) a un areglo con de PaisInfo de los paises que se pasaran a fetchInfoPaises
+   * @param respuestas
+   * @returns
+   */
   procesFetch(respuestas:any):Array<PaisInfo>{
 
     let paisesDia:PaisInfo[] = [];

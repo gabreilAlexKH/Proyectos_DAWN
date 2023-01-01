@@ -24,6 +24,9 @@ export class PaisCardComponent {
   }
 
 
+  /**
+   * Redirigue la pagina a la info de feriados del pais en la carta
+   */
   goToResponse() {
 
     let ruta: string = `feriadosPais/${this.infoPais.alphaCode}/01/12`;

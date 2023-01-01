@@ -13,6 +13,11 @@ export class PaisFeriadosService {
   constructor() { }
 
 
+  /**
+   * Hase un get a  https://api.getfestivo.com/v2/holidays devolviendo un json con la lista de feriados del año pasado de pais ingresado por codigo ISO 2
+   * @param codigoPais
+   * @returns
+   */
   async fetchFeriadosPais(codigoPais:string){
 
     try {

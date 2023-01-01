@@ -18,6 +18,10 @@ export class PaisFormComponent {
     this.paises = this.codPaisService.obtenerPaises() as Array<PaisAlpha2>;
   }
 
+  /**
+   * Emite un evento al padre con el codigo ISO 3166-1 alfa-2 del pais selecionado
+   * @param pais
+   */
   onSelectedPais(pais: any) {
 
     this.onSelected.emit(pais);

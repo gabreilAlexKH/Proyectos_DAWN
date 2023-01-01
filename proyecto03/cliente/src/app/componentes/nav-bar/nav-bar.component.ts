@@ -12,8 +12,11 @@ export class NavBarComponent {
 
   }
 
-
-  changeRoute(route: string) {
+  /**
+   * Cambia la pagina web a la ruta parasada como parametro
+   * @param route
+   */
+  protected changeRoute(route: string) {
     this.router.navigate([route]);
   }
 

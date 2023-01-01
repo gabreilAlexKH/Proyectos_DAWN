@@ -21,16 +21,29 @@ export class CodigosPaisesService {
     }
   }
 
+  /**
+   * Devuleve una lista de los codigos ISO 3166-1 alfa-2 de los paises diponibles en la aplicasion
+   * @returns
+   */
   obtenerPaises(){
     return paises;
   }
 
 
-
+  /**
+   * Devuelve el nombre del pais ingresado segun su codigo ISO 3166-1 alfa-2
+   * @param code
+   * @returns
+   */
   getPaisByCode(code:string){
     return CodigosPaisesService.paisCod.get(code) ;
   }
 
+  /**
+   * Devuelve una lista de nombres de paises segun las lista de codigos ISO 3166-1 alfa-2
+   * @param codes
+   * @returns
+   */
   getPaisesByCode(codes:string[]){
 
     let paises:string[] = [];
@@ -43,6 +56,11 @@ export class CodigosPaisesService {
     return paises;
   }
 
+  /**
+   * Devuelve un conjunto de n codigos ISO 3166-1 alfa-2
+   * @param n
+   * @returns
+   */
   getRandomSample(n:number):string[]{
 
     let keys:string[] = Array.from(CodigosPaisesService.paisCod.keys()) as Array<string>;

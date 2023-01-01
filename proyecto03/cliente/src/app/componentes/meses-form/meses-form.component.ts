@@ -26,7 +26,10 @@ export class MesesFormComponent {
   constructor() {
   }
 
-  onSelectedMeses() {
+  /**
+   * Emite un evento con los numeros de los meses escogidos
+   */
+  protected onSelectedMeses() {
 
     if (this.mesInit > this.mesFin) {
       this.onSelected.emit("");

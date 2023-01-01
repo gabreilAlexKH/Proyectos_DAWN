@@ -14,6 +14,9 @@ export class RevbarComponent {
 
   }
 
+  /**
+   * Cambia la pagina a la ruta mandada como parametro last al componente
+   */
   changeRoute() {
     this.router.navigate([this.last]);
   }

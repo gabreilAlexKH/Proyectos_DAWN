@@ -44,6 +44,12 @@ export class ComparacionPaisesComponent {
     })
   }
 
+  /**
+   * Crea un grafico de barras con lables paises y  datos feriadosPorPais
+   * @param paises
+   * @param feriadosPorPais
+   * @returns
+   */
   private renderisarGraficoBar(paises: String[], feriadosPorPais: number[]): Chart {
 
     var ctx: any = document.getElementById("BarChart");
@@ -94,6 +100,12 @@ export class ComparacionPaisesComponent {
     return myLineChart;
   }
 
+  /**
+   * Actulisa las labels y datos del grafico de barras ingresado
+   * @param grafico
+   * @param paises
+   * @param feriadosPorPais
+   */
   private updateGraficoBar(grafico: Chart, paises: string[], feriadosPorPais: number[]) {
     grafico.data.labels = paises
     grafico.data.datasets[0].data = feriadosPorPais

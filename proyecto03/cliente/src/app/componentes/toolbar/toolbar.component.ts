@@ -9,7 +9,9 @@ export class ToolbarComponent {
 
   @Input() enlaces:any;
 
-
+  /**
+   * Despliega la sidebar pasada como parametro
+   */
   menu() {
     this.enlaces.toggle()
   }

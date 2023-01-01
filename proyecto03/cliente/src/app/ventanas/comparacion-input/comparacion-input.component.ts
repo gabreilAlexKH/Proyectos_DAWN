@@ -18,7 +18,10 @@ export class ComparacionInputComponent {
   protected mesInit: string = '01';
   protected mesFin: string = '12';
 
-
+  /**
+   * Agrega el pais ingresado a al conjunto paisesCodes
+   * @param pais
+   */
   protected onSelectedPais(pais: string) {
 
     if (this.paisesCodes.size < 10) {
@@ -26,9 +29,15 @@ export class ComparacionInputComponent {
     }
   }
 
+  /**
+   * Devuelve el nombre del pais segun su codigo ISO 2
+   * @param code
+   * @returns
+   */
   getPaisName(code: any) {
     return this.codPaisService.getPaisByCode(code as string);
   }
+
 
   protected onSelectedMeses(mesesStr: string) {
 
