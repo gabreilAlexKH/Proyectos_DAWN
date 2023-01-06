@@ -120,7 +120,7 @@ export class PaisFeriadosService {
         let fecha:string = esSustituto ? feriado["observed"] : feriado["date"];
 
 
-        feriadosPais.push({ fecha: fecha, feriado: feriadoName , substitute: esSustituto });
+        feriadosPais.push({ date: fecha, name: feriadoName , substitute: esSustituto });
 
       }
 
@@ -137,7 +137,7 @@ export class PaisFeriadosService {
 
     for (const feriado of feriadosPais) {
 
-      let mes:number = parseInt(feriado.fecha.split("-")[1]);
+      let mes:number = parseInt(feriado.date.split("-")[1]);
 
       if(!feriado.substitute){
         feriadosMes[mes - 1] += 1;

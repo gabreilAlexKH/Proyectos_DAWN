@@ -1,5 +1,5 @@
 export interface FeriadoTabla {
-  fecha: string;
-  feriado: string;
+  date: string;
+  name: string;
   substitute:boolean;
 }

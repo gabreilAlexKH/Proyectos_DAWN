@@ -55,28 +55,28 @@ export class PaisesInfoService {
     for (const res  of respuestas) {
 
       let info:PaisInfo = {
-        alphaCode: "",
+        iso2: "",
         name: "",
-        telCode: "",
+        phonecode: "",
         capital: '',
-        moneda: '',
+        currency: '',
         nCiudades: 0,
         nEstados: 0
       };
 
       let respuestaCoun:Country = res[0] as Country;
 
-      info.alphaCode = respuestaCoun.iso2;
-      info.name = respuestaCoun.name;
-      info.telCode = respuestaCoun.phonecode;
-      info.capital = respuestaCoun.capital;
-      info.moneda = respuestaCoun.currency;
+      info.iso2 = respuestaCoun.iso2 ? respuestaCoun.iso2 : "None";
+      info.name = respuestaCoun.name ? respuestaCoun.name : "None";
+      info.phonecode = respuestaCoun.phonecode ? respuestaCoun.phonecode : "None";
+      info.capital = respuestaCoun.capital ? respuestaCoun.capital : "None";
+      info.currency = respuestaCoun.currency ? respuestaCoun.currency : "None";
 
       let estados:State[] = res[1] as Array<State>;
-      info.nEstados = estados.length;
+      info.nEstados = estados.length ? estados.length : 0;
 
       let ciudades:City[] = res[2] as Array<City>;
-      info.nCiudades = ciudades.length;
+      info.nCiudades = ciudades.length ? ciudades.length : 0 ;
 
       paisesDia.push(info);
 

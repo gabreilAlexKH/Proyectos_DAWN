@@ -6,17 +6,17 @@
       <div class="row">
         <div class="col-6 d-flex flex-column ">
 
-            <img mat-card-image src="https://flagcdn.com/w160/{{infoPais.alphaCode.toLowerCase()}}.jpg" loading="eager" width="100%" class="mb-1 mt-2">
+            <img mat-card-image src="https://flagcdn.com/w160/{{infoPais.iso2.toLowerCase()}}.jpg" loading="eager" width="100%" class="mb-1 mt-2">
 
 
               <mat-form-field  color="warn" appearance="fill">
                 <mat-label>Moneda</mat-label>
-                <input matInput readonly="true" value="{{infoPais.moneda}}" >
+                <input matInput readonly="true" value="{{infoPais.currency}}" >
               </mat-form-field>
 
               <mat-form-field  color="warn" appearance="fill">
                 <mat-label>Cod tel</mat-label>
-                <input matInput readonly="true" value="+{{infoPais.telCode}}">
+                <input matInput readonly="true" value="+{{infoPais.phonecode}}">
               </mat-form-field>
 
         </div>

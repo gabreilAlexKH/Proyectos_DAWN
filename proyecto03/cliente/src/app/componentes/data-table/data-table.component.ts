@@ -11,7 +11,7 @@ import { FeriadoTabla } from 'src/app/interfases/feriado-tabla';
 })
 export class DataTableComponent implements AfterViewInit {
 
-  @Input() displayedColumns: string[] = ['fecha', 'feriado'];
+  @Input() displayedColumns: string[] = ['date', 'name'];
 
   @Input() data: FeriadoTabla[] = [];
 

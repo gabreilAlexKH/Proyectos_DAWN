@@ -1,9 +1,9 @@
 export interface PaisInfo {
-  alphaCode:string;
   name:string;
-  telCode:string;
+  iso2:string;
+  phonecode:string;
   capital:string;
-  moneda:string;
+  currency:string;
   nCiudades:number;
   nEstados:number;
 }

@@ -11,6 +11,8 @@ import { PaisInfo } from './interfases/pais-info';
 })
 export class AppComponent {
 
+  title:string = "cliente";
+
   constructor(private infosService: PaisesInfoService , private codigoService:CodigosPaisesService) {
 
   }

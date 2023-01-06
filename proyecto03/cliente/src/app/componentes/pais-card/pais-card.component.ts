@@ -11,11 +11,11 @@ import { Router } from '@angular/router';
 export class PaisCardComponent {
 
   @Input() infoPais: PaisInfo = {
-    alphaCode: "GB",
+    iso2: "GB",
     name: "Default",
-    telCode: "00",
+    phonecode: "00",
     capital: 'Default',
-    moneda: 'DD',
+    currency: 'DD',
     nCiudades: 0,
     nEstados: 0
   };
@@ -29,7 +29,7 @@ export class PaisCardComponent {
    */
   goToResponse() {
 
-    let ruta: string = `feriadosPais/${this.infoPais.alphaCode}/01/12`;
+    let ruta: string = `feriadosPais/${this.infoPais.iso2}/01/12`;
     this.router.navigate([ruta]);
   }
 

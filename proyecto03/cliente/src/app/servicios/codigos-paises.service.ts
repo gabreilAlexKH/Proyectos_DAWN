@@ -10,7 +10,7 @@ import {PaisAlpha2} from '../interfases/pais-alpha2'
 
 export class CodigosPaisesService {
 
-  static paisCod = new Map<string, string>();
+  private static  paisCod = new Map<string, string>();
 
   constructor() {
 
@@ -57,7 +57,7 @@ export class CodigosPaisesService {
   }
 
   /**
-   * Devuelve un conjunto de n codigos ISO 3166-1 alfa-2
+   * Devuelve un areglo de n codigos  ISO 3166-1 alfa-2 no repetidos
    * @param n
    * @returns
    */
