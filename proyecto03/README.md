@@ -18,8 +18,6 @@ src: https://material.angular.io/components/categories
 src: https://www.chartjs.org/
 
 
-
-
 ## API
 **Festivo Public Holidays**
 src: https://docs.getfestivo.com/docs/products/public-holidays-api/intro/
