@@ -19,6 +19,6 @@ Api_sales
 
 
 Api_total
-1. Asignar puerto 4503 con "set PORT=4503" en la carpeta [api_enterprise](/api_total)
-2. Levantar el servidor  "npm run devstart" en la carpeta [api_enterprise](/api_enterprise) 
+1. Asignar puerto 4503 con "set PORT=4503" en la carpeta [api_total](/api_total)
+2. Levantar el servidor  "npm run devstart" en la carpeta [api_enterprise](/api_total) 
 

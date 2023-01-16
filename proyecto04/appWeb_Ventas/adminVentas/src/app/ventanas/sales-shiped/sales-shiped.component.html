@@ -1,0 +1,9 @@
+<h1>Shipped: {{cutomerId}}</h1>
+
+<div *ngIf="!loadinData" >
+  <app-tabla-sales [data]=tableData ></app-tabla-sales>
+
+</div>
+
+<h2>Total: </h2>
+  <p>{{total}}</p>
