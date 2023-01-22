@@ -15,10 +15,11 @@ export class TotalSalesService {
 
     let url:string= "http://localhost:4503/suma/total";
 
-    const parametros = new HttpParams().set('lista', JSON.stringify(sales));
+    const headers = { 'content-type': 'application/json'}
+    const body=JSON.stringify({'lista': sales});
 
+    return this.http.post(url,body, {'headers':headers} );
 
-    return this.http.post(url,{headers: parametros});
   }
 
 }

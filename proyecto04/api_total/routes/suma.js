@@ -5,17 +5,18 @@ var router = express.Router();
 
 router.post('/total', function(req, res, next) {  
 
-  //Solo para pruebas con Angular, debe cambiarse a funcionar con todos
-  let lista = req.body.headers.updates[0].value;
 
-  let json = JSON.parse(lista);
+  let lista = req.body.lista;
+
   let suma = 0;
-
-  for (const entry of json) {
+  
+  for (const entry of lista) {
     suma+= entry["priceEach"] * entry["quantityOrdered"]
   }
   
   let reponse = {total:suma};
+  
+  console.log(suma);
   
   res.json(reponse);
 

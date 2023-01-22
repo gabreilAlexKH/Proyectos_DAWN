@@ -29,14 +29,18 @@ export class SalesShipedComponent {
 
         this.tableData = response as Sales[];
 
+
         this.sumServ.fetchSumaSales(this.tableData).subscribe( (response) => {
 
           let res = response as any;
+
           this.total = res["total"]
 
-          this.loadinData = false;
 
         })
+
+        this.loadinData = false;
+
 
 
       });

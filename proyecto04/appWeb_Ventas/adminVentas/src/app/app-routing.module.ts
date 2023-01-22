@@ -7,8 +7,8 @@ import { SalesShipedComponent } from './ventanas/sales-shiped/sales-shiped.compo
 const routes: Routes = [
   {path: "inicio", component: InicioComponent},
   {path: "sales/shipped/:customerNumber", component: SalesShipedComponent},
-  {path: "sales/:customerNumber", component: SalesAllComponent},
-  {path: "*", redirectTo: "inicio"}
+  {path: "sales", component: SalesAllComponent},
+  {path: "**", redirectTo: "inicio"}
 
 
 ];

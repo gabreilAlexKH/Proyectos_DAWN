@@ -33,9 +33,9 @@ export class InicioComponent {
 
   }
 
-  protected checkSalesAll(custumerNumber:number){
+  protected checkSalesAll(){
 
-    this.ruteador.navigate(["sales/" + custumerNumber]);
+    this.ruteador.navigate(["sales"]);
 
   }
 

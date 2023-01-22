@@ -21,21 +21,13 @@ export class SalesAllComponent {
 
   ngOnInit(){
 
-    this.route.params.subscribe(params =>{
-
-      this.cutomerId =params['customerNumber'];
-
-      this.salesServ.fetchSalesAll(this.cutomerId).subscribe( (response) => {
-
+      this.salesServ.fetchSales().subscribe( (response) => {
         this.tableData = response as Sales[];
-
         console.log(this.tableData );
-
         this.loadinData = false;
 
       });
 
-    })
   }
 
 }
