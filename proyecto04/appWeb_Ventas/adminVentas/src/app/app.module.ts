@@ -9,6 +9,7 @@ import { SalesAllComponent } from './ventanas/sales-all/sales-all.component';
 import { TablaSalesComponent } from './componentes/tabla-sales/tabla-sales.component';
 import { RevbarComponent } from './componentes/revbar/revbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToolbarComponent } from './componentes/toolbar/toolbar.component';
 
 import {MatCommonModule} from '@angular/material/core';
 import {MatToolbarModule} from '@angular/material/toolbar';
@@ -27,6 +28,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     SalesAllComponent,
     TablaSalesComponent,
     RevbarComponent,
+    ToolbarComponent
   ],
   imports: [
     BrowserModule,

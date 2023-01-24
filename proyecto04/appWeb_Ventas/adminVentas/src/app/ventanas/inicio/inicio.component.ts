@@ -18,12 +18,20 @@ export class InicioComponent {
 
   ngOnInit(){
 
-    this.servicioCliente.fetchClientes().subscribe( (respuesta)=>{
+    let clientes:any =  localStorage.getItem("clientes");
 
-      this.dataSource = respuesta as Cliente[];
+    if(!clientes){
 
-    });
+      this.servicioCliente.fetchClientes().subscribe( (respuesta)=>{
 
+        this.dataSource = respuesta as Cliente[];
+        localStorage.setItem("clientes" , JSON.stringify(this.dataSource));
+
+      });
+    }else{
+
+      this.dataSource = JSON.parse(clientes) as Cliente[];
+    }
 
   }
 

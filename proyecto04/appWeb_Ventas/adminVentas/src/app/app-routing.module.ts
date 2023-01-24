@@ -5,10 +5,10 @@ import { SalesAllComponent } from './ventanas/sales-all/sales-all.component';
 import { SalesShipedComponent } from './ventanas/sales-shiped/sales-shiped.component';
 
 const routes: Routes = [
-  {path: "inicio", component: InicioComponent},
+  {path: "clientes", component: InicioComponent},
   {path: "sales/shipped/:customerNumber", component: SalesShipedComponent},
   {path: "sales", component: SalesAllComponent},
-  {path: "**", redirectTo: "inicio"}
+  {path: "**", redirectTo: "clientes"}
 
 
 ];
