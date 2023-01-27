@@ -15,6 +15,8 @@ export class SalesShipedComponent {
   protected tableData:Sales[]=[];
   protected total: number = 0;
   protected cutomerId:number = 0;
+  protected noResponse:boolean = false;
+  protected erroMesage:string = "";
 
 
   constructor(private route: ActivatedRoute, private salesServ: SalesService , private sumServ: TotalSalesService ) {}
@@ -29,21 +31,24 @@ export class SalesShipedComponent {
 
         this.tableData = response as Sales[];
 
+        if(this.tableData.length !=0){
+          this.sumServ.fetchSumaSales(this.tableData).subscribe( (response) => {
 
-        this.sumServ.fetchSumaSales(this.tableData).subscribe( (response) => {
+            let res = response as any;
 
-          let res = response as any;
+            this.total = res["total"]
 
-          this.total = res["total"]
+          })
+          this.loadinData = false;
+        }else{
+          this.noResponse= true;
+          this.erroMesage = "No hay coinisidencias";
+        }
 
-
-        })
-
-        this.loadinData = false;
-
-
-
-      });
+      },(error) => {
+        this.noResponse= true;
+        this.erroMesage = "Error detectado: \n" + error.errorMessege;
+    });
 
     })
   }

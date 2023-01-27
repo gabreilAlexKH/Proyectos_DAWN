@@ -3,7 +3,7 @@
   <div class="row my-3">
     <div class="col-12 py-1">
       <h1>
-        <b>Ordenes Shipped: {{cutomerId}}</b>
+        <b>Ordenes Shipped de Cliente {{cutomerId}}:</b>
       </h1>
     </div>
   </div>
@@ -20,7 +20,10 @@
           <label>{{total}}$</label>
         </div>
       </div>
-
-
   </div>
+
+  <div *ngIf="noResponse">
+    <p>{{erroMesage}}</p>
+  </div>
+
 </div>
