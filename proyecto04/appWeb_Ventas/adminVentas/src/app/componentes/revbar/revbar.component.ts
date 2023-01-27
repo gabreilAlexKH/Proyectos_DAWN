@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 })
 export class RevbarComponent {
 
-  @Input() returnPath:string = "clientes"
+  @Input() returnPath:string = "main/clientes"
 
   constructor(private router:Router) {
 

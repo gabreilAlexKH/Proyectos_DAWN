@@ -1,0 +1,19 @@
+<mat-toolbar color="primary">
+  <span>Menu</span>
+</mat-toolbar>
+
+<mat-selection-list #page [multiple]="false" (click)="changeRoute(page.selectedOptions.selected[0].value); page.deselectAll();">
+  <mat-list-option value="/main/clientes" >
+    <mat-icon  matListItemIcon color="accent">radio_button_unchecked</mat-icon>
+    Clientes
+  </mat-list-option>
+  <mat-list-option value='/main/sales'>
+    <mat-icon matListItemIcon color="accent">radio_button_unchecked</mat-icon>
+    Pedidos
+  </mat-list-option>
+
+
+</mat-selection-list>
+
+
+

@@ -1,68 +1,18 @@
-<h1>
-  Todos lo clientes
-</h1>
+<mat-sidenav-container  autosize>
 
-<div class="row">
-  <div class="col-3">
-    <label>Revisar pedidos</label>
-  </div>
+  <mat-sidenav #enlaces mode="over">
+    <app-navbar></app-navbar>
+  </mat-sidenav>
 
-  <div class="col-3">
-    <button mat-raised-button color="primary" (click)="checkSalesAll()"> Todos los pedidos</button>
-  </div>
+  <mat-sidenav-content>
 
-</div>
+    <app-toolbar [enlaces]=enlaces ></app-toolbar>
 
-<div class="row">
-  <div class="col-12">
-    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-      <ng-container matColumnDef="customerNumber">
-        <th mat-header-cell *matHeaderCellDef> ID </th>
-        <td mat-cell *matCellDef="let element"> {{element.customerNumber}} </td>
-      </ng-container>
+    <div class="px-5">
+      <router-outlet ></router-outlet>
+    </div>
 
-      <ng-container matColumnDef="customerName">
-        <th mat-header-cell *matHeaderCellDef> Nombre </th>
-        <td mat-cell *matCellDef="let element"> {{element.customerName}} </td>
-      </ng-container>
-
-      <ng-container matColumnDef="phone">
-        <th mat-header-cell *matHeaderCellDef>Telf.</th>
-        <td mat-cell *matCellDef="let element"> {{element.phone}} </td>
-      </ng-container>
-
-      <ng-container matColumnDef="city">
-        <th mat-header-cell *matHeaderCellDef>Ciudad</th>
-        <td mat-cell *matCellDef="let element"> {{element.city}} </td>
-      </ng-container>
-
-      <ng-container matColumnDef="state">
-        <th mat-header-cell *matHeaderCellDef> Estado </th>
-        <td mat-cell *matCellDef="let element"> {{element.state}} </td>
-      </ng-container>
-
-      <ng-container matColumnDef="country">
-        <th mat-header-cell *matHeaderCellDef>Pais</th>
-        <td mat-cell *matCellDef="let element"> {{element.country}} </td>
-      </ng-container>
-
-      <ng-container matColumnDef="postalCode">
-        <th mat-header-cell *matHeaderCellDef>Codigo Postal</th>
-        <td mat-cell *matCellDef="let element"> {{element.postalCode}} </td>
-      </ng-container>
-
-      <ng-container matColumnDef="boton">
-        <th mat-header-cell *matHeaderCellDef>Ordenes</th>
-        <td mat-cell *matCellDef="let element">
-          <button mat-raised-button color="primary" (click)="checkSalesShipped(element.customerNumber)">
-            Shiipped</button>
-        </td>
-      </ng-container>
-
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-    </table>
+  </mat-sidenav-content>
 
 
-  </div>
-</div>
+</mat-sidenav-container>

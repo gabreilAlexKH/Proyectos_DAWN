@@ -1,0 +1,7 @@
+mat-list-option > mat-icon{
+  margin: 0 , 5px , 0 , 5px;
+}
+
+app-navbar .mat-pseudo-checkbox {
+  display: none !important;
+}

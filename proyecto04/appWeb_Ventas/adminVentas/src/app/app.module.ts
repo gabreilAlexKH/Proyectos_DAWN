@@ -10,6 +10,7 @@ import { TablaSalesComponent } from './componentes/tabla-sales/tabla-sales.compo
 import { RevbarComponent } from './componentes/revbar/revbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToolbarComponent } from './componentes/toolbar/toolbar.component';
+import { NavbarComponent } from './componentes/navbar/navbar.component';
 
 import {MatCommonModule} from '@angular/material/core';
 import {MatToolbarModule} from '@angular/material/toolbar';
@@ -18,6 +19,10 @@ import {MatTableModule} from '@angular/material/table';
 import {MatButtonModule} from '@angular/material/button';
 import { HttpClientModule } from '@angular/common/http';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { ClientesComponent } from './ventanas/clientes/clientes.component';
+import {MatListModule} from '@angular/material/list';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 
 @NgModule({
@@ -28,7 +33,9 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     SalesAllComponent,
     TablaSalesComponent,
     RevbarComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    ClientesComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +47,9 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     MatIconModule,
     MatTableModule,
     MatButtonModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatListModule,
+    MatSidenavModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

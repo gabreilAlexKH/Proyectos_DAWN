@@ -1,6 +1,13 @@
-<h1>
-  Todos las Ordenes
-</h1>
-<div *ngIf="!loadinData" >
-  <app-tabla-sales [data]=tableData ></app-tabla-sales>
+<div class="row my-3">
+  <div class="col-12 py-1">
+    <h1>
+      <b> Todos las Ordenes
+      </b>
+    </h1>
+  </div>
+</div>
+
+
+<div *ngIf="!loadinData">
+  <app-tabla-sales [data]=tableData></app-tabla-sales>
 </div>
