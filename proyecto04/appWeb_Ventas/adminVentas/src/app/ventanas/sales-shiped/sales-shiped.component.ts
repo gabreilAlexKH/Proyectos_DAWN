@@ -36,7 +36,7 @@ export class SalesShipedComponent {
 
             let res = response as any;
 
-            this.total = res["total"]
+            this.total = Math.round(res["total"] * 100) / 100
 
           })
           this.loadinData = false;
